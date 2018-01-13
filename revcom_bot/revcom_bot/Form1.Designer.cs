@@ -61,7 +61,7 @@
             this.txtKey.Name = "txtKey";
             this.txtKey.Size = new System.Drawing.Size(383, 20);
             this.txtKey.TabIndex = 0;
-            this.txtKey.Text = "ваш токен бота";
+            this.txtKey.Text = "508343926:AAHaaWy-GnJJnYAWIgd6NxzHq8TjY5GTGm0";
             // 
             // Form1
             // 
