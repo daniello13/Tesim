@@ -50,7 +50,7 @@
             this.BtnRun.Location = new System.Drawing.Point(6, 45);
             this.BtnRun.Name = "BtnRun";
             this.BtnRun.Size = new System.Drawing.Size(114, 23);
-            this.BtnRun.TabIndex = 1;
+            this.BtnRun.TabIndex = 0;
             this.BtnRun.Text = "Поехали";
             this.BtnRun.UseVisualStyleBackColor = true;
             this.BtnRun.Click += new System.EventHandler(this.BtnRun_Click);
@@ -60,7 +60,7 @@
             this.txtKey.Location = new System.Drawing.Point(6, 19);
             this.txtKey.Name = "txtKey";
             this.txtKey.Size = new System.Drawing.Size(383, 20);
-            this.txtKey.TabIndex = 0;
+            this.txtKey.TabIndex = 1;
             this.txtKey.Text = "508343926:AAHaaWy-GnJJnYAWIgd6NxzHq8TjY5GTGm0";
             // 
             // Form1
