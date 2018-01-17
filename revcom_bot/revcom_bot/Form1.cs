@@ -45,6 +45,66 @@ namespace revcom_bot
                                             },
                 ResizeKeyboard = true
             };
+            var keyboardWait = new Telegram.Bot.Types.ReplyMarkups.ReplyKeyboardMarkup
+            {
+                Keyboard = new[] {
+                                                new[] // row 1
+                                                {
+                                                    new Telegram.Bot.Types.KeyboardButton("Ожидайте загрузки текста"),
+                                                },
+                                            },
+                ResizeKeyboard = true
+            };
+            var keyboardDoor2 = new Telegram.Bot.Types.ReplyMarkups.ReplyKeyboardMarkup
+            {
+                Keyboard = new[] {
+                                                new[] // row 1
+                                                {
+                                                    new Telegram.Bot.Types.KeyboardButton("Войти во вторую дверь"),
+                                                },
+                                            },
+                ResizeKeyboard = true
+            };
+            var keyboardDoor3 = new Telegram.Bot.Types.ReplyMarkups.ReplyKeyboardMarkup
+            {
+                Keyboard = new[] {
+                                                new[] // row 1
+                                                {
+                                                    new Telegram.Bot.Types.KeyboardButton("Войти в третью дверь"),
+                                                },
+                                            },
+                ResizeKeyboard = true
+            };
+            var keyboardDoor4 = new Telegram.Bot.Types.ReplyMarkups.ReplyKeyboardMarkup
+            {
+                Keyboard = new[] {
+                                                new[] // row 1
+                                                {
+                                                    new Telegram.Bot.Types.KeyboardButton("Войти во четвертую дверь"),
+                                                },
+                                            },
+                ResizeKeyboard = true
+            };
+            var keyboardDoor5 = new Telegram.Bot.Types.ReplyMarkups.ReplyKeyboardMarkup
+            {
+                Keyboard = new[] {
+                                                new[] // row 1
+                                                {
+                                                    new Telegram.Bot.Types.KeyboardButton("Войти в пятую дверь"),
+                                                },
+                                            },
+                ResizeKeyboard = true
+            };
+            var keyboardDoor6 = new Telegram.Bot.Types.ReplyMarkups.ReplyKeyboardMarkup
+            {
+                Keyboard = new[] {
+                                                new[] // row 1
+                                                {
+                                                    new Telegram.Bot.Types.KeyboardButton("Войти в шестую дверь"),
+                                                },
+                                            },
+                ResizeKeyboard = true
+            };
             var worker = sender as BackgroundWorker;
             var key = e.Argument as String; // получаем ключ из аргументов
             try
@@ -166,22 +226,14 @@ namespace revcom_bot
                         else if (message.Text == "Ожидайте загрузки квеста"){
 
                         }
+                        //дверь №1
                         else if (message.Text == "Войти в первую дверь")
                         {
                             // в ответ на команду Начать игру выводим комнату с дверьми
                             //await Bot.SendPhotoAsync(message.Chat.Id, "http://aftamat4ik.ru/wp-content/uploads/2017/03/photo_2016-12-13_23-21-07.jpg", "Revolution!");
                             string door1 = "Дверь первая \n\n Первая дверь, перед которой я оказался, была выполнена из темного дерева с резным узором и вставками из неизвестного мне метала. Не знаю, почему выбрал именно ее.\n\nНеуверенно я шагнул вперед и потянул ручку на себя.\n\nТак началось мое путешествие…\n\n";
-                            var keyboard = new Telegram.Bot.Types.ReplyMarkups.ReplyKeyboardMarkup
-                            {
-                                Keyboard = new[] {
-                                                new[] // row 1
-                                                {
-                                                    new Telegram.Bot.Types.KeyboardButton("Ожидайте загрузки текста"),
-                                                },
-                                            },
-                                ResizeKeyboard = true
-                            };
-                            await Bot.SendTextMessageAsync(message.Chat.Id, door1, false, false, 0, keyboard, ParseMode.Html);
+                            
+                            await Bot.SendTextMessageAsync(message.Chat.Id, door1, false, false, 0, keyboardWait, ParseMode.Html);
                             //Telegram.Bot.Types.FileToSend audio = new Telegram.Bot.Types.FileToSend("opening.mp3", );
                             //await Bot.SendAudioAsync(message.Chat.Id, Telegram.Bot.Types.FileToSend , "Pixie Paris", "Opening", false,0,null);
                             //"opening.mp3"
@@ -204,7 +256,7 @@ namespace revcom_bot
                             
                             string door11 = "<i>Шагнув через порог, я оказался на лестничной клетке перед другой дверью. Не знаю, как это произошло. Кажется, я нахожусь в каком то здании. \n\n Я не помню, чтобы звонил или стучал в дверь, но там, с той стороны, послышались приближающиеся шаги. Через пару секунд она распахнулась и передо мной оказалась милая длинноволосая брюнетка с карими глазами. Она была среднего роста.</i>";
                             Thread.Sleep(52);
-                            await Bot.SendTextMessageAsync(message.Chat.Id, door11, false, false, 0, null, ParseMode.Html);
+                            await Bot.SendTextMessageAsync(message.Chat.Id, door11, false, false, 0, keyboardWait, ParseMode.Html);
                             string door12 = "- Братик?";
                             await Bot.SendTextMessageAsync(message.Chat.Id, door12, false, false, 0, null, ParseMode.Html); Thread.Sleep(52);
                             string door13 = "- Братик?..  – <i>недоуменно переспросил я. \n\nНеужели эта девушка – моя сестра?</i>";
@@ -426,14 +478,25 @@ namespace revcom_bot
                             await Bot.SendTextMessageAsync(message.Chat.Id, door_1110, false, false, 0, null, ParseMode.Html); Thread.Sleep(52);
                             await Bot.SendTextMessageAsync(message.Chat.Id, door_1111, false, false, 0, null, ParseMode.Html); Thread.Sleep(52);
                             
-                            keyboard = new Telegram.Bot.Types.ReplyMarkups.ReplyKeyboardMarkup
+                            var keyboard = new Telegram.Bot.Types.ReplyMarkups.ReplyKeyboardMarkup
                             {
                                 Keyboard = new[] {
                                                 new[] // row 1
                                                 {
                                                     new Telegram.Bot.Types.KeyboardButton("Заступиться за сестру"),
+                                                    
+                                                    
+                                                },
+                                                new[]
+                                                {
                                                     new Telegram.Bot.Types.KeyboardButton("Уйти"),
+                                                },
+                                                new[]
+                                                {
                                                     new Telegram.Bot.Types.KeyboardButton("Поговорить"),
+                                                },
+                                                new[]
+                                                {
                                                     new Telegram.Bot.Types.KeyboardButton("/help")
                                                 },
                                             },
@@ -470,7 +533,7 @@ namespace revcom_bot
                             await Bot.SendTextMessageAsync(message.Chat.Id, door_1117, false, false, 0, null, ParseMode.Html); Thread.Sleep(52);
                             await Bot.SendTextMessageAsync(message.Chat.Id, door_1118, false, false, 0, null, ParseMode.Html); Thread.Sleep(52);
                             await Bot.SendTextMessageAsync(message.Chat.Id, door_1119, false, false, 0, null, ParseMode.Html); Thread.Sleep(52);
-                            await Bot.SendTextMessageAsync(message.Chat.Id, door_1120, false, false, 0, null, ParseMode.Html); Thread.Sleep(52);
+                            await Bot.SendTextMessageAsync(message.Chat.Id, door_1120, false, false, 0, keyboardDoor2, ParseMode.Html); Thread.Sleep(52);
 
                         }
                         else if (message.Text == "Уйти")
@@ -486,7 +549,7 @@ namespace revcom_bot
                                 ResizeKeyboard = true
                             };
                             string door_1121 = "<i>Я ничего не мог сделать. Мне оставалось только уйти, поджав хвост…\n\nНа следующий день они помирились.\n\nЧерез неделю сестра сказала мне, что беременна от Ивана. Она плакала всю ночь. Ни я, ни мама не могли успокоить ее.\n\nСегодня он переезжает к нам. Я обещал помочь с коробками. Но, поднимаясь по лестнице, я почувствовал, что что-то не так.\n\nСтены, окружающие меня предметы и люди – все это начало таять, как мороженное в жару.\n\nЯ снова очнулся в той комнате с дверями.\n\nНаверное стоило вернуться, нехорошо было оставлять сестру одну, но я не мог. Что-то неведомое мешало мне, заставляло продолжать путь. Я поклялся себе, что вернусь сюда, когда вспомню все…</i>";
-                            await Bot.SendTextMessageAsync(message.Chat.Id, door_1121, false, false, 0, keyboard, ParseMode.Html); Thread.Sleep(52);
+                            await Bot.SendTextMessageAsync(message.Chat.Id, door_1121, false, false, 0, keyboardDoor2, ParseMode.Html); Thread.Sleep(52);
 
                         }
                         else if (message.Text == "Поговорить")
@@ -533,7 +596,7 @@ namespace revcom_bot
                             await Bot.SendTextMessageAsync(message.Chat.Id, door_1135, false, false, 0, null, ParseMode.Html); Thread.Sleep(52);
                             await Bot.SendTextMessageAsync(message.Chat.Id, door_1136, false, false, 0, null, ParseMode.Html); Thread.Sleep(52);
                             await Bot.SendTextMessageAsync(message.Chat.Id, door_1137, false, false, 0, null, ParseMode.Html); Thread.Sleep(52);
-                            await Bot.SendTextMessageAsync(message.Chat.Id, door_1138, false, false, 0, null, ParseMode.Html); Thread.Sleep(52);
+                            await Bot.SendTextMessageAsync(message.Chat.Id, door_1138, false, false, 0, keyboardDoor2, ParseMode.Html); Thread.Sleep(52);
 
                         }
                         else if (message.Text == "Авторы" || message.Text == "авторы")
@@ -560,7 +623,10 @@ namespace revcom_bot
 
                             await Bot.SendTextMessageAsync(message.Chat.Id, "Давай накатим, товарищ, по одной!", false, false, 0, keyboard, Telegram.Bot.Types.Enums.ParseMode.Default);
                         }
-
+                        else if(message.Text == "/help")
+                        {
+                            await Bot.SendTextMessageAsync(message.Chat.Id, "Этот бот служит для игрового процесса в текствовoм квесте, в чате ничего не пишите что бы не спойлерить себе игру, читайте текст, и ждите кнопок", false, false, 0, null, Telegram.Bot.Types.Enums.ParseMode.Default);
+                        }
                         // reply buttons
                         else if (message.Text == "/rbuttons")
                         {
@@ -587,6 +653,269 @@ namespace revcom_bot
                         {
                             await Bot.SendTextMessageAsync(message.Chat.Id, "Ну, за демократию!", replyToMessageId: message.MessageId);
                         }
+                        //дверь №2
+                        else if (message.Text == "Войти во вторую дверь")
+                        {
+                            
+                            string door_20 = "<i>Я вновь был в той круглой комнате.\n\nНа данный момент моей единственной зацепкой были голубые волосы с фотографии. Я намеревался это исправить.\n\nПоднявшись на ноги, я направился к следующей двери. Она была выполнена на манер средневековой Англии. Не знаю, откуда я могу помнить про Англию и другие очевидные вещи. Мне очень повезло, что утрата памяти была частичной. В противном случае я ничем не отличался бы от овоща.\n\nВзяв себя в руки, я открыл ее и тут же понял, что все идет не так.\n\nЯ несся на огромной скорости по какой-то трубе, наполненной водой. Нет, это не была обычная труба. В ней было достаточно места, Я мог дышать и двигаться, вот только совершенно ничего не видел.\n\nПотом все закончилось. Я больше не чувствовал ничего под собой. Выбравшись из так называемой «трубы», я оказался ослеплен ярким солнечным светом, мне казалось, что я лечу. Какое-то время так и было. Но мне понадобилась не одна секунда на то, чтобы осознать, что лечу я вниз.\n\nПослышался всплеск – это я ударился о водяную гладь\n\n. Хорошо, что лететь было не высоко. В противном случае приземление не было бы столь удачным.</i>";
+                            string door_21 = "<i>Я в один миг оказался в воде и тут же всплыл на поверхность, подобно резиновому мячу.\n\nОт неожиданности я чуть не захлебнулся.</i>";
+                            string door_22 = "- Ты в порядке? –<i> кто-то протянул мне руку. Это была шикарная голубоглазая блондинка.</i>";
+                            string door_23 = "- Вы кто? – <i>спросил я, не решаясь обратиться к ней на «ты».</i>";
+                            string door_24 = "<i>Девушка мгновенно рассмеялась, по-видимому, не приняла моих слов всерьез.</i>";
+                            string door_25 = "- Очень смешно, Миш. Ладно. Выбирайся. Простудишься еще.";
+                            string door_26 = "<i>Я решил, что не стоит повторять былых ошибок. Все же у врача я был и мне сказали, что видимых травм у меня не наблюдается. Что бы ни служило причиной моей амнезии, это не ускорит процесс восстановления памяти, а возможно и наоборот, замедлит ее.  Лучше помалкивать и наблюдать за происходящим. Поэтому я просто кивнул и вылез из бассейна.\n\nСначала я подумал, что нахожусь в каком-нибудь аквапарке, но это было не так. Настоящий бассейн с водяной горкой находился прямо в ее дворе.\n\nХорошо бы узнать ее имя, но так, чтобы не вызвать подозрений. Пока же все, что мне известно – она красивая и богатая.\n\nМы вошли в дом, который размерами своими был сопоставим с какими-нибудь старинными английскими усадьбами.\n\nНе удивительно, что дверь в этот мир была именно такой.\n\nА отдельный ли это мир? Полагаю да. У меня было чувство, что за каждой из тех дверей находится своя альтернативная реальность. Так почему же я могу спокойно перемещаться между ними? И остаюсь ли я собой в каждом из этих миров?..</i>";
+                            string door_27 = "- О чем задумался?";
+                            string door_28 = "- Сколько лет прошло с нашего знакомства?";
+                            string door_29 = "<i>Она задумалась, словно вспоминая.</i>";
+                            string door_210 = "- Много лет. Кажется с самого детства. Честно говоря, это было так давно, что я уже и вспомнить, наверное, не смогу.";
+                            string door_211 = "<i>Значит я не ошибся.</i>";
+                            string door_212 = "- С чего вдруг ты решил заговорить о прошлом?";
+                            string door_213 = "- Сам не знаю. Просто иногда накатывают воспоминания. С тобой такое случается?";
+                            string door_214 = "- Конечно, я ведь тоже человек. Мы столько лет дружили с тобой… Даже не верится, что ты осмелел и предложил мне встречаться. Ты всегда был таким нерешительным. Это даже мило.";
+                            string door_215 = "- И почему ты согласилась? ";
+                            string door_216 = "- Не знаю… На самом деле ты единственный, к кому я чувствую теплоту. Мои родители всегда говорили, что самые крепкие браки – те, что держатся на дружбе, -<i> заговорив о семье, она густо покраснела,</i> - Прости. Ты знаешь, я ведь ничего такого не имею в виду…";
+                            string door_217 = "- Похоже, это многое значит для тебя, я прав?";
+                            string door_218 = "<i>Девушка отвела взгляд к окну.</i>";
+                            string door_219 = "- Я всегда любила смотреть на моих родителей. Такие любящие и счастливые… Интересно, будет ли у меня такая же семья? Своя, собственная?.. Я пока не до конца разобралась в себе, но, если бы у меня было такое будущее, я бы ни о чем не жалела…";
+                            string door_220 = "<i>Я положил руку на ее плече.</i>";
+                            string door_221 = "- Когда-нибудь обязательно будет.";
+                            string door_222 = "<i>Она улыбнулась.</i>";
+                            string door_223 = "-Ты прав. Однажды… Возможно даже с тобой.";
+                            string door_224 = "<i>Эти слова заставили меня подавиться слюной. Ее это позабавило.</i>";
+                            string door_225 = "- Прости. Ты ведь совсем не изменился. Всегда так смущаешься и краснеешь. Это я и люблю в тебе. ";
+                            string door_226 = "- Разве в этом есть что-то особенное?";
+                            string door_227 = "- И да, и нет.  Сейчас многие парни стесняются этого. Они боятся выглядеть не круто. Ты не такой, как они. Ты настоящий. Не теряй этого.";
+                            string door_228 = "- Хорошо.";
+                            string door_229 = "<i>Мы еще посидели какое-то время у бассейна, безмолвно наблюдая за тем, как колышется вода от малейшего дуновения ветерка. Неожиданно в него упала капля, затем еще одна и еще. Небо медленно заполняли тучи.</i>";
+                            string door_230 = "- Кажется нам лучше вернуться в дом. Здесь становится прохладно…";
+                            string door_231 = "<i>И правда. Ветер становился все сильнее и порывистей. Капли с новой силой били по телу.\n\nЕще немного и один из нас бы точно заболел.\n\nМы прошли в дом, и я едва не закричал от восторга. Если снаружи он казался большим, то внутри оказался просто огромным. Стены, потолки – все это казалось чем-то недостижимым.\n\nЯ словно находился в музее. И там, и тут можно было увидеть различные картины, статуи, вазы, да и сама обстановка была, как в старинных поместьях. От всего окружающего было невозможно оторвать глаз…\n\nМеня отвлек ее голос.</i>";
+                            string door_232 = "- Поражает, верно? ";
+                            string door_233 = "- Что?";
+                            string door_234 = "- Мама столько лет занималась домом, покупала все это, чтобы я культурно развивалась. Глупо, наверное, звучит. Думаю, ей просто хотелось иметь свою галерею.";
+                            string door_235 = "- Наверное… Но это правда потрясающе! Прямо дух захватывает.";
+                            string door_236 = "- Да, но… Он все меньше походит на дом. Конечно, мы можем себе это позволить, но это все так бессмысленно… Величие делает этот дом еще более пустым.";
+                            string door_237 = "- Я не думал об этом…";
+                            string door_238 = "<i>Она выглядела грустной. Кажется это очень важно для нее.</i>";
+                            string door_239 = "- Ты… всегда был добр ко мне… Знаешь, я пыталась ходить в специальную школу для богатых семей, но не смогла. Все там… Учителя, другие работники, даже дети… У всех тот страшный взгляд…";
+                            string door_240 = "- «Страшный взгляд»?..";
+                            string door_241 = "- Да… Улыбки, добродушие – за всем этим скрывались ужасные монстры. В конце концов оставаться там было невыносимо. Меня перевели в обычную школу, но даже там я видела их… Ты был другим. Тебе было не важно ни кто я, ни сколько у меня денег. Ты просто был добр ко мне. Тебе не было нужно ничего. Все, что ты хотел – это помочь…";
+                            string door_242 = "<i>Я промолчал.</i>";
+                            string door_243 = "- Помнишь день нашей встречи?";
+                            string door_244 = "<i>Я виновато опустил глаза. Нет. Я не могу рассказать ей о том, что потерял память.</i>";
+                            string door_245 = "- Нет… Конечно нет… Ты и не можешь помнить этого. Это было так давно…";
+                            string door_246 = "- Прости.";
+                            string door_247 = "- Да нет, ничего. Для тебя это, наверное, один из обычных дней, но я никогда не забуду его… То, как ты спас меня от тех девчонок… Я так испугалась, что убежала и долго-долго плакала, а ты пошел за мной…";
+                            string door_248 = "- Я не мог пройти мимо. Тебе ведь было нужно, чтобы тебя кто-то поддержал.";
+                            string door_249 = "- Только ты был готов заступиться за меня. Даже когда с тобой все перестали разговаривать, ты сказал, что  все в порядке, пока я не плачу…";
+                            string door_250 = "<i>Ее воспоминания вызывали множество чувств даже у меня. Пусть я и не помнил всего, но это не мешало мне чувствовать.\n\nТогда я обнял ее. Не знаю почему. Для меня она была никем. Я не знал ее имени, я не помнил ни ее, ни того времени, которое она провела со мной. Но, в то же время, я не мог назвать ее чужой. Что-то глубоко внутри мешало мне.\n\nОна обняла меня в ответ.\n\nНе знаю, сколько мы простояли так, до тех пор, пока она не решилась отстраниться.</i>";
+                            string door_251 = "- Прости, я совсем забыла о завтраке. Пойдем, я приготовлю что-нибудь…";
+                            string door_252 = "- Странно, что в таком громадном доме нет прислуги.";
+                            string door_253 = "- Да, я тоже иногда думаю об этом, но мне приятно самой заниматься хозяйскими делами. Не хочу доверять работу, которую могу выполнить сама, кому-то еще.";
+                            string door_254 = "- Ты слишком много задумываешься над этим.";
+                            string door_255 = "- Наверное, ты прав.";
+                            string door_256 = "<i>Она рассмеялась вновь. В тот момент что-то мелькнуло у меня в голове.\n\nЯ был на детской площадке. Она качалась на качели с какой-то девочкой с зелеными волосами. Я позвал ее и она обернулась.\n\nИрина! Так вот, как ее зовут! И та девочка… С зелеными волосами… Почему мне кажется это важным?..</i>";
+                            string door_257 = "- Ира, скажи…";
+                            string door_258 = "- Да?";
+                            string door_259 = "- Я вдруг просто вспомнил… Когда-то давно… Ты качалась на качели с одной девочкой… У нее еще были зеленые волосы… Ты не помнишь ее?";
+                            string door_260 = "<i>Она выглядела задумчиво.</i>";
+                            string door_261 = "- Зеленые волосы?..";
+                            string door_262 = "- Ну как? Вспомнила что-нибудь?";
+                            string door_263 = "- Нет, прости.  Я правда не помню ничего подобного. На самом деле я не помню, чтобы видела кого-нибудь с зелеными волосами где-нибудь, кроме картинок.";
+                            string door_264 = "- Вот как… ";
+                            string door_265 = "<i>Я тяжело вздохнул. Снова мои воспоминания ни к чему не привели.</i>";
+                            string door_266 = "- Все хорошо? Ты такой задумчивый в последнее время…";
+                            string door_267 = "- Да… Просто много чего случилось… Не бери в голову.";
+                            string door_268 = "- Хорошо… Спасибо тебе, что согласился провести все это время со мной. Это правда важно для меня.";
+                            string door_269 = "- Кстати говоря. Почему ты вдруг попросила об этом?";
+                            string door_270 = "<i>Она замялась. Этого нельзя было не заметить. Ирина тут же изменилась в лице.\n\nЧто-то было не так…</i>";
+                            string door_271 = "- Миш… Я давно хотела тебе сказать… Но все никак не могла решиться… Родители хотят забрать меня в Лондон через неделю…";
+                            string door_272 = "- Это же здорово!";
+                            string door_273 = "<i>Ира покачала головой.</i>";
+                            string door_274 = "- Ты не понял, Миш. Они хотят забрать меня насовсем… Не думаю, что я когда-нибудь вернусь сюда… Боюсь, мы больше никогда не увидимся.";
+                            await Bot.SendTextMessageAsync(message.Chat.Id, door_20, false, false, 0, keyboardWait, ParseMode.Html); Thread.Sleep(52);
+                            await Bot.SendTextMessageAsync(message.Chat.Id, door_21, false, false, 0, null, ParseMode.Html); Thread.Sleep(52);
+                            await Bot.SendTextMessageAsync(message.Chat.Id, door_22, false, false, 0, null, ParseMode.Html); Thread.Sleep(52);
+                            await Bot.SendTextMessageAsync(message.Chat.Id, door_23, false, false, 0, null, ParseMode.Html); Thread.Sleep(52);
+                            await Bot.SendTextMessageAsync(message.Chat.Id, door_24, false, false, 0, null, ParseMode.Html); Thread.Sleep(52);
+                            await Bot.SendTextMessageAsync(message.Chat.Id, door_25, false, false, 0, null, ParseMode.Html); Thread.Sleep(52);
+                            await Bot.SendTextMessageAsync(message.Chat.Id, door_26, false, false, 0, null, ParseMode.Html); Thread.Sleep(52);
+                            await Bot.SendTextMessageAsync(message.Chat.Id, door_27, false, false, 0, null, ParseMode.Html); Thread.Sleep(52);
+                            await Bot.SendTextMessageAsync(message.Chat.Id, door_28, false, false, 0, null, ParseMode.Html); Thread.Sleep(52);
+                            await Bot.SendTextMessageAsync(message.Chat.Id, door_29, false, false, 0, null, ParseMode.Html); Thread.Sleep(52);
+                            await Bot.SendTextMessageAsync(message.Chat.Id, door_210, false, false, 0, null, ParseMode.Html); Thread.Sleep(52);
+                            await Bot.SendTextMessageAsync(message.Chat.Id, door_211, false, false, 0, null, ParseMode.Html); Thread.Sleep(52);
+                            await Bot.SendTextMessageAsync(message.Chat.Id, door_212, false, false, 0, null, ParseMode.Html); Thread.Sleep(52);
+                            await Bot.SendTextMessageAsync(message.Chat.Id, door_213, false, false, 0, null, ParseMode.Html); Thread.Sleep(52);
+                            await Bot.SendTextMessageAsync(message.Chat.Id, door_214, false, false, 0, null, ParseMode.Html); Thread.Sleep(52);
+                            await Bot.SendTextMessageAsync(message.Chat.Id, door_215, false, false, 0, null, ParseMode.Html); Thread.Sleep(52);
+                            await Bot.SendTextMessageAsync(message.Chat.Id, door_216, false, false, 0, null, ParseMode.Html); Thread.Sleep(52);
+                            await Bot.SendTextMessageAsync(message.Chat.Id, door_217, false, false, 0, null, ParseMode.Html); Thread.Sleep(52);
+                            await Bot.SendTextMessageAsync(message.Chat.Id, door_218, false, false, 0, null, ParseMode.Html); Thread.Sleep(52);
+                            await Bot.SendTextMessageAsync(message.Chat.Id, door_219, false, false, 0, null, ParseMode.Html); Thread.Sleep(52);
+                            await Bot.SendTextMessageAsync(message.Chat.Id, door_220, false, false, 0, null, ParseMode.Html); Thread.Sleep(52);
+                            await Bot.SendTextMessageAsync(message.Chat.Id, door_221, false, false, 0, null, ParseMode.Html); Thread.Sleep(52);
+                            await Bot.SendTextMessageAsync(message.Chat.Id, door_222, false, false, 0, null, ParseMode.Html); Thread.Sleep(52);
+                            await Bot.SendTextMessageAsync(message.Chat.Id, door_223, false, false, 0, null, ParseMode.Html); Thread.Sleep(52);
+                            await Bot.SendTextMessageAsync(message.Chat.Id, door_224, false, false, 0, null, ParseMode.Html); Thread.Sleep(52);
+                            await Bot.SendTextMessageAsync(message.Chat.Id, door_225, false, false, 0, null, ParseMode.Html); Thread.Sleep(52);
+                            await Bot.SendTextMessageAsync(message.Chat.Id, door_226, false, false, 0, null, ParseMode.Html); Thread.Sleep(52);
+                            await Bot.SendTextMessageAsync(message.Chat.Id, door_227, false, false, 0, null, ParseMode.Html); Thread.Sleep(52);
+                            await Bot.SendTextMessageAsync(message.Chat.Id, door_228, false, false, 0, null, ParseMode.Html); Thread.Sleep(52);
+                            await Bot.SendTextMessageAsync(message.Chat.Id, door_229, false, false, 0, null, ParseMode.Html); Thread.Sleep(52);
+                            await Bot.SendTextMessageAsync(message.Chat.Id, door_230, false, false, 0, null, ParseMode.Html); Thread.Sleep(52);
+                            await Bot.SendTextMessageAsync(message.Chat.Id, door_231, false, false, 0, null, ParseMode.Html); Thread.Sleep(52);
+                            await Bot.SendTextMessageAsync(message.Chat.Id, door_232, false, false, 0, null, ParseMode.Html); Thread.Sleep(52);
+                            await Bot.SendTextMessageAsync(message.Chat.Id, door_233, false, false, 0, null, ParseMode.Html); Thread.Sleep(52);
+                            await Bot.SendTextMessageAsync(message.Chat.Id, door_234, false, false, 0, null, ParseMode.Html); Thread.Sleep(52);
+                            await Bot.SendTextMessageAsync(message.Chat.Id, door_235, false, false, 0, null, ParseMode.Html); Thread.Sleep(52);
+                            await Bot.SendTextMessageAsync(message.Chat.Id, door_236, false, false, 0, null, ParseMode.Html); Thread.Sleep(52);
+                            await Bot.SendTextMessageAsync(message.Chat.Id, door_237, false, false, 0, null, ParseMode.Html); Thread.Sleep(52);
+                            await Bot.SendTextMessageAsync(message.Chat.Id, door_238, false, false, 0, null, ParseMode.Html); Thread.Sleep(52);
+                            await Bot.SendTextMessageAsync(message.Chat.Id, door_239, false, false, 0, null, ParseMode.Html); Thread.Sleep(52);
+                            await Bot.SendTextMessageAsync(message.Chat.Id, door_240, false, false, 0, null, ParseMode.Html); Thread.Sleep(52);
+                            await Bot.SendTextMessageAsync(message.Chat.Id, door_241, false, false, 0, null, ParseMode.Html); Thread.Sleep(52);
+                            await Bot.SendTextMessageAsync(message.Chat.Id, door_242, false, false, 0, null, ParseMode.Html); Thread.Sleep(52);
+                            await Bot.SendTextMessageAsync(message.Chat.Id, door_243, false, false, 0, null, ParseMode.Html); Thread.Sleep(52);
+                            await Bot.SendTextMessageAsync(message.Chat.Id, door_244, false, false, 0, null, ParseMode.Html); Thread.Sleep(52);
+                            await Bot.SendTextMessageAsync(message.Chat.Id, door_245, false, false, 0, null, ParseMode.Html); Thread.Sleep(52);
+                            await Bot.SendTextMessageAsync(message.Chat.Id, door_246, false, false, 0, null, ParseMode.Html); Thread.Sleep(52);
+                            await Bot.SendTextMessageAsync(message.Chat.Id, door_247, false, false, 0, null, ParseMode.Html); Thread.Sleep(52);
+                            await Bot.SendTextMessageAsync(message.Chat.Id, door_248, false, false, 0, null, ParseMode.Html); Thread.Sleep(52);
+                            await Bot.SendTextMessageAsync(message.Chat.Id, door_249, false, false, 0, null, ParseMode.Html); Thread.Sleep(52);
+                            await Bot.SendTextMessageAsync(message.Chat.Id, door_250, false, false, 0, null, ParseMode.Html); Thread.Sleep(52);
+                            await Bot.SendTextMessageAsync(message.Chat.Id, door_251, false, false, 0, null, ParseMode.Html); Thread.Sleep(52);
+                            await Bot.SendTextMessageAsync(message.Chat.Id, door_252, false, false, 0, null, ParseMode.Html); Thread.Sleep(52);
+                            await Bot.SendTextMessageAsync(message.Chat.Id, door_253, false, false, 0, null, ParseMode.Html); Thread.Sleep(52);
+                            await Bot.SendTextMessageAsync(message.Chat.Id, door_254, false, false, 0, null, ParseMode.Html); Thread.Sleep(52);
+                            await Bot.SendTextMessageAsync(message.Chat.Id, door_255, false, false, 0, null, ParseMode.Html); Thread.Sleep(52);
+                            await Bot.SendTextMessageAsync(message.Chat.Id, door_256, false, false, 0, null, ParseMode.Html); Thread.Sleep(52);
+                            await Bot.SendTextMessageAsync(message.Chat.Id, door_257, false, false, 0, null, ParseMode.Html); Thread.Sleep(52);
+                            await Bot.SendTextMessageAsync(message.Chat.Id, door_258, false, false, 0, null, ParseMode.Html); Thread.Sleep(52);
+                            await Bot.SendTextMessageAsync(message.Chat.Id, door_259, false, false, 0, null, ParseMode.Html); Thread.Sleep(52);
+                            await Bot.SendTextMessageAsync(message.Chat.Id, door_260, false, false, 0, null, ParseMode.Html); Thread.Sleep(52);
+                            await Bot.SendTextMessageAsync(message.Chat.Id, door_261, false, false, 0, null, ParseMode.Html); Thread.Sleep(52);
+                            await Bot.SendTextMessageAsync(message.Chat.Id, door_262, false, false, 0, null, ParseMode.Html); Thread.Sleep(52);
+                            await Bot.SendTextMessageAsync(message.Chat.Id, door_263, false, false, 0, null, ParseMode.Html); Thread.Sleep(52);
+                            await Bot.SendTextMessageAsync(message.Chat.Id, door_264, false, false, 0, null, ParseMode.Html); Thread.Sleep(52);
+                            await Bot.SendTextMessageAsync(message.Chat.Id, door_265, false, false, 0, null, ParseMode.Html); Thread.Sleep(52);
+                            await Bot.SendTextMessageAsync(message.Chat.Id, door_266, false, false, 0, null, ParseMode.Html); Thread.Sleep(52);
+                            await Bot.SendTextMessageAsync(message.Chat.Id, door_267, false, false, 0, null, ParseMode.Html); Thread.Sleep(52);
+                            await Bot.SendTextMessageAsync(message.Chat.Id, door_268, false, false, 0, null, ParseMode.Html); Thread.Sleep(52);
+                            await Bot.SendTextMessageAsync(message.Chat.Id, door_269, false, false, 0, null, ParseMode.Html); Thread.Sleep(52);
+                            await Bot.SendTextMessageAsync(message.Chat.Id, door_270, false, false, 0, null, ParseMode.Html); Thread.Sleep(52);
+                            await Bot.SendTextMessageAsync(message.Chat.Id, door_271, false, false, 0, null, ParseMode.Html); Thread.Sleep(52);
+                            await Bot.SendTextMessageAsync(message.Chat.Id, door_272, false, false, 0, null, ParseMode.Html); Thread.Sleep(52);
+                            await Bot.SendTextMessageAsync(message.Chat.Id, door_273, false, false, 0, null, ParseMode.Html); Thread.Sleep(52);
+                            var keyboard = new Telegram.Bot.Types.ReplyMarkups.ReplyKeyboardMarkup
+                            {
+                                Keyboard = new[] {
+                                                new[] // row 1
+                                                {
+                                                    new Telegram.Bot.Types.KeyboardButton("Остановить"),
+
+
+                                                },
+                                                new[]
+                                                {
+                                                    new Telegram.Bot.Types.KeyboardButton("Согласиться"),
+                                                },
+                                                new[]
+                                                {
+                                                    new Telegram.Bot.Types.KeyboardButton("Отказаться"),
+                                                },
+                                                new[]
+                                                {
+                                                    new Telegram.Bot.Types.KeyboardButton("Отпустить"),
+                                                },
+                                                new[]
+                                                {
+                                                    new Telegram.Bot.Types.KeyboardButton("/help")
+                                                },
+                                            },
+                                ResizeKeyboard = true
+                            };
+                            keyboardLast = keyboard;
+                            await Bot.SendTextMessageAsync(message.Chat.Id, door_274, false, false, 0, keyboard, ParseMode.Html); Thread.Sleep(52);
+
+                        }
+                        else if (message.Text == "Остановить")
+                        {
+                            string door_276 = "- Разве ты хочешь этого?";
+                            string door_277 = "- Что? Нет! Конечно не хочу! Но… Что я могу? ";
+                            string door_278 = "- Скажи им, что хочешь остаться, что не хочешь уезжать. Ты уже совершеннолетняя, ты можешь жить здесь и одна.";
+                            string door_279 = "- Они против этого… Считают, опасно оставлять меня одну здесь.";
+                            string door_280 = "- Но ты ведь не одна здесь. У тебя есть я.";
+                            string door_281 = "- Ты прав… Возможно, если бы ты поговорил с ними, они позволили бы мне остаться здесь… Но… Ты правда пойдешь на это?...";
+                            await Bot.SendTextMessageAsync(message.Chat.Id, door_276, false, false, 0, keyboardWait, ParseMode.Html); Thread.Sleep(52);
+                            await Bot.SendTextMessageAsync(message.Chat.Id, door_277, false, false, 0, null, ParseMode.Html); Thread.Sleep(52);
+                            await Bot.SendTextMessageAsync(message.Chat.Id, door_278, false, false, 0, null, ParseMode.Html); Thread.Sleep(52);
+                            await Bot.SendTextMessageAsync(message.Chat.Id, door_279, false, false, 0, null, ParseMode.Html); Thread.Sleep(52);
+                            await Bot.SendTextMessageAsync(message.Chat.Id, door_280, false, false, 0, null, ParseMode.Html); Thread.Sleep(52);
+                            await Bot.SendTextMessageAsync(message.Chat.Id, door_281, false, false, 0, keyboardDoor3, ParseMode.Html); Thread.Sleep(52);
+                        }
+                        else if (message.Text == "Согласиться")
+                        {
+                            string door_282 = "- А почему нет? Глупо не попытаться…";
+                            string door_283 = "<i>Вечером мы пили чай в напряженном молчании, дожидаясь возвращения ее родителей. Я не знал, получится ли у меня, но попробовать стоило.\n\nРазговор был долгим и тяжелым. Они оба выслушали меня, сопоставив все «за» и «против». Отец Иры долго буравил меня взглядом, но я держался. Я ведь действительно не собирался причинять ей зло.\n\nВ конце концов, после нашего разговора, они не остыли полностью, но попробовать согласились.\n\nИрина останется здесь на месяц и, если не будет никаких проблем, она сможет и дальше жить здесь.\n\nКогда родители ушли вновь, Ира радостно кинулась мне на шею.</i>";
+                            string door_284 = "- Слава Богу! Господи, Миш, как же я рада! Спасибо тебе!";
+                            string door_285 = "- Ладно тебе. Все уже позади. Рада, что остаешься?";
+                            string door_286 = "- Очень! Очень рада! Спасибо тебе огромное!";
+                            await Bot.SendTextMessageAsync(message.Chat.Id, door_282, false, false, 0, keyboardWait, ParseMode.Html); Thread.Sleep(52);
+                            await Bot.SendTextMessageAsync(message.Chat.Id, door_283, false, false, 0, null, ParseMode.Html); Thread.Sleep(52);
+                            await Bot.SendTextMessageAsync(message.Chat.Id, door_284, false, false, 0, null, ParseMode.Html); Thread.Sleep(52);
+                            await Bot.SendTextMessageAsync(message.Chat.Id, door_285, false, false, 0, null, ParseMode.Html); Thread.Sleep(52);
+                            await Bot.SendTextMessageAsync(message.Chat.Id, door_286, false, false, 0, keyboardDoor3, ParseMode.Html); Thread.Sleep(52);
+
+                        }
+                        else if (message.Text == "Отказаться")
+                        {
+                            string door_287 = "- Ир, это твоя жизнь. Твои родители должны понять тебя, но для этого тебе нужно поговорить с ними. Покажи им, что ты способна самостоятельно принимать решения.";
+                            string door_288 = "- Наверное ты прав… Я слишком часто полагалась на тебя…";
+                            string door_289 = "- Дело не в этом. Ира, ты сильная, сильнее, чем думаешь. Не хватает лишь веры в себя. Понимаешь? ";
+                            string door_290 = "<i>Она грустно посмотрела на меня.</i>";
+                            string door_291 = "- Не знаю, получится ли у меня…";
+                            string door_292 = "- Обязательно получится.";
+                            string door_293 = "<i>Родители поняли ее.\n\nВ конце концов, после бесконечных уговоров, установив кучу правил и условий, они согласились оставить ее в городе.\n\nДумаю это было правильным решением… </i>";
+                            string door_294 = "<i>На следующий день мы поехали куда-то. Ирина не сказала куда. Наверное готовила сюрприз. Но нам было не суждено доехать.\n\nНа одном из сложных поворотов случилась авария, Ира не справилась с управлением. Машина перевернулась.\n\nЯ почувствовал, что выпадаю из реальности. Подобные ощущения люди испытывают при пробуждении. Но, что-то мне подсказывало, что я не сплю. Люди не могут спать так долго…</i>";
+                            await Bot.SendTextMessageAsync(message.Chat.Id, door_287, false, false, 0, keyboardWait, ParseMode.Html); Thread.Sleep(52);
+                            await Bot.SendTextMessageAsync(message.Chat.Id, door_288, false, false, 0, null, ParseMode.Html); Thread.Sleep(52);
+                            await Bot.SendTextMessageAsync(message.Chat.Id, door_289, false, false, 0, null, ParseMode.Html); Thread.Sleep(52);
+                            await Bot.SendTextMessageAsync(message.Chat.Id, door_290, false, false, 0, null, ParseMode.Html); Thread.Sleep(52);
+                            await Bot.SendTextMessageAsync(message.Chat.Id, door_291, false, false, 0, null, ParseMode.Html); Thread.Sleep(52);
+                            await Bot.SendTextMessageAsync(message.Chat.Id, door_292, false, false, 0, null, ParseMode.Html); Thread.Sleep(52);
+                            await Bot.SendTextMessageAsync(message.Chat.Id, door_293, false, false, 0, null, ParseMode.Html); Thread.Sleep(52);
+                            await Bot.SendTextMessageAsync(message.Chat.Id, door_294, false, false, 0, keyboardDoor3, ParseMode.Html); Thread.Sleep(52);
+
+                        }
+                        else if (message.Text == "Отпустить")
+                        {
+                            string door_296 = "- С чего ты взяла? Мы еще обязательно встретимся. Я могу приезжать к тебе, а ты ко мне. Сейчас рейсы летают практически каждый день.";
+                            string door_297 = "<i>Ирина заплакала.</i>";
+                            string door_298 = "- Просто… Так грустно улетать… Я не хочу оставлять тебя. Не хочу, чтобы ты меня забывал, чтобы забыл все это…";
+                            string door_299 = "- Я не забуду. Обещаю.";
+                            string door_2100 = "<i>Только не снова.</i>";
+                            string door_2101 = "- Правда?";
+                            string door_2102 = "- Правда.";
+                            string door_2103 = "<i>Я легонько провел по ее щеке, вытирая слезу.</i>";
+                            string door_2104 = "- Миш… Миш, поцелуй меня, пожалуйста… Я знаю, это глупо… но… Я не знаю, когда смогу увидеть тебя, услышать тебя и прикоснуться к тебе вновь… Сейчас, пока я здесь, я хочу чувствовать тебя…";
+                            string door_2105 = "<i>И мы поцеловались.</i>";
+                            string door_2106 = "*Постельная сцена*";
+                            string door_2107 = "<i>Когда Ирина уехала, я почувствовал, что выпадаю из реальности. Подобные ощущения люди испытывают при пробуждении. Но, что-то мне подсказывало, что я не сплю. Люди не могут спать так долго…</i>";
+                            await Bot.SendTextMessageAsync(message.Chat.Id, door_296, false, false, 0, keyboardWait, ParseMode.Html); Thread.Sleep(52);
+                            await Bot.SendTextMessageAsync(message.Chat.Id, door_297, false, false, 0, null, ParseMode.Html); Thread.Sleep(52);
+                            await Bot.SendTextMessageAsync(message.Chat.Id, door_298, false, false, 0, null, ParseMode.Html); Thread.Sleep(52);
+                            await Bot.SendTextMessageAsync(message.Chat.Id, door_299, false, false, 0, null, ParseMode.Html); Thread.Sleep(52);
+                            await Bot.SendTextMessageAsync(message.Chat.Id, door_2100, false, false, 0, null, ParseMode.Html); Thread.Sleep(52);
+                            await Bot.SendTextMessageAsync(message.Chat.Id, door_2101, false, false, 0, null, ParseMode.Html); Thread.Sleep(52);
+                            await Bot.SendTextMessageAsync(message.Chat.Id, door_2102, false, false, 0, null, ParseMode.Html); Thread.Sleep(52);
+                            await Bot.SendTextMessageAsync(message.Chat.Id, door_2103, false, false, 0, null, ParseMode.Html); Thread.Sleep(52);
+                            await Bot.SendTextMessageAsync(message.Chat.Id, door_2104, false, false, 0, null, ParseMode.Html); Thread.Sleep(52);
+                            await Bot.SendTextMessageAsync(message.Chat.Id, door_2105, false, false, 0, null, ParseMode.Html); Thread.Sleep(52);
+                            await Bot.SendTextMessageAsync(message.Chat.Id, door_2106, false, false, 0, null, ParseMode.Html); Thread.Sleep(52);
+                            await Bot.SendTextMessageAsync(message.Chat.Id, door_2107, false, false, 0, keyboardDoor3, ParseMode.Html); Thread.Sleep(52);
+
+                        }
+
                         else
                         {
                             string opisanie = "Текст предупреждения\n";
