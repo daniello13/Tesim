@@ -105,6 +105,23 @@ namespace revcom_bot
                                             },
                 ResizeKeyboard = true
             };
+            var keyboard6 = new Telegram.Bot.Types.ReplyMarkups.ReplyKeyboardMarkup
+            {
+                Keyboard = new[] {
+                                                new[] // row 1
+                                                {
+                                                    new Telegram.Bot.Types.KeyboardButton("Перейти к эпилогу"),
+
+                                                },
+                                                
+
+                                                new[]
+                                                {
+                                                    new Telegram.Bot.Types.KeyboardButton("/help")
+                                                },
+                                            },
+                ResizeKeyboard = true
+            };
             var worker = sender as BackgroundWorker;
             var key = e.Argument as String; // получаем ключ из аргументов
             try
@@ -258,22 +275,22 @@ namespace revcom_bot
                                 }
 
                                 string door11 = "<i>Шагнув через порог, я оказался на лестничной клетке перед другой дверью. Не знаю, как это произошло. Кажется, я нахожусь в каком то здании. \n\n Я не помню, чтобы звонил или стучал в дверь, но там, с той стороны, послышались приближающиеся шаги. Через пару секунд она распахнулась и передо мной оказалась милая длинноволосая брюнетка с карими глазами. Она была среднего роста.</i>";
-                                Thread.Sleep(52);
+                                Thread.Sleep(4000);
                                 await Bot.SendTextMessageAsync(message.Chat.Id, door11, false, false, 0, keyboardWait, ParseMode.Html);
                                 string door12 = "- Братик?";
-                                await Bot.SendTextMessageAsync(message.Chat.Id, door12, false, false, 0, null, ParseMode.Html); Thread.Sleep(52);
+                                await Bot.SendTextMessageAsync(message.Chat.Id, door12, false, false, 0, null, ParseMode.Html); Thread.Sleep(4000);
                                 string door13 = "- Братик?..  – <i>недоуменно переспросил я. \n\nНеужели эта девушка – моя сестра?</i>";
-                                await Bot.SendTextMessageAsync(message.Chat.Id, door13, false, false, 0, null, ParseMode.Html); Thread.Sleep(52);
+                                await Bot.SendTextMessageAsync(message.Chat.Id, door13, false, false, 0, null, ParseMode.Html); Thread.Sleep(4000);
                                 string door14 = "<i>Она оценивающе посмотрела на меня, в мгновение ока изменившись в лице.  Мне это не понравилось. Взгляд стал суровым. Не успел я опомниться, как та, которую я несколько минут назад опрометчиво посчитал милашкой, размахнулась и изо всех сил врезала мне по лицу кулаком. Да так, что я чуть было не потерял равновесие.</i>";
-                                await Bot.SendTextMessageAsync(message.Chat.Id, door14, false, false, 0, null, ParseMode.Html); Thread.Sleep(52);
+                                await Bot.SendTextMessageAsync(message.Chat.Id, door14, false, false, 0, null, ParseMode.Html); Thread.Sleep(4000);
                                 string door_15 = "- Снова пил со своими друзьями?! А я-то волновалась, думала, где же ты шастал всю ночь, а оно вот как! Это же до каких соплей и чертиков нужно было напиться, чтобы сестру родную не признать?! Небось и имени моего не помнишь?!  - <i>я виновато посмотрел на нее и она тяжело выдохнула</i>.";
-                                await Bot.SendTextMessageAsync(message.Chat.Id, door_15, false, false, 0, null, ParseMode.Html); Thread.Sleep(52);
+                                await Bot.SendTextMessageAsync(message.Chat.Id, door_15, false, false, 0, null, ParseMode.Html); Thread.Sleep(4000);
                                 string door_16 = "- Прости, я совершенно ничего не помню. Не знаю, что произошло.";
-                                await Bot.SendTextMessageAsync(message.Chat.Id, door_16, false, false, 0, null, ParseMode.Html); Thread.Sleep(52);
+                                await Bot.SendTextMessageAsync(message.Chat.Id, door_16, false, false, 0, null, ParseMode.Html); Thread.Sleep(4000);
                                 string door_17 = "-Серьезно ? – <i> брюнетка еще какое-то время сверлила меня недоверчивым взглядом, а затем смирилась.Даже выражение ее лица стало более мягким, я бы сказал несколько обеспокоенным </i>.";
-                                await Bot.SendTextMessageAsync(message.Chat.Id, door_17, false, false, 0, null, ParseMode.Html); Thread.Sleep(52);
+                                await Bot.SendTextMessageAsync(message.Chat.Id, door_17, false, false, 0, null, ParseMode.Html); Thread.Sleep(4000);
                                 string door_18 = "-Мне очень жаль.";
-                                await Bot.SendTextMessageAsync(message.Chat.Id, door_18, false, false, 0, null, ParseMode.Html); Thread.Sleep(52);
+                                await Bot.SendTextMessageAsync(message.Chat.Id, door_18, false, false, 0, null, ParseMode.Html); Thread.Sleep(4000);
                                 //отсюда начинать вызывать эвэйты сендов (дур 19)
                                 string door_19 = "- Что с тобой поделаешь?..  Я – Алена. Твоя младшая сестра. Мы живем вместе с родителями здесь, в этом доме, но сейчас их нет, потому что они уехали в отпуск. Может ты головой ударился? Свое-то имя помнишь? –<i> я лишь покачал головой</i>.";
                                 string door_110 = "- Нет.";
@@ -379,107 +396,109 @@ namespace revcom_bot
                                 string door_1110 = "<i>Несмотря на весь здравый смысл, я обернулся к ней, и она в тот же миг накрыла мои губы поцелуем.</i>";
                                 string door_1111 = "- Ален, это неправильно. Мы – брат и сестра. Все-таки это была не лучшая идея. Прости… Мне стоит уйти… -<i> и я действительно ушел. Она не стала меня останавливать</i>.";
                                 string door_1112 = "<i>На следующий день я решил поговорить с Иваном по-мужски. Попросил у Алены его номер и договорился о встрече.\n\nОн оказался чуть ли не в три раза больше меня.\n\nИнстинкт самозащиты просто кричал о том, что я не выстою против него.</i>";
-                                await Bot.SendTextMessageAsync(message.Chat.Id, door_111, false, false, 0, null, ParseMode.Html); Thread.Sleep(52);
-                                await Bot.SendTextMessageAsync(message.Chat.Id, door_112, false, false, 0, null, ParseMode.Html); Thread.Sleep(52);
-                                await Bot.SendTextMessageAsync(message.Chat.Id, door_113, false, false, 0, null, ParseMode.Html); Thread.Sleep(52);
-                                await Bot.SendTextMessageAsync(message.Chat.Id, door_114, false, false, 0, null, ParseMode.Html); Thread.Sleep(52);
-                                await Bot.SendTextMessageAsync(message.Chat.Id, door_115, false, false, 0, null, ParseMode.Html); Thread.Sleep(52);
-                                await Bot.SendTextMessageAsync(message.Chat.Id, door_116, false, false, 0, null, ParseMode.Html); Thread.Sleep(52);
-                                await Bot.SendTextMessageAsync(message.Chat.Id, door_117, false, false, 0, null, ParseMode.Html); Thread.Sleep(52);
-                                await Bot.SendTextMessageAsync(message.Chat.Id, door_118, false, false, 0, null, ParseMode.Html); Thread.Sleep(52);
-                                await Bot.SendTextMessageAsync(message.Chat.Id, door_119, false, false, 0, null, ParseMode.Html); Thread.Sleep(52);
-                                await Bot.SendTextMessageAsync(message.Chat.Id, door_120, false, false, 0, null, ParseMode.Html); Thread.Sleep(52);
-                                await Bot.SendTextMessageAsync(message.Chat.Id, door_121, false, false, 0, null, ParseMode.Html); Thread.Sleep(52);
-                                await Bot.SendTextMessageAsync(message.Chat.Id, door_122, false, false, 0, null, ParseMode.Html); Thread.Sleep(52);
-                                await Bot.SendTextMessageAsync(message.Chat.Id, door_123, false, false, 0, null, ParseMode.Html); Thread.Sleep(52);
-                                await Bot.SendTextMessageAsync(message.Chat.Id, door_124, false, false, 0, null, ParseMode.Html); Thread.Sleep(52);
-                                await Bot.SendTextMessageAsync(message.Chat.Id, door_125, false, false, 0, null, ParseMode.Html); Thread.Sleep(52);
-                                await Bot.SendTextMessageAsync(message.Chat.Id, door_126, false, false, 0, null, ParseMode.Html); Thread.Sleep(52);
-                                await Bot.SendTextMessageAsync(message.Chat.Id, door_127, false, false, 0, null, ParseMode.Html); Thread.Sleep(52);
-                                await Bot.SendTextMessageAsync(message.Chat.Id, door_128, false, false, 0, null, ParseMode.Html); Thread.Sleep(52);
-                                await Bot.SendTextMessageAsync(message.Chat.Id, door_129, false, false, 0, null, ParseMode.Html); Thread.Sleep(52);
-                                await Bot.SendTextMessageAsync(message.Chat.Id, door_130, false, false, 0, null, ParseMode.Html); Thread.Sleep(52);
-                                await Bot.SendTextMessageAsync(message.Chat.Id, door_131, false, false, 0, null, ParseMode.Html); Thread.Sleep(52);
-                                await Bot.SendTextMessageAsync(message.Chat.Id, door_132, false, false, 0, null, ParseMode.Html); Thread.Sleep(52);
-                                await Bot.SendTextMessageAsync(message.Chat.Id, door_133, false, false, 0, null, ParseMode.Html); Thread.Sleep(52);
-                                await Bot.SendTextMessageAsync(message.Chat.Id, door_134, false, false, 0, null, ParseMode.Html); Thread.Sleep(52);
-                                await Bot.SendTextMessageAsync(message.Chat.Id, door_135, false, false, 0, null, ParseMode.Html); Thread.Sleep(52);
-                                await Bot.SendTextMessageAsync(message.Chat.Id, door_136, false, false, 0, null, ParseMode.Html); Thread.Sleep(52);
-                                await Bot.SendTextMessageAsync(message.Chat.Id, door_137, false, false, 0, null, ParseMode.Html); Thread.Sleep(52);
-                                await Bot.SendTextMessageAsync(message.Chat.Id, door_138, false, false, 0, null, ParseMode.Html); Thread.Sleep(52);
-                                await Bot.SendTextMessageAsync(message.Chat.Id, door_139, false, false, 0, null, ParseMode.Html); Thread.Sleep(52);
-                                await Bot.SendTextMessageAsync(message.Chat.Id, door_140, false, false, 0, null, ParseMode.Html); Thread.Sleep(52);
-                                await Bot.SendTextMessageAsync(message.Chat.Id, door_141, false, false, 0, null, ParseMode.Html); Thread.Sleep(52);
-                                await Bot.SendTextMessageAsync(message.Chat.Id, door_142, false, false, 0, null, ParseMode.Html); Thread.Sleep(52);
-                                await Bot.SendTextMessageAsync(message.Chat.Id, door_143, false, false, 0, null, ParseMode.Html); Thread.Sleep(52);
-                                await Bot.SendTextMessageAsync(message.Chat.Id, door_144, false, false, 0, null, ParseMode.Html); Thread.Sleep(52);
-                                await Bot.SendTextMessageAsync(message.Chat.Id, door_145, false, false, 0, null, ParseMode.Html); Thread.Sleep(52);
-                                await Bot.SendTextMessageAsync(message.Chat.Id, door_146, false, false, 0, null, ParseMode.Html); Thread.Sleep(52);
-                                await Bot.SendTextMessageAsync(message.Chat.Id, door_147, false, false, 0, null, ParseMode.Html); Thread.Sleep(52);
-                                await Bot.SendTextMessageAsync(message.Chat.Id, door_148, false, false, 0, null, ParseMode.Html); Thread.Sleep(52);
-                                await Bot.SendTextMessageAsync(message.Chat.Id, door_149, false, false, 0, null, ParseMode.Html); Thread.Sleep(52);
-                                await Bot.SendTextMessageAsync(message.Chat.Id, door_150, false, false, 0, null, ParseMode.Html); Thread.Sleep(52);
-                                await Bot.SendTextMessageAsync(message.Chat.Id, door_151, false, false, 0, null, ParseMode.Html); Thread.Sleep(52);
-                                await Bot.SendTextMessageAsync(message.Chat.Id, door_152, false, false, 0, null, ParseMode.Html); Thread.Sleep(52);
-                                await Bot.SendTextMessageAsync(message.Chat.Id, door_153, false, false, 0, null, ParseMode.Html); Thread.Sleep(52);
-                                await Bot.SendTextMessageAsync(message.Chat.Id, door_154, false, false, 0, null, ParseMode.Html); Thread.Sleep(52);
-                                await Bot.SendTextMessageAsync(message.Chat.Id, door_155, false, false, 0, null, ParseMode.Html); Thread.Sleep(52);
-                                await Bot.SendTextMessageAsync(message.Chat.Id, door_156, false, false, 0, null, ParseMode.Html); Thread.Sleep(52);
-                                await Bot.SendTextMessageAsync(message.Chat.Id, door_157, false, false, 0, null, ParseMode.Html); Thread.Sleep(52);
-                                await Bot.SendTextMessageAsync(message.Chat.Id, door_158, false, false, 0, null, ParseMode.Html); Thread.Sleep(52);
-                                await Bot.SendTextMessageAsync(message.Chat.Id, door_159, false, false, 0, null, ParseMode.Html); Thread.Sleep(52);
-                                await Bot.SendTextMessageAsync(message.Chat.Id, door_160, false, false, 0, null, ParseMode.Html); Thread.Sleep(52);
-                                await Bot.SendTextMessageAsync(message.Chat.Id, door_161, false, false, 0, null, ParseMode.Html); Thread.Sleep(52);
-                                await Bot.SendTextMessageAsync(message.Chat.Id, door_162, false, false, 0, null, ParseMode.Html); Thread.Sleep(52);
-                                await Bot.SendTextMessageAsync(message.Chat.Id, door_163, false, false, 0, null, ParseMode.Html); Thread.Sleep(52);
-                                await Bot.SendTextMessageAsync(message.Chat.Id, door_164, false, false, 0, null, ParseMode.Html); Thread.Sleep(52);
-                                await Bot.SendTextMessageAsync(message.Chat.Id, door_165, false, false, 0, null, ParseMode.Html); Thread.Sleep(52);
-                                await Bot.SendTextMessageAsync(message.Chat.Id, door_166, false, false, 0, null, ParseMode.Html); Thread.Sleep(52);
-                                await Bot.SendTextMessageAsync(message.Chat.Id, door_167, false, false, 0, null, ParseMode.Html); Thread.Sleep(52);
-                                await Bot.SendTextMessageAsync(message.Chat.Id, door_168, false, false, 0, null, ParseMode.Html); Thread.Sleep(52);
-                                await Bot.SendTextMessageAsync(message.Chat.Id, door_169, false, false, 0, null, ParseMode.Html); Thread.Sleep(52);
-                                await Bot.SendTextMessageAsync(message.Chat.Id, door_170, false, false, 0, null, ParseMode.Html); Thread.Sleep(52);
-                                await Bot.SendTextMessageAsync(message.Chat.Id, door_171, false, false, 0, null, ParseMode.Html); Thread.Sleep(52);
-                                await Bot.SendTextMessageAsync(message.Chat.Id, door_172, false, false, 0, null, ParseMode.Html); Thread.Sleep(52);
-                                await Bot.SendTextMessageAsync(message.Chat.Id, door_173, false, false, 0, null, ParseMode.Html); Thread.Sleep(52);
-                                await Bot.SendTextMessageAsync(message.Chat.Id, door_174, false, false, 0, null, ParseMode.Html); Thread.Sleep(52);
-                                await Bot.SendTextMessageAsync(message.Chat.Id, door_175, false, false, 0, null, ParseMode.Html); Thread.Sleep(52);
-                                await Bot.SendTextMessageAsync(message.Chat.Id, door_176, false, false, 0, null, ParseMode.Html); Thread.Sleep(52);
-                                await Bot.SendTextMessageAsync(message.Chat.Id, door_177, false, false, 0, null, ParseMode.Html); Thread.Sleep(52);
-                                await Bot.SendTextMessageAsync(message.Chat.Id, door_178, false, false, 0, null, ParseMode.Html); Thread.Sleep(52);
-                                await Bot.SendTextMessageAsync(message.Chat.Id, door_179, false, false, 0, null, ParseMode.Html); Thread.Sleep(52);
-                                await Bot.SendTextMessageAsync(message.Chat.Id, door_180, false, false, 0, null, ParseMode.Html); Thread.Sleep(52);
-                                await Bot.SendTextMessageAsync(message.Chat.Id, door_181, false, false, 0, null, ParseMode.Html); Thread.Sleep(52);
-                                await Bot.SendTextMessageAsync(message.Chat.Id, door_182, false, false, 0, null, ParseMode.Html); Thread.Sleep(52);
-                                await Bot.SendTextMessageAsync(message.Chat.Id, door_183, false, false, 0, null, ParseMode.Html); Thread.Sleep(52);
-                                await Bot.SendTextMessageAsync(message.Chat.Id, door_184, false, false, 0, null, ParseMode.Html); Thread.Sleep(52);
-                                await Bot.SendTextMessageAsync(message.Chat.Id, door_185, false, false, 0, null, ParseMode.Html); Thread.Sleep(52);
-                                await Bot.SendTextMessageAsync(message.Chat.Id, door_186, false, false, 0, null, ParseMode.Html); Thread.Sleep(52);
-                                await Bot.SendTextMessageAsync(message.Chat.Id, door_187, false, false, 0, null, ParseMode.Html); Thread.Sleep(52);
-                                await Bot.SendTextMessageAsync(message.Chat.Id, door_188, false, false, 0, null, ParseMode.Html); Thread.Sleep(52);
-                                await Bot.SendTextMessageAsync(message.Chat.Id, door_189, false, false, 0, null, ParseMode.Html); Thread.Sleep(52);
-                                await Bot.SendTextMessageAsync(message.Chat.Id, door_190, false, false, 0, null, ParseMode.Html); Thread.Sleep(52);
-                                await Bot.SendTextMessageAsync(message.Chat.Id, door_191, false, false, 0, null, ParseMode.Html); Thread.Sleep(52);
-                                await Bot.SendTextMessageAsync(message.Chat.Id, door_192, false, false, 0, null, ParseMode.Html); Thread.Sleep(52);
-                                await Bot.SendTextMessageAsync(message.Chat.Id, door_193, false, false, 0, null, ParseMode.Html); Thread.Sleep(52);
-                                await Bot.SendTextMessageAsync(message.Chat.Id, door_194, false, false, 0, null, ParseMode.Html); Thread.Sleep(52);
-                                await Bot.SendTextMessageAsync(message.Chat.Id, door_195, false, false, 0, null, ParseMode.Html); Thread.Sleep(52);
-                                await Bot.SendTextMessageAsync(message.Chat.Id, door_196, false, false, 0, null, ParseMode.Html); Thread.Sleep(52);
-                                await Bot.SendTextMessageAsync(message.Chat.Id, door_197, false, false, 0, null, ParseMode.Html); Thread.Sleep(52);
-                                await Bot.SendTextMessageAsync(message.Chat.Id, door_198, false, false, 0, null, ParseMode.Html); Thread.Sleep(52);
-                                await Bot.SendTextMessageAsync(message.Chat.Id, door_199, false, false, 0, null, ParseMode.Html); Thread.Sleep(52);
-                                await Bot.SendTextMessageAsync(message.Chat.Id, door_1100, false, false, 0, null, ParseMode.Html); Thread.Sleep(52);
-                                await Bot.SendTextMessageAsync(message.Chat.Id, door_1101, false, false, 0, null, ParseMode.Html); Thread.Sleep(52);
-                                await Bot.SendTextMessageAsync(message.Chat.Id, door_1102, false, false, 0, null, ParseMode.Html); Thread.Sleep(52);
-                                await Bot.SendTextMessageAsync(message.Chat.Id, door_1103, false, false, 0, null, ParseMode.Html); Thread.Sleep(52);
-                                await Bot.SendTextMessageAsync(message.Chat.Id, door_1104, false, false, 0, null, ParseMode.Html); Thread.Sleep(52);
-                                await Bot.SendTextMessageAsync(message.Chat.Id, door_1105, false, false, 0, null, ParseMode.Html); Thread.Sleep(52);
-                                await Bot.SendTextMessageAsync(message.Chat.Id, door_1106, false, false, 0, null, ParseMode.Html); Thread.Sleep(52);
-                                await Bot.SendTextMessageAsync(message.Chat.Id, door_1107, false, false, 0, null, ParseMode.Html); Thread.Sleep(52);
-                                await Bot.SendTextMessageAsync(message.Chat.Id, door_1108, false, false, 0, null, ParseMode.Html); Thread.Sleep(52);
-                                await Bot.SendTextMessageAsync(message.Chat.Id, door_1109, false, false, 0, null, ParseMode.Html); Thread.Sleep(52);
-                                await Bot.SendTextMessageAsync(message.Chat.Id, door_1110, false, false, 0, null, ParseMode.Html); Thread.Sleep(52);
-                                await Bot.SendTextMessageAsync(message.Chat.Id, door_1111, false, false, 0, null, ParseMode.Html); Thread.Sleep(52);
+                                await Bot.SendTextMessageAsync(message.Chat.Id, door_19, false, false, 0, null, ParseMode.Html); Thread.Sleep(4000);
+                                await Bot.SendTextMessageAsync(message.Chat.Id, door_110, false, false, 0, null, ParseMode.Html); Thread.Sleep(4000);
+                                await Bot.SendTextMessageAsync(message.Chat.Id, door_111, false, false, 0, null, ParseMode.Html); Thread.Sleep(4000);
+                                await Bot.SendTextMessageAsync(message.Chat.Id, door_112, false, false, 0, null, ParseMode.Html); Thread.Sleep(4000);
+                                await Bot.SendTextMessageAsync(message.Chat.Id, door_113, false, false, 0, null, ParseMode.Html); Thread.Sleep(4000);
+                                await Bot.SendTextMessageAsync(message.Chat.Id, door_114, false, false, 0, null, ParseMode.Html); Thread.Sleep(4000);
+                                await Bot.SendTextMessageAsync(message.Chat.Id, door_115, false, false, 0, null, ParseMode.Html); Thread.Sleep(4000);
+                                await Bot.SendTextMessageAsync(message.Chat.Id, door_116, false, false, 0, null, ParseMode.Html); Thread.Sleep(4000);
+                                await Bot.SendTextMessageAsync(message.Chat.Id, door_117, false, false, 0, null, ParseMode.Html); Thread.Sleep(4000);
+                                await Bot.SendTextMessageAsync(message.Chat.Id, door_118, false, false, 0, null, ParseMode.Html); Thread.Sleep(4000);
+                                await Bot.SendTextMessageAsync(message.Chat.Id, door_119, false, false, 0, null, ParseMode.Html); Thread.Sleep(4000);
+                                await Bot.SendTextMessageAsync(message.Chat.Id, door_120, false, false, 0, null, ParseMode.Html); Thread.Sleep(4000);
+                                await Bot.SendTextMessageAsync(message.Chat.Id, door_121, false, false, 0, null, ParseMode.Html); Thread.Sleep(4000);
+                                await Bot.SendTextMessageAsync(message.Chat.Id, door_122, false, false, 0, null, ParseMode.Html); Thread.Sleep(4000);
+                                await Bot.SendTextMessageAsync(message.Chat.Id, door_123, false, false, 0, null, ParseMode.Html); Thread.Sleep(4000);
+                                await Bot.SendTextMessageAsync(message.Chat.Id, door_124, false, false, 0, null, ParseMode.Html); Thread.Sleep(4000);
+                                await Bot.SendTextMessageAsync(message.Chat.Id, door_125, false, false, 0, null, ParseMode.Html); Thread.Sleep(4000);
+                                await Bot.SendTextMessageAsync(message.Chat.Id, door_126, false, false, 0, null, ParseMode.Html); Thread.Sleep(4000);
+                                await Bot.SendTextMessageAsync(message.Chat.Id, door_127, false, false, 0, null, ParseMode.Html); Thread.Sleep(4000);
+                                await Bot.SendTextMessageAsync(message.Chat.Id, door_128, false, false, 0, null, ParseMode.Html); Thread.Sleep(4000);
+                                await Bot.SendTextMessageAsync(message.Chat.Id, door_129, false, false, 0, null, ParseMode.Html); Thread.Sleep(4000);
+                                await Bot.SendTextMessageAsync(message.Chat.Id, door_130, false, false, 0, null, ParseMode.Html); Thread.Sleep(4000);
+                                await Bot.SendTextMessageAsync(message.Chat.Id, door_131, false, false, 0, null, ParseMode.Html); Thread.Sleep(4000);
+                                await Bot.SendTextMessageAsync(message.Chat.Id, door_132, false, false, 0, null, ParseMode.Html); Thread.Sleep(4000);
+                                await Bot.SendTextMessageAsync(message.Chat.Id, door_133, false, false, 0, null, ParseMode.Html); Thread.Sleep(4000);
+                                await Bot.SendTextMessageAsync(message.Chat.Id, door_134, false, false, 0, null, ParseMode.Html); Thread.Sleep(4000);
+                                await Bot.SendTextMessageAsync(message.Chat.Id, door_135, false, false, 0, null, ParseMode.Html); Thread.Sleep(4000);
+                                await Bot.SendTextMessageAsync(message.Chat.Id, door_136, false, false, 0, null, ParseMode.Html); Thread.Sleep(4000);
+                                await Bot.SendTextMessageAsync(message.Chat.Id, door_137, false, false, 0, null, ParseMode.Html); Thread.Sleep(4000);
+                                await Bot.SendTextMessageAsync(message.Chat.Id, door_138, false, false, 0, null, ParseMode.Html); Thread.Sleep(4000);
+                                await Bot.SendTextMessageAsync(message.Chat.Id, door_139, false, false, 0, null, ParseMode.Html); Thread.Sleep(4000);
+                                await Bot.SendTextMessageAsync(message.Chat.Id, door_140, false, false, 0, null, ParseMode.Html); Thread.Sleep(4000);
+                                await Bot.SendTextMessageAsync(message.Chat.Id, door_141, false, false, 0, null, ParseMode.Html); Thread.Sleep(4000);
+                                await Bot.SendTextMessageAsync(message.Chat.Id, door_142, false, false, 0, null, ParseMode.Html); Thread.Sleep(4000);
+                                await Bot.SendTextMessageAsync(message.Chat.Id, door_143, false, false, 0, null, ParseMode.Html); Thread.Sleep(4000);
+                                await Bot.SendTextMessageAsync(message.Chat.Id, door_144, false, false, 0, null, ParseMode.Html); Thread.Sleep(4000);
+                                await Bot.SendTextMessageAsync(message.Chat.Id, door_145, false, false, 0, null, ParseMode.Html); Thread.Sleep(4000);
+                                await Bot.SendTextMessageAsync(message.Chat.Id, door_146, false, false, 0, null, ParseMode.Html); Thread.Sleep(4000);
+                                await Bot.SendTextMessageAsync(message.Chat.Id, door_147, false, false, 0, null, ParseMode.Html); Thread.Sleep(4000);
+                                await Bot.SendTextMessageAsync(message.Chat.Id, door_148, false, false, 0, null, ParseMode.Html); Thread.Sleep(4000);
+                                await Bot.SendTextMessageAsync(message.Chat.Id, door_149, false, false, 0, null, ParseMode.Html); Thread.Sleep(4000);
+                                await Bot.SendTextMessageAsync(message.Chat.Id, door_150, false, false, 0, null, ParseMode.Html); Thread.Sleep(4000);
+                                await Bot.SendTextMessageAsync(message.Chat.Id, door_151, false, false, 0, null, ParseMode.Html); Thread.Sleep(4000);
+                                await Bot.SendTextMessageAsync(message.Chat.Id, door_152, false, false, 0, null, ParseMode.Html); Thread.Sleep(4000);
+                                await Bot.SendTextMessageAsync(message.Chat.Id, door_153, false, false, 0, null, ParseMode.Html); Thread.Sleep(4000);
+                                await Bot.SendTextMessageAsync(message.Chat.Id, door_154, false, false, 0, null, ParseMode.Html); Thread.Sleep(4000);
+                                await Bot.SendTextMessageAsync(message.Chat.Id, door_155, false, false, 0, null, ParseMode.Html); Thread.Sleep(4000);
+                                await Bot.SendTextMessageAsync(message.Chat.Id, door_156, false, false, 0, null, ParseMode.Html); Thread.Sleep(4000);
+                                await Bot.SendTextMessageAsync(message.Chat.Id, door_157, false, false, 0, null, ParseMode.Html); Thread.Sleep(4000);
+                                await Bot.SendTextMessageAsync(message.Chat.Id, door_158, false, false, 0, null, ParseMode.Html); Thread.Sleep(4000);
+                                await Bot.SendTextMessageAsync(message.Chat.Id, door_159, false, false, 0, null, ParseMode.Html); Thread.Sleep(4000);
+                                await Bot.SendTextMessageAsync(message.Chat.Id, door_160, false, false, 0, null, ParseMode.Html); Thread.Sleep(4000);
+                                await Bot.SendTextMessageAsync(message.Chat.Id, door_161, false, false, 0, null, ParseMode.Html); Thread.Sleep(4000);
+                                await Bot.SendTextMessageAsync(message.Chat.Id, door_162, false, false, 0, null, ParseMode.Html); Thread.Sleep(4000);
+                                await Bot.SendTextMessageAsync(message.Chat.Id, door_163, false, false, 0, null, ParseMode.Html); Thread.Sleep(4000);
+                                await Bot.SendTextMessageAsync(message.Chat.Id, door_164, false, false, 0, null, ParseMode.Html); Thread.Sleep(4000);
+                                await Bot.SendTextMessageAsync(message.Chat.Id, door_165, false, false, 0, null, ParseMode.Html); Thread.Sleep(4000);
+                                await Bot.SendTextMessageAsync(message.Chat.Id, door_166, false, false, 0, null, ParseMode.Html); Thread.Sleep(4000);
+                                await Bot.SendTextMessageAsync(message.Chat.Id, door_167, false, false, 0, null, ParseMode.Html); Thread.Sleep(4000);
+                                await Bot.SendTextMessageAsync(message.Chat.Id, door_168, false, false, 0, null, ParseMode.Html); Thread.Sleep(4000);
+                                await Bot.SendTextMessageAsync(message.Chat.Id, door_169, false, false, 0, null, ParseMode.Html); Thread.Sleep(4000);
+                                await Bot.SendTextMessageAsync(message.Chat.Id, door_170, false, false, 0, null, ParseMode.Html); Thread.Sleep(4000);
+                                await Bot.SendTextMessageAsync(message.Chat.Id, door_171, false, false, 0, null, ParseMode.Html); Thread.Sleep(4000);
+                                await Bot.SendTextMessageAsync(message.Chat.Id, door_172, false, false, 0, null, ParseMode.Html); Thread.Sleep(4000);
+                                await Bot.SendTextMessageAsync(message.Chat.Id, door_173, false, false, 0, null, ParseMode.Html); Thread.Sleep(4000);
+                                await Bot.SendTextMessageAsync(message.Chat.Id, door_174, false, false, 0, null, ParseMode.Html); Thread.Sleep(4000);
+                                await Bot.SendTextMessageAsync(message.Chat.Id, door_175, false, false, 0, null, ParseMode.Html); Thread.Sleep(4000);
+                                await Bot.SendTextMessageAsync(message.Chat.Id, door_176, false, false, 0, null, ParseMode.Html); Thread.Sleep(4000);
+                                await Bot.SendTextMessageAsync(message.Chat.Id, door_177, false, false, 0, null, ParseMode.Html); Thread.Sleep(4000);
+                                await Bot.SendTextMessageAsync(message.Chat.Id, door_178, false, false, 0, null, ParseMode.Html); Thread.Sleep(4000);
+                                await Bot.SendTextMessageAsync(message.Chat.Id, door_179, false, false, 0, null, ParseMode.Html); Thread.Sleep(4000);
+                                await Bot.SendTextMessageAsync(message.Chat.Id, door_180, false, false, 0, null, ParseMode.Html); Thread.Sleep(4000);
+                                await Bot.SendTextMessageAsync(message.Chat.Id, door_181, false, false, 0, null, ParseMode.Html); Thread.Sleep(4000);
+                                await Bot.SendTextMessageAsync(message.Chat.Id, door_182, false, false, 0, null, ParseMode.Html); Thread.Sleep(4000);
+                                await Bot.SendTextMessageAsync(message.Chat.Id, door_183, false, false, 0, null, ParseMode.Html); Thread.Sleep(4000);
+                                await Bot.SendTextMessageAsync(message.Chat.Id, door_184, false, false, 0, null, ParseMode.Html); Thread.Sleep(4000);
+                                await Bot.SendTextMessageAsync(message.Chat.Id, door_185, false, false, 0, null, ParseMode.Html); Thread.Sleep(4000);
+                                await Bot.SendTextMessageAsync(message.Chat.Id, door_186, false, false, 0, null, ParseMode.Html); Thread.Sleep(4000);
+                                await Bot.SendTextMessageAsync(message.Chat.Id, door_187, false, false, 0, null, ParseMode.Html); Thread.Sleep(4000);
+                                await Bot.SendTextMessageAsync(message.Chat.Id, door_188, false, false, 0, null, ParseMode.Html); Thread.Sleep(4000);
+                                await Bot.SendTextMessageAsync(message.Chat.Id, door_189, false, false, 0, null, ParseMode.Html); Thread.Sleep(4000);
+                                await Bot.SendTextMessageAsync(message.Chat.Id, door_190, false, false, 0, null, ParseMode.Html); Thread.Sleep(4000);
+                                await Bot.SendTextMessageAsync(message.Chat.Id, door_191, false, false, 0, null, ParseMode.Html); Thread.Sleep(4000);
+                                await Bot.SendTextMessageAsync(message.Chat.Id, door_192, false, false, 0, null, ParseMode.Html); Thread.Sleep(4000);
+                                await Bot.SendTextMessageAsync(message.Chat.Id, door_193, false, false, 0, null, ParseMode.Html); Thread.Sleep(4000);
+                                await Bot.SendTextMessageAsync(message.Chat.Id, door_194, false, false, 0, null, ParseMode.Html); Thread.Sleep(4000);
+                                await Bot.SendTextMessageAsync(message.Chat.Id, door_195, false, false, 0, null, ParseMode.Html); Thread.Sleep(4000);
+                                await Bot.SendTextMessageAsync(message.Chat.Id, door_196, false, false, 0, null, ParseMode.Html); Thread.Sleep(4000);
+                                await Bot.SendTextMessageAsync(message.Chat.Id, door_197, false, false, 0, null, ParseMode.Html); Thread.Sleep(4000);
+                                await Bot.SendTextMessageAsync(message.Chat.Id, door_198, false, false, 0, null, ParseMode.Html); Thread.Sleep(4000);
+                                await Bot.SendTextMessageAsync(message.Chat.Id, door_199, false, false, 0, null, ParseMode.Html); Thread.Sleep(4000);
+                                await Bot.SendTextMessageAsync(message.Chat.Id, door_1100, false, false, 0, null, ParseMode.Html); Thread.Sleep(4000);
+                                await Bot.SendTextMessageAsync(message.Chat.Id, door_1101, false, false, 0, null, ParseMode.Html); Thread.Sleep(4000);
+                                await Bot.SendTextMessageAsync(message.Chat.Id, door_1102, false, false, 0, null, ParseMode.Html); Thread.Sleep(4000);
+                                await Bot.SendTextMessageAsync(message.Chat.Id, door_1103, false, false, 0, null, ParseMode.Html); Thread.Sleep(4000);
+                                await Bot.SendTextMessageAsync(message.Chat.Id, door_1104, false, false, 0, null, ParseMode.Html); Thread.Sleep(4000);
+                                await Bot.SendTextMessageAsync(message.Chat.Id, door_1105, false, false, 0, null, ParseMode.Html); Thread.Sleep(4000);
+                                await Bot.SendTextMessageAsync(message.Chat.Id, door_1106, false, false, 0, null, ParseMode.Html); Thread.Sleep(4000);
+                                await Bot.SendTextMessageAsync(message.Chat.Id, door_1107, false, false, 0, null, ParseMode.Html); Thread.Sleep(4000);
+                                await Bot.SendTextMessageAsync(message.Chat.Id, door_1108, false, false, 0, null, ParseMode.Html); Thread.Sleep(4000);
+                                await Bot.SendTextMessageAsync(message.Chat.Id, door_1109, false, false, 0, null, ParseMode.Html); Thread.Sleep(4000);
+                                await Bot.SendTextMessageAsync(message.Chat.Id, door_1110, false, false, 0, null, ParseMode.Html); Thread.Sleep(4000);
+                                await Bot.SendTextMessageAsync(message.Chat.Id, door_1111, false, false, 0, null, ParseMode.Html); Thread.Sleep(4000);
 
                                 var keyboard = new Telegram.Bot.Types.ReplyMarkups.ReplyKeyboardMarkup
                                 {
@@ -506,7 +525,7 @@ namespace revcom_bot
                                     ResizeKeyboard = true
                                 };
                                 keyboardLast = keyboard;
-                                await Bot.SendTextMessageAsync(message.Chat.Id, door_1112, false, false, 0, keyboard, ParseMode.Html); Thread.Sleep(52);
+                                await Bot.SendTextMessageAsync(message.Chat.Id, door_1112, false, false, 0, keyboard, ParseMode.Html); Thread.Sleep(4000);
 
                             }
                             else if (message.Text == "Заступиться за сестру")
@@ -529,15 +548,15 @@ namespace revcom_bot
                                 string door_1118 = "<i>Я взял ее за руку и она улыбнулась сквозь слезы, кивнув мне.</i>";
                                 string door_1119 = "- Да…";
                                 string door_1120 = "Постельная сцена\n\n<i>Сказать, что мне было стыдно – значит ничего не сказать. Стыдно перед Аленой, перед собой, но больше всего перед родителями.\n\nПосле всего, что произошло, мне не оставалось другого выбора, кроме как рассказать обо всем родителям и взять на себя всю ответственность…\n\nОказалось, что мы с Аленой – не родные брат и сестра. Ее родители дружили с моими. Потом случилась авария. Тогда малышка осиротела. Они не могли оставить ее в приюте.\n\nЧестно говоря, эта новость меня обрадовала, сняла гору с плеч.\n\nМама сказала, что теперь все будет иначе.</i>";
-                                await Bot.SendTextMessageAsync(message.Chat.Id, door_1113, false, false, 0, keyboard, ParseMode.Html); Thread.Sleep(52);
-                                await Bot.SendTextMessageAsync(message.Chat.Id, door_1114, false, false, 0, null, ParseMode.Html); Thread.Sleep(52);
-                                await Bot.SendTextMessageAsync(message.Chat.Id, door_1115, false, false, 0, null, ParseMode.Html); Thread.Sleep(52);
-                                await Bot.SendTextMessageAsync(message.Chat.Id, door_1116, false, false, 0, null, ParseMode.Html); Thread.Sleep(52);
-                                await Bot.SendTextMessageAsync(message.Chat.Id, door_1117, false, false, 0, null, ParseMode.Html); Thread.Sleep(52);
-                                await Bot.SendTextMessageAsync(message.Chat.Id, door_1118, false, false, 0, null, ParseMode.Html); Thread.Sleep(52);
-                                await Bot.SendTextMessageAsync(message.Chat.Id, door_1119, false, false, 0, null, ParseMode.Html); Thread.Sleep(52);
-                                await Bot.SendTextMessageAsync(message.Chat.Id, door_1120, false, false, 0, keyboardDoor2, ParseMode.Html); Thread.Sleep(52);
-
+                                await Bot.SendTextMessageAsync(message.Chat.Id, door_1113, false, false, 0, keyboard, ParseMode.Html); Thread.Sleep(4000);
+                                await Bot.SendTextMessageAsync(message.Chat.Id, door_1114, false, false, 0, null, ParseMode.Html); Thread.Sleep(4000);
+                                await Bot.SendTextMessageAsync(message.Chat.Id, door_1115, false, false, 0, null, ParseMode.Html); Thread.Sleep(4000);
+                                await Bot.SendTextMessageAsync(message.Chat.Id, door_1116, false, false, 0, null, ParseMode.Html); Thread.Sleep(4000);
+                                await Bot.SendTextMessageAsync(message.Chat.Id, door_1117, false, false, 0, null, ParseMode.Html); Thread.Sleep(4000);
+                                await Bot.SendTextMessageAsync(message.Chat.Id, door_1118, false, false, 0, null, ParseMode.Html); Thread.Sleep(4000);
+                                await Bot.SendTextMessageAsync(message.Chat.Id, door_1119, false, false, 0, null, ParseMode.Html); Thread.Sleep(4000);
+                                await Bot.SendTextMessageAsync(message.Chat.Id, door_1120, false, false, 0, keyboardDoor2, ParseMode.Html); Thread.Sleep(4000);
+                                keyboardLast = keyboardDoor2;
                             }
                             else if (message.Text == "Уйти")
                             {
@@ -552,8 +571,8 @@ namespace revcom_bot
                                     ResizeKeyboard = true
                                 };
                                 string door_1121 = "<i>Я ничего не мог сделать. Мне оставалось только уйти, поджав хвост…\n\nНа следующий день они помирились.\n\nЧерез неделю сестра сказала мне, что беременна от Ивана. Она плакала всю ночь. Ни я, ни мама не могли успокоить ее.\n\nСегодня он переезжает к нам. Я обещал помочь с коробками. Но, поднимаясь по лестнице, я почувствовал, что что-то не так.\n\nСтены, окружающие меня предметы и люди – все это начало таять, как мороженное в жару.\n\nЯ снова очнулся в той комнате с дверями.\n\nНаверное стоило вернуться, нехорошо было оставлять сестру одну, но я не мог. Что-то неведомое мешало мне, заставляло продолжать путь. Я поклялся себе, что вернусь сюда, когда вспомню все…</i>";
-                                await Bot.SendTextMessageAsync(message.Chat.Id, door_1121, false, false, 0, keyboardDoor2, ParseMode.Html); Thread.Sleep(52);
-
+                                await Bot.SendTextMessageAsync(message.Chat.Id, door_1121, false, false, 0, keyboardDoor2, ParseMode.Html); Thread.Sleep(4000);
+                                keyboardLast = keyboard;
                             }
                             else if (message.Text == "Поговорить")
                             {
@@ -584,78 +603,35 @@ namespace revcom_bot
                                 string door_1137 = "- И мне…";
                                 string door_1138 = "<i>Они действительно помирились.\n\nУзнав о том, что я поговорил с Иваном, Алена очень удивилась, а потом  поблагодарила меня. Думаю теперь у нее все наладится…\n\nВдруг стены, окружающие меня предметы и люди – все это начало таять, как мороженное в жару.\n\nЯ снова очнулся в той комнате с дверями.\n\nНаверное стоило вернуться, нехорошо было оставлять сестру одну, но я чувствовал, что больше не нужен здесь. Я должен продолжить свой путь…</i>";
 
-                                await Bot.SendTextMessageAsync(message.Chat.Id, door_1123, false, false, 0, keyboard, ParseMode.Html); Thread.Sleep(52);
-                                await Bot.SendTextMessageAsync(message.Chat.Id, door_1124, false, false, 0, null, ParseMode.Html); Thread.Sleep(52);
-                                await Bot.SendTextMessageAsync(message.Chat.Id, door_1125, false, false, 0, null, ParseMode.Html); Thread.Sleep(52);
-                                await Bot.SendTextMessageAsync(message.Chat.Id, door_1126, false, false, 0, null, ParseMode.Html); Thread.Sleep(52);
-                                await Bot.SendTextMessageAsync(message.Chat.Id, door_1127, false, false, 0, null, ParseMode.Html); Thread.Sleep(52);
-                                await Bot.SendTextMessageAsync(message.Chat.Id, door_1128, false, false, 0, null, ParseMode.Html); Thread.Sleep(52);
-                                await Bot.SendTextMessageAsync(message.Chat.Id, door_1129, false, false, 0, null, ParseMode.Html); Thread.Sleep(52);
-                                await Bot.SendTextMessageAsync(message.Chat.Id, door_1130, false, false, 0, null, ParseMode.Html); Thread.Sleep(52);
-                                await Bot.SendTextMessageAsync(message.Chat.Id, door_1131, false, false, 0, null, ParseMode.Html); Thread.Sleep(52);
-                                await Bot.SendTextMessageAsync(message.Chat.Id, door_1132, false, false, 0, null, ParseMode.Html); Thread.Sleep(52);
-                                await Bot.SendTextMessageAsync(message.Chat.Id, door_1133, false, false, 0, null, ParseMode.Html); Thread.Sleep(52);
-                                await Bot.SendTextMessageAsync(message.Chat.Id, door_1134, false, false, 0, null, ParseMode.Html); Thread.Sleep(52);
-                                await Bot.SendTextMessageAsync(message.Chat.Id, door_1135, false, false, 0, null, ParseMode.Html); Thread.Sleep(52);
-                                await Bot.SendTextMessageAsync(message.Chat.Id, door_1136, false, false, 0, null, ParseMode.Html); Thread.Sleep(52);
-                                await Bot.SendTextMessageAsync(message.Chat.Id, door_1137, false, false, 0, null, ParseMode.Html); Thread.Sleep(52);
-                                await Bot.SendTextMessageAsync(message.Chat.Id, door_1138, false, false, 0, keyboardDoor2, ParseMode.Html); Thread.Sleep(52);
-
+                                await Bot.SendTextMessageAsync(message.Chat.Id, door_1123, false, false, 0, keyboard, ParseMode.Html); Thread.Sleep(4000);
+                                await Bot.SendTextMessageAsync(message.Chat.Id, door_1124, false, false, 0, null, ParseMode.Html); Thread.Sleep(4000);
+                                await Bot.SendTextMessageAsync(message.Chat.Id, door_1125, false, false, 0, null, ParseMode.Html); Thread.Sleep(4000);
+                                await Bot.SendTextMessageAsync(message.Chat.Id, door_1126, false, false, 0, null, ParseMode.Html); Thread.Sleep(4000);
+                                await Bot.SendTextMessageAsync(message.Chat.Id, door_1127, false, false, 0, null, ParseMode.Html); Thread.Sleep(4000);
+                                await Bot.SendTextMessageAsync(message.Chat.Id, door_1128, false, false, 0, null, ParseMode.Html); Thread.Sleep(4000);
+                                await Bot.SendTextMessageAsync(message.Chat.Id, door_1129, false, false, 0, null, ParseMode.Html); Thread.Sleep(4000);
+                                await Bot.SendTextMessageAsync(message.Chat.Id, door_1130, false, false, 0, null, ParseMode.Html); Thread.Sleep(4000);
+                                await Bot.SendTextMessageAsync(message.Chat.Id, door_1131, false, false, 0, null, ParseMode.Html); Thread.Sleep(4000);
+                                await Bot.SendTextMessageAsync(message.Chat.Id, door_1132, false, false, 0, null, ParseMode.Html); Thread.Sleep(4000);
+                                await Bot.SendTextMessageAsync(message.Chat.Id, door_1133, false, false, 0, null, ParseMode.Html); Thread.Sleep(4000);
+                                await Bot.SendTextMessageAsync(message.Chat.Id, door_1134, false, false, 0, null, ParseMode.Html); Thread.Sleep(4000);
+                                await Bot.SendTextMessageAsync(message.Chat.Id, door_1135, false, false, 0, null, ParseMode.Html); Thread.Sleep(4000);
+                                await Bot.SendTextMessageAsync(message.Chat.Id, door_1136, false, false, 0, null, ParseMode.Html); Thread.Sleep(4000);
+                                await Bot.SendTextMessageAsync(message.Chat.Id, door_1137, false, false, 0, null, ParseMode.Html); Thread.Sleep(4000);
+                                await Bot.SendTextMessageAsync(message.Chat.Id, door_1138, false, false, 0, keyboardDoor2, ParseMode.Html); Thread.Sleep(4000);
+                                keyboardLast = keyboardDoor2;
                             }
                             else if (message.Text == "Авторы" || message.Text == "авторы")
                             {
 
                                 await Bot.SendPhotoAsync(message.Chat.Id, "https://preview.ibb.co/gsmpCR/pasha.jpg", "Вы нашли пасхалочку, заботливо подготовленную для Вас авторами. \n\nМы, Amadei, Znahar");
                             }
-                            // inline buttons
-                            else if (message.Text == "/ibuttons")
-                            {
-                                var keyboard = new Telegram.Bot.Types.ReplyMarkups.InlineKeyboardMarkup(
-                                                        new Telegram.Bot.Types.InlineKeyboardButton[][]
-                                                        {
-                                                            // First row
-                                                            new [] {
-                                                                // First column
-                                                                new Telegram.Bot.Types.InlineKeyboardButton("раз","callback1"),
 
-                                                                // Second column
-                                                                new Telegram.Bot.Types.InlineKeyboardButton("два","callback2"),
-                                                            },
-                                                        }
-                                                    );
-
-                                await Bot.SendTextMessageAsync(message.Chat.Id, "Давай накатим, товарищ, по одной!", false, false, 0, keyboard, Telegram.Bot.Types.Enums.ParseMode.Default);
-                            }
                             else if (message.Text == "/help")
                             {
-                                await Bot.SendTextMessageAsync(message.Chat.Id, "Этот бот служит для игрового процесса в текствовoм квесте, в чате ничего не пишите что бы не спойлерить себе игру, читайте текст, и ждите кнопок", false, false, 0, null, Telegram.Bot.Types.Enums.ParseMode.Default);
+                                await Bot.SendTextMessageAsync(message.Chat.Id, "Этот бот служит для игрового процесса в текствовoм квесте, в чате ничего не пишите что бы не спойлерить себе игру, читайте текст, и ждите кнопок", false, false, 0, keyboardLast, Telegram.Bot.Types.Enums.ParseMode.Default);
                             }
-                            // reply buttons
-                            else if (message.Text == "/rbuttons")
-                            {
-                                var keyboard = new Telegram.Bot.Types.ReplyMarkups.ReplyKeyboardMarkup
-                                {
-                                    Keyboard = new[] {
-                                                new[] // row 1
-                                                {
-                                                    new Telegram.Bot.Types.KeyboardButton("Накатим!"),
-                                                    new Telegram.Bot.Types.KeyboardButton("Рря!")
-                                                },
-                                            },
-                                    ResizeKeyboard = true
-                                };
 
-                                await Bot.SendTextMessageAsync(message.Chat.Id, "Давай накатим, товарищ, мой!", false, false, 0, keyboard, Telegram.Bot.Types.Enums.ParseMode.Default);
-                            }
-                            // обработка reply кнопок
-                            else if (message.Text.ToLower() == "накатим!")
-                            {
-                                await Bot.SendTextMessageAsync(message.Chat.Id, "Ну, за охоту!", replyToMessageId: message.MessageId);
-                            }
-                            else if (message.Text.ToLower() == "рря!")
-                            {
-                                await Bot.SendTextMessageAsync(message.Chat.Id, "Ну, за демократию!", replyToMessageId: message.MessageId);
-                            }
                             //дверь №2
                             else if (message.Text == "Войти во вторую дверь")
                             {
@@ -735,80 +711,80 @@ namespace revcom_bot
                                 string door_272 = "- Это же здорово!";
                                 string door_273 = "<i>Ира покачала головой.</i>";
                                 string door_274 = "- Ты не понял, Миш. Они хотят забрать меня насовсем… Не думаю, что я когда-нибудь вернусь сюда… Боюсь, мы больше никогда не увидимся.";
-                                await Bot.SendTextMessageAsync(message.Chat.Id, door_20, false, false, 0, keyboardWait, ParseMode.Html); Thread.Sleep(52);
-                                await Bot.SendTextMessageAsync(message.Chat.Id, door_21, false, false, 0, null, ParseMode.Html); Thread.Sleep(52);
-                                await Bot.SendTextMessageAsync(message.Chat.Id, door_22, false, false, 0, null, ParseMode.Html); Thread.Sleep(52);
-                                await Bot.SendTextMessageAsync(message.Chat.Id, door_23, false, false, 0, null, ParseMode.Html); Thread.Sleep(52);
-                                await Bot.SendTextMessageAsync(message.Chat.Id, door_24, false, false, 0, null, ParseMode.Html); Thread.Sleep(52);
-                                await Bot.SendTextMessageAsync(message.Chat.Id, door_25, false, false, 0, null, ParseMode.Html); Thread.Sleep(52);
-                                await Bot.SendTextMessageAsync(message.Chat.Id, door_26, false, false, 0, null, ParseMode.Html); Thread.Sleep(52);
-                                await Bot.SendTextMessageAsync(message.Chat.Id, door_27, false, false, 0, null, ParseMode.Html); Thread.Sleep(52);
-                                await Bot.SendTextMessageAsync(message.Chat.Id, door_28, false, false, 0, null, ParseMode.Html); Thread.Sleep(52);
-                                await Bot.SendTextMessageAsync(message.Chat.Id, door_29, false, false, 0, null, ParseMode.Html); Thread.Sleep(52);
-                                await Bot.SendTextMessageAsync(message.Chat.Id, door_210, false, false, 0, null, ParseMode.Html); Thread.Sleep(52);
-                                await Bot.SendTextMessageAsync(message.Chat.Id, door_211, false, false, 0, null, ParseMode.Html); Thread.Sleep(52);
-                                await Bot.SendTextMessageAsync(message.Chat.Id, door_212, false, false, 0, null, ParseMode.Html); Thread.Sleep(52);
-                                await Bot.SendTextMessageAsync(message.Chat.Id, door_213, false, false, 0, null, ParseMode.Html); Thread.Sleep(52);
-                                await Bot.SendTextMessageAsync(message.Chat.Id, door_214, false, false, 0, null, ParseMode.Html); Thread.Sleep(52);
-                                await Bot.SendTextMessageAsync(message.Chat.Id, door_215, false, false, 0, null, ParseMode.Html); Thread.Sleep(52);
-                                await Bot.SendTextMessageAsync(message.Chat.Id, door_216, false, false, 0, null, ParseMode.Html); Thread.Sleep(52);
-                                await Bot.SendTextMessageAsync(message.Chat.Id, door_217, false, false, 0, null, ParseMode.Html); Thread.Sleep(52);
-                                await Bot.SendTextMessageAsync(message.Chat.Id, door_218, false, false, 0, null, ParseMode.Html); Thread.Sleep(52);
-                                await Bot.SendTextMessageAsync(message.Chat.Id, door_219, false, false, 0, null, ParseMode.Html); Thread.Sleep(52);
-                                await Bot.SendTextMessageAsync(message.Chat.Id, door_220, false, false, 0, null, ParseMode.Html); Thread.Sleep(52);
-                                await Bot.SendTextMessageAsync(message.Chat.Id, door_221, false, false, 0, null, ParseMode.Html); Thread.Sleep(52);
-                                await Bot.SendTextMessageAsync(message.Chat.Id, door_222, false, false, 0, null, ParseMode.Html); Thread.Sleep(52);
-                                await Bot.SendTextMessageAsync(message.Chat.Id, door_223, false, false, 0, null, ParseMode.Html); Thread.Sleep(52);
-                                await Bot.SendTextMessageAsync(message.Chat.Id, door_224, false, false, 0, null, ParseMode.Html); Thread.Sleep(52);
-                                await Bot.SendTextMessageAsync(message.Chat.Id, door_225, false, false, 0, null, ParseMode.Html); Thread.Sleep(52);
-                                await Bot.SendTextMessageAsync(message.Chat.Id, door_226, false, false, 0, null, ParseMode.Html); Thread.Sleep(52);
-                                await Bot.SendTextMessageAsync(message.Chat.Id, door_227, false, false, 0, null, ParseMode.Html); Thread.Sleep(52);
-                                await Bot.SendTextMessageAsync(message.Chat.Id, door_228, false, false, 0, null, ParseMode.Html); Thread.Sleep(52);
-                                await Bot.SendTextMessageAsync(message.Chat.Id, door_229, false, false, 0, null, ParseMode.Html); Thread.Sleep(52);
-                                await Bot.SendTextMessageAsync(message.Chat.Id, door_230, false, false, 0, null, ParseMode.Html); Thread.Sleep(52);
-                                await Bot.SendTextMessageAsync(message.Chat.Id, door_231, false, false, 0, null, ParseMode.Html); Thread.Sleep(52);
-                                await Bot.SendTextMessageAsync(message.Chat.Id, door_232, false, false, 0, null, ParseMode.Html); Thread.Sleep(52);
-                                await Bot.SendTextMessageAsync(message.Chat.Id, door_233, false, false, 0, null, ParseMode.Html); Thread.Sleep(52);
-                                await Bot.SendTextMessageAsync(message.Chat.Id, door_234, false, false, 0, null, ParseMode.Html); Thread.Sleep(52);
-                                await Bot.SendTextMessageAsync(message.Chat.Id, door_235, false, false, 0, null, ParseMode.Html); Thread.Sleep(52);
-                                await Bot.SendTextMessageAsync(message.Chat.Id, door_236, false, false, 0, null, ParseMode.Html); Thread.Sleep(52);
-                                await Bot.SendTextMessageAsync(message.Chat.Id, door_237, false, false, 0, null, ParseMode.Html); Thread.Sleep(52);
-                                await Bot.SendTextMessageAsync(message.Chat.Id, door_238, false, false, 0, null, ParseMode.Html); Thread.Sleep(52);
-                                await Bot.SendTextMessageAsync(message.Chat.Id, door_239, false, false, 0, null, ParseMode.Html); Thread.Sleep(52);
-                                await Bot.SendTextMessageAsync(message.Chat.Id, door_240, false, false, 0, null, ParseMode.Html); Thread.Sleep(52);
-                                await Bot.SendTextMessageAsync(message.Chat.Id, door_241, false, false, 0, null, ParseMode.Html); Thread.Sleep(52);
-                                await Bot.SendTextMessageAsync(message.Chat.Id, door_242, false, false, 0, null, ParseMode.Html); Thread.Sleep(52);
-                                await Bot.SendTextMessageAsync(message.Chat.Id, door_243, false, false, 0, null, ParseMode.Html); Thread.Sleep(52);
-                                await Bot.SendTextMessageAsync(message.Chat.Id, door_244, false, false, 0, null, ParseMode.Html); Thread.Sleep(52);
-                                await Bot.SendTextMessageAsync(message.Chat.Id, door_245, false, false, 0, null, ParseMode.Html); Thread.Sleep(52);
-                                await Bot.SendTextMessageAsync(message.Chat.Id, door_246, false, false, 0, null, ParseMode.Html); Thread.Sleep(52);
-                                await Bot.SendTextMessageAsync(message.Chat.Id, door_247, false, false, 0, null, ParseMode.Html); Thread.Sleep(52);
-                                await Bot.SendTextMessageAsync(message.Chat.Id, door_248, false, false, 0, null, ParseMode.Html); Thread.Sleep(52);
-                                await Bot.SendTextMessageAsync(message.Chat.Id, door_249, false, false, 0, null, ParseMode.Html); Thread.Sleep(52);
-                                await Bot.SendTextMessageAsync(message.Chat.Id, door_250, false, false, 0, null, ParseMode.Html); Thread.Sleep(52);
-                                await Bot.SendTextMessageAsync(message.Chat.Id, door_251, false, false, 0, null, ParseMode.Html); Thread.Sleep(52);
-                                await Bot.SendTextMessageAsync(message.Chat.Id, door_252, false, false, 0, null, ParseMode.Html); Thread.Sleep(52);
-                                await Bot.SendTextMessageAsync(message.Chat.Id, door_253, false, false, 0, null, ParseMode.Html); Thread.Sleep(52);
-                                await Bot.SendTextMessageAsync(message.Chat.Id, door_254, false, false, 0, null, ParseMode.Html); Thread.Sleep(52);
-                                await Bot.SendTextMessageAsync(message.Chat.Id, door_255, false, false, 0, null, ParseMode.Html); Thread.Sleep(52);
-                                await Bot.SendTextMessageAsync(message.Chat.Id, door_256, false, false, 0, null, ParseMode.Html); Thread.Sleep(52);
-                                await Bot.SendTextMessageAsync(message.Chat.Id, door_257, false, false, 0, null, ParseMode.Html); Thread.Sleep(52);
-                                await Bot.SendTextMessageAsync(message.Chat.Id, door_258, false, false, 0, null, ParseMode.Html); Thread.Sleep(52);
-                                await Bot.SendTextMessageAsync(message.Chat.Id, door_259, false, false, 0, null, ParseMode.Html); Thread.Sleep(52);
-                                await Bot.SendTextMessageAsync(message.Chat.Id, door_260, false, false, 0, null, ParseMode.Html); Thread.Sleep(52);
-                                await Bot.SendTextMessageAsync(message.Chat.Id, door_261, false, false, 0, null, ParseMode.Html); Thread.Sleep(52);
-                                await Bot.SendTextMessageAsync(message.Chat.Id, door_262, false, false, 0, null, ParseMode.Html); Thread.Sleep(52);
-                                await Bot.SendTextMessageAsync(message.Chat.Id, door_263, false, false, 0, null, ParseMode.Html); Thread.Sleep(52);
-                                await Bot.SendTextMessageAsync(message.Chat.Id, door_264, false, false, 0, null, ParseMode.Html); Thread.Sleep(52);
-                                await Bot.SendTextMessageAsync(message.Chat.Id, door_265, false, false, 0, null, ParseMode.Html); Thread.Sleep(52);
-                                await Bot.SendTextMessageAsync(message.Chat.Id, door_266, false, false, 0, null, ParseMode.Html); Thread.Sleep(52);
-                                await Bot.SendTextMessageAsync(message.Chat.Id, door_267, false, false, 0, null, ParseMode.Html); Thread.Sleep(52);
-                                await Bot.SendTextMessageAsync(message.Chat.Id, door_268, false, false, 0, null, ParseMode.Html); Thread.Sleep(52);
-                                await Bot.SendTextMessageAsync(message.Chat.Id, door_269, false, false, 0, null, ParseMode.Html); Thread.Sleep(52);
-                                await Bot.SendTextMessageAsync(message.Chat.Id, door_270, false, false, 0, null, ParseMode.Html); Thread.Sleep(52);
-                                await Bot.SendTextMessageAsync(message.Chat.Id, door_271, false, false, 0, null, ParseMode.Html); Thread.Sleep(52);
-                                await Bot.SendTextMessageAsync(message.Chat.Id, door_272, false, false, 0, null, ParseMode.Html); Thread.Sleep(52);
-                                await Bot.SendTextMessageAsync(message.Chat.Id, door_273, false, false, 0, null, ParseMode.Html); Thread.Sleep(52);
+                                await Bot.SendTextMessageAsync(message.Chat.Id, door_20, false, false, 0, keyboardWait, ParseMode.Html); Thread.Sleep(4000);
+                                await Bot.SendTextMessageAsync(message.Chat.Id, door_21, false, false, 0, null, ParseMode.Html); Thread.Sleep(4000);
+                                await Bot.SendTextMessageAsync(message.Chat.Id, door_22, false, false, 0, null, ParseMode.Html); Thread.Sleep(4000);
+                                await Bot.SendTextMessageAsync(message.Chat.Id, door_23, false, false, 0, null, ParseMode.Html); Thread.Sleep(4000);
+                                await Bot.SendTextMessageAsync(message.Chat.Id, door_24, false, false, 0, null, ParseMode.Html); Thread.Sleep(4000);
+                                await Bot.SendTextMessageAsync(message.Chat.Id, door_25, false, false, 0, null, ParseMode.Html); Thread.Sleep(4000);
+                                await Bot.SendTextMessageAsync(message.Chat.Id, door_26, false, false, 0, null, ParseMode.Html); Thread.Sleep(4000);
+                                await Bot.SendTextMessageAsync(message.Chat.Id, door_27, false, false, 0, null, ParseMode.Html); Thread.Sleep(4000);
+                                await Bot.SendTextMessageAsync(message.Chat.Id, door_28, false, false, 0, null, ParseMode.Html); Thread.Sleep(4000);
+                                await Bot.SendTextMessageAsync(message.Chat.Id, door_29, false, false, 0, null, ParseMode.Html); Thread.Sleep(4000);
+                                await Bot.SendTextMessageAsync(message.Chat.Id, door_210, false, false, 0, null, ParseMode.Html); Thread.Sleep(4000);
+                                await Bot.SendTextMessageAsync(message.Chat.Id, door_211, false, false, 0, null, ParseMode.Html); Thread.Sleep(4000);
+                                await Bot.SendTextMessageAsync(message.Chat.Id, door_212, false, false, 0, null, ParseMode.Html); Thread.Sleep(4000);
+                                await Bot.SendTextMessageAsync(message.Chat.Id, door_213, false, false, 0, null, ParseMode.Html); Thread.Sleep(4000);
+                                await Bot.SendTextMessageAsync(message.Chat.Id, door_214, false, false, 0, null, ParseMode.Html); Thread.Sleep(4000);
+                                await Bot.SendTextMessageAsync(message.Chat.Id, door_215, false, false, 0, null, ParseMode.Html); Thread.Sleep(4000);
+                                await Bot.SendTextMessageAsync(message.Chat.Id, door_216, false, false, 0, null, ParseMode.Html); Thread.Sleep(4000);
+                                await Bot.SendTextMessageAsync(message.Chat.Id, door_217, false, false, 0, null, ParseMode.Html); Thread.Sleep(4000);
+                                await Bot.SendTextMessageAsync(message.Chat.Id, door_218, false, false, 0, null, ParseMode.Html); Thread.Sleep(4000);
+                                await Bot.SendTextMessageAsync(message.Chat.Id, door_219, false, false, 0, null, ParseMode.Html); Thread.Sleep(4000);
+                                await Bot.SendTextMessageAsync(message.Chat.Id, door_220, false, false, 0, null, ParseMode.Html); Thread.Sleep(4000);
+                                await Bot.SendTextMessageAsync(message.Chat.Id, door_221, false, false, 0, null, ParseMode.Html); Thread.Sleep(4000);
+                                await Bot.SendTextMessageAsync(message.Chat.Id, door_222, false, false, 0, null, ParseMode.Html); Thread.Sleep(4000);
+                                await Bot.SendTextMessageAsync(message.Chat.Id, door_223, false, false, 0, null, ParseMode.Html); Thread.Sleep(4000);
+                                await Bot.SendTextMessageAsync(message.Chat.Id, door_224, false, false, 0, null, ParseMode.Html); Thread.Sleep(4000);
+                                await Bot.SendTextMessageAsync(message.Chat.Id, door_225, false, false, 0, null, ParseMode.Html); Thread.Sleep(4000);
+                                await Bot.SendTextMessageAsync(message.Chat.Id, door_226, false, false, 0, null, ParseMode.Html); Thread.Sleep(4000);
+                                await Bot.SendTextMessageAsync(message.Chat.Id, door_227, false, false, 0, null, ParseMode.Html); Thread.Sleep(4000);
+                                await Bot.SendTextMessageAsync(message.Chat.Id, door_228, false, false, 0, null, ParseMode.Html); Thread.Sleep(4000);
+                                await Bot.SendTextMessageAsync(message.Chat.Id, door_229, false, false, 0, null, ParseMode.Html); Thread.Sleep(4000);
+                                await Bot.SendTextMessageAsync(message.Chat.Id, door_230, false, false, 0, null, ParseMode.Html); Thread.Sleep(4000);
+                                await Bot.SendTextMessageAsync(message.Chat.Id, door_231, false, false, 0, null, ParseMode.Html); Thread.Sleep(4000);
+                                await Bot.SendTextMessageAsync(message.Chat.Id, door_232, false, false, 0, null, ParseMode.Html); Thread.Sleep(4000);
+                                await Bot.SendTextMessageAsync(message.Chat.Id, door_233, false, false, 0, null, ParseMode.Html); Thread.Sleep(4000);
+                                await Bot.SendTextMessageAsync(message.Chat.Id, door_234, false, false, 0, null, ParseMode.Html); Thread.Sleep(4000);
+                                await Bot.SendTextMessageAsync(message.Chat.Id, door_235, false, false, 0, null, ParseMode.Html); Thread.Sleep(4000);
+                                await Bot.SendTextMessageAsync(message.Chat.Id, door_236, false, false, 0, null, ParseMode.Html); Thread.Sleep(4000);
+                                await Bot.SendTextMessageAsync(message.Chat.Id, door_237, false, false, 0, null, ParseMode.Html); Thread.Sleep(4000);
+                                await Bot.SendTextMessageAsync(message.Chat.Id, door_238, false, false, 0, null, ParseMode.Html); Thread.Sleep(4000);
+                                await Bot.SendTextMessageAsync(message.Chat.Id, door_239, false, false, 0, null, ParseMode.Html); Thread.Sleep(4000);
+                                await Bot.SendTextMessageAsync(message.Chat.Id, door_240, false, false, 0, null, ParseMode.Html); Thread.Sleep(4000);
+                                await Bot.SendTextMessageAsync(message.Chat.Id, door_241, false, false, 0, null, ParseMode.Html); Thread.Sleep(4000);
+                                await Bot.SendTextMessageAsync(message.Chat.Id, door_242, false, false, 0, null, ParseMode.Html); Thread.Sleep(4000);
+                                await Bot.SendTextMessageAsync(message.Chat.Id, door_243, false, false, 0, null, ParseMode.Html); Thread.Sleep(4000);
+                                await Bot.SendTextMessageAsync(message.Chat.Id, door_244, false, false, 0, null, ParseMode.Html); Thread.Sleep(4000);
+                                await Bot.SendTextMessageAsync(message.Chat.Id, door_245, false, false, 0, null, ParseMode.Html); Thread.Sleep(4000);
+                                await Bot.SendTextMessageAsync(message.Chat.Id, door_246, false, false, 0, null, ParseMode.Html); Thread.Sleep(4000);
+                                await Bot.SendTextMessageAsync(message.Chat.Id, door_247, false, false, 0, null, ParseMode.Html); Thread.Sleep(4000);
+                                await Bot.SendTextMessageAsync(message.Chat.Id, door_248, false, false, 0, null, ParseMode.Html); Thread.Sleep(4000);
+                                await Bot.SendTextMessageAsync(message.Chat.Id, door_249, false, false, 0, null, ParseMode.Html); Thread.Sleep(4000);
+                                await Bot.SendTextMessageAsync(message.Chat.Id, door_250, false, false, 0, null, ParseMode.Html); Thread.Sleep(4000);
+                                await Bot.SendTextMessageAsync(message.Chat.Id, door_251, false, false, 0, null, ParseMode.Html); Thread.Sleep(4000);
+                                await Bot.SendTextMessageAsync(message.Chat.Id, door_252, false, false, 0, null, ParseMode.Html); Thread.Sleep(4000);
+                                await Bot.SendTextMessageAsync(message.Chat.Id, door_253, false, false, 0, null, ParseMode.Html); Thread.Sleep(4000);
+                                await Bot.SendTextMessageAsync(message.Chat.Id, door_254, false, false, 0, null, ParseMode.Html); Thread.Sleep(4000);
+                                await Bot.SendTextMessageAsync(message.Chat.Id, door_255, false, false, 0, null, ParseMode.Html); Thread.Sleep(4000);
+                                await Bot.SendTextMessageAsync(message.Chat.Id, door_256, false, false, 0, null, ParseMode.Html); Thread.Sleep(4000);
+                                await Bot.SendTextMessageAsync(message.Chat.Id, door_257, false, false, 0, null, ParseMode.Html); Thread.Sleep(4000);
+                                await Bot.SendTextMessageAsync(message.Chat.Id, door_258, false, false, 0, null, ParseMode.Html); Thread.Sleep(4000);
+                                await Bot.SendTextMessageAsync(message.Chat.Id, door_259, false, false, 0, null, ParseMode.Html); Thread.Sleep(4000);
+                                await Bot.SendTextMessageAsync(message.Chat.Id, door_260, false, false, 0, null, ParseMode.Html); Thread.Sleep(4000);
+                                await Bot.SendTextMessageAsync(message.Chat.Id, door_261, false, false, 0, null, ParseMode.Html); Thread.Sleep(4000);
+                                await Bot.SendTextMessageAsync(message.Chat.Id, door_262, false, false, 0, null, ParseMode.Html); Thread.Sleep(4000);
+                                await Bot.SendTextMessageAsync(message.Chat.Id, door_263, false, false, 0, null, ParseMode.Html); Thread.Sleep(4000);
+                                await Bot.SendTextMessageAsync(message.Chat.Id, door_264, false, false, 0, null, ParseMode.Html); Thread.Sleep(4000);
+                                await Bot.SendTextMessageAsync(message.Chat.Id, door_265, false, false, 0, null, ParseMode.Html); Thread.Sleep(4000);
+                                await Bot.SendTextMessageAsync(message.Chat.Id, door_266, false, false, 0, null, ParseMode.Html); Thread.Sleep(4000);
+                                await Bot.SendTextMessageAsync(message.Chat.Id, door_267, false, false, 0, null, ParseMode.Html); Thread.Sleep(4000);
+                                await Bot.SendTextMessageAsync(message.Chat.Id, door_268, false, false, 0, null, ParseMode.Html); Thread.Sleep(4000);
+                                await Bot.SendTextMessageAsync(message.Chat.Id, door_269, false, false, 0, null, ParseMode.Html); Thread.Sleep(4000);
+                                await Bot.SendTextMessageAsync(message.Chat.Id, door_270, false, false, 0, null, ParseMode.Html); Thread.Sleep(4000);
+                                await Bot.SendTextMessageAsync(message.Chat.Id, door_271, false, false, 0, null, ParseMode.Html); Thread.Sleep(4000);
+                                await Bot.SendTextMessageAsync(message.Chat.Id, door_272, false, false, 0, null, ParseMode.Html); Thread.Sleep(4000);
+                                await Bot.SendTextMessageAsync(message.Chat.Id, door_273, false, false, 0, null, ParseMode.Html); Thread.Sleep(4000);
                                 var keyboard = new Telegram.Bot.Types.ReplyMarkups.ReplyKeyboardMarkup
                                 {
                                     Keyboard = new[] {
@@ -838,7 +814,7 @@ namespace revcom_bot
                                     ResizeKeyboard = true
                                 };
                                 keyboardLast = keyboard;
-                                await Bot.SendTextMessageAsync(message.Chat.Id, door_274, false, false, 0, keyboard, ParseMode.Html); Thread.Sleep(52);
+                                await Bot.SendTextMessageAsync(message.Chat.Id, door_274, false, false, 0, keyboard, ParseMode.Html); Thread.Sleep(4000);
 
                             }
                             else if (message.Text == "Остановить")
@@ -849,12 +825,13 @@ namespace revcom_bot
                                 string door_279 = "- Они против этого… Считают, опасно оставлять меня одну здесь.";
                                 string door_280 = "- Но ты ведь не одна здесь. У тебя есть я.";
                                 string door_281 = "- Ты прав… Возможно, если бы ты поговорил с ними, они позволили бы мне остаться здесь… Но… Ты правда пойдешь на это?...";
-                                await Bot.SendTextMessageAsync(message.Chat.Id, door_276, false, false, 0, keyboardWait, ParseMode.Html); Thread.Sleep(52);
-                                await Bot.SendTextMessageAsync(message.Chat.Id, door_277, false, false, 0, null, ParseMode.Html); Thread.Sleep(52);
-                                await Bot.SendTextMessageAsync(message.Chat.Id, door_278, false, false, 0, null, ParseMode.Html); Thread.Sleep(52);
-                                await Bot.SendTextMessageAsync(message.Chat.Id, door_279, false, false, 0, null, ParseMode.Html); Thread.Sleep(52);
-                                await Bot.SendTextMessageAsync(message.Chat.Id, door_280, false, false, 0, null, ParseMode.Html); Thread.Sleep(52);
-                                await Bot.SendTextMessageAsync(message.Chat.Id, door_281, false, false, 0, keyboardDoor3, ParseMode.Html); Thread.Sleep(52);
+                                await Bot.SendTextMessageAsync(message.Chat.Id, door_276, false, false, 0, keyboardWait, ParseMode.Html); Thread.Sleep(4000);
+                                await Bot.SendTextMessageAsync(message.Chat.Id, door_277, false, false, 0, null, ParseMode.Html); Thread.Sleep(4000);
+                                await Bot.SendTextMessageAsync(message.Chat.Id, door_278, false, false, 0, null, ParseMode.Html); Thread.Sleep(4000);
+                                await Bot.SendTextMessageAsync(message.Chat.Id, door_279, false, false, 0, null, ParseMode.Html); Thread.Sleep(4000);
+                                await Bot.SendTextMessageAsync(message.Chat.Id, door_280, false, false, 0, null, ParseMode.Html); Thread.Sleep(4000);
+                                await Bot.SendTextMessageAsync(message.Chat.Id, door_281, false, false, 0, keyboardDoor3, ParseMode.Html); Thread.Sleep(4000);
+                                keyboardLast = keyboardDoor3;
                             }
                             else if (message.Text == "Согласиться")
                             {
@@ -863,12 +840,12 @@ namespace revcom_bot
                                 string door_284 = "- Слава Богу! Господи, Миш, как же я рада! Спасибо тебе!";
                                 string door_285 = "- Ладно тебе. Все уже позади. Рада, что остаешься?";
                                 string door_286 = "- Очень! Очень рада! Спасибо тебе огромное!";
-                                await Bot.SendTextMessageAsync(message.Chat.Id, door_282, false, false, 0, keyboardWait, ParseMode.Html); Thread.Sleep(52);
-                                await Bot.SendTextMessageAsync(message.Chat.Id, door_283, false, false, 0, null, ParseMode.Html); Thread.Sleep(52);
-                                await Bot.SendTextMessageAsync(message.Chat.Id, door_284, false, false, 0, null, ParseMode.Html); Thread.Sleep(52);
-                                await Bot.SendTextMessageAsync(message.Chat.Id, door_285, false, false, 0, null, ParseMode.Html); Thread.Sleep(52);
-                                await Bot.SendTextMessageAsync(message.Chat.Id, door_286, false, false, 0, keyboardDoor3, ParseMode.Html); Thread.Sleep(52);
-
+                                await Bot.SendTextMessageAsync(message.Chat.Id, door_282, false, false, 0, keyboardWait, ParseMode.Html); Thread.Sleep(4000);
+                                await Bot.SendTextMessageAsync(message.Chat.Id, door_283, false, false, 0, null, ParseMode.Html); Thread.Sleep(4000);
+                                await Bot.SendTextMessageAsync(message.Chat.Id, door_284, false, false, 0, null, ParseMode.Html); Thread.Sleep(4000);
+                                await Bot.SendTextMessageAsync(message.Chat.Id, door_285, false, false, 0, null, ParseMode.Html); Thread.Sleep(4000);
+                                await Bot.SendTextMessageAsync(message.Chat.Id, door_286, false, false, 0, keyboardDoor3, ParseMode.Html); Thread.Sleep(4000);
+                                keyboardLast = keyboardDoor3;
                             }
                             else if (message.Text == "Отказаться")
                             {
@@ -880,15 +857,15 @@ namespace revcom_bot
                                 string door_292 = "- Обязательно получится.";
                                 string door_293 = "<i>Родители поняли ее.\n\nВ конце концов, после бесконечных уговоров, установив кучу правил и условий, они согласились оставить ее в городе.\n\nДумаю это было правильным решением… </i>";
                                 string door_294 = "<i>На следующий день мы поехали куда-то. Ирина не сказала куда. Наверное готовила сюрприз. Но нам было не суждено доехать.\n\nНа одном из сложных поворотов случилась авария, Ира не справилась с управлением. Машина перевернулась.\n\nЯ почувствовал, что выпадаю из реальности. Подобные ощущения люди испытывают при пробуждении. Но, что-то мне подсказывало, что я не сплю. Люди не могут спать так долго…</i>";
-                                await Bot.SendTextMessageAsync(message.Chat.Id, door_287, false, false, 0, keyboardWait, ParseMode.Html); Thread.Sleep(52);
-                                await Bot.SendTextMessageAsync(message.Chat.Id, door_288, false, false, 0, null, ParseMode.Html); Thread.Sleep(52);
-                                await Bot.SendTextMessageAsync(message.Chat.Id, door_289, false, false, 0, null, ParseMode.Html); Thread.Sleep(52);
-                                await Bot.SendTextMessageAsync(message.Chat.Id, door_290, false, false, 0, null, ParseMode.Html); Thread.Sleep(52);
-                                await Bot.SendTextMessageAsync(message.Chat.Id, door_291, false, false, 0, null, ParseMode.Html); Thread.Sleep(52);
-                                await Bot.SendTextMessageAsync(message.Chat.Id, door_292, false, false, 0, null, ParseMode.Html); Thread.Sleep(52);
-                                await Bot.SendTextMessageAsync(message.Chat.Id, door_293, false, false, 0, null, ParseMode.Html); Thread.Sleep(52);
-                                await Bot.SendTextMessageAsync(message.Chat.Id, door_294, false, false, 0, keyboardDoor3, ParseMode.Html); Thread.Sleep(52);
-
+                                await Bot.SendTextMessageAsync(message.Chat.Id, door_287, false, false, 0, keyboardWait, ParseMode.Html); Thread.Sleep(4000);
+                                await Bot.SendTextMessageAsync(message.Chat.Id, door_288, false, false, 0, null, ParseMode.Html); Thread.Sleep(4000);
+                                await Bot.SendTextMessageAsync(message.Chat.Id, door_289, false, false, 0, null, ParseMode.Html); Thread.Sleep(4000);
+                                await Bot.SendTextMessageAsync(message.Chat.Id, door_290, false, false, 0, null, ParseMode.Html); Thread.Sleep(4000);
+                                await Bot.SendTextMessageAsync(message.Chat.Id, door_291, false, false, 0, null, ParseMode.Html); Thread.Sleep(4000);
+                                await Bot.SendTextMessageAsync(message.Chat.Id, door_292, false, false, 0, null, ParseMode.Html); Thread.Sleep(4000);
+                                await Bot.SendTextMessageAsync(message.Chat.Id, door_293, false, false, 0, null, ParseMode.Html); Thread.Sleep(4000);
+                                await Bot.SendTextMessageAsync(message.Chat.Id, door_294, false, false, 0, keyboardDoor3, ParseMode.Html); Thread.Sleep(4000);
+                                keyboardLast = keyboardDoor3;
                             }
                             else if (message.Text == "Отпустить")
                             {
@@ -904,19 +881,19 @@ namespace revcom_bot
                                 string door_2105 = "<i>И мы поцеловались.</i>";
                                 string door_2106 = "*Постельная сцена*";
                                 string door_2107 = "<i>Когда Ирина уехала, я почувствовал, что выпадаю из реальности. Подобные ощущения люди испытывают при пробуждении. Но, что-то мне подсказывало, что я не сплю. Люди не могут спать так долго…</i>";
-                                await Bot.SendTextMessageAsync(message.Chat.Id, door_296, false, false, 0, keyboardWait, ParseMode.Html); Thread.Sleep(52);
-                                await Bot.SendTextMessageAsync(message.Chat.Id, door_297, false, false, 0, null, ParseMode.Html); Thread.Sleep(52);
-                                await Bot.SendTextMessageAsync(message.Chat.Id, door_298, false, false, 0, null, ParseMode.Html); Thread.Sleep(52);
-                                await Bot.SendTextMessageAsync(message.Chat.Id, door_299, false, false, 0, null, ParseMode.Html); Thread.Sleep(52);
-                                await Bot.SendTextMessageAsync(message.Chat.Id, door_2100, false, false, 0, null, ParseMode.Html); Thread.Sleep(52);
-                                await Bot.SendTextMessageAsync(message.Chat.Id, door_2101, false, false, 0, null, ParseMode.Html); Thread.Sleep(52);
-                                await Bot.SendTextMessageAsync(message.Chat.Id, door_2102, false, false, 0, null, ParseMode.Html); Thread.Sleep(52);
-                                await Bot.SendTextMessageAsync(message.Chat.Id, door_2103, false, false, 0, null, ParseMode.Html); Thread.Sleep(52);
-                                await Bot.SendTextMessageAsync(message.Chat.Id, door_2104, false, false, 0, null, ParseMode.Html); Thread.Sleep(52);
-                                await Bot.SendTextMessageAsync(message.Chat.Id, door_2105, false, false, 0, null, ParseMode.Html); Thread.Sleep(52);
-                                await Bot.SendTextMessageAsync(message.Chat.Id, door_2106, false, false, 0, null, ParseMode.Html); Thread.Sleep(52);
-                                await Bot.SendTextMessageAsync(message.Chat.Id, door_2107, false, false, 0, keyboardDoor3, ParseMode.Html); Thread.Sleep(52);
-
+                                await Bot.SendTextMessageAsync(message.Chat.Id, door_296, false, false, 0, keyboardWait, ParseMode.Html); Thread.Sleep(4000);
+                                await Bot.SendTextMessageAsync(message.Chat.Id, door_297, false, false, 0, null, ParseMode.Html); Thread.Sleep(4000);
+                                await Bot.SendTextMessageAsync(message.Chat.Id, door_298, false, false, 0, null, ParseMode.Html); Thread.Sleep(4000);
+                                await Bot.SendTextMessageAsync(message.Chat.Id, door_299, false, false, 0, null, ParseMode.Html); Thread.Sleep(4000);
+                                await Bot.SendTextMessageAsync(message.Chat.Id, door_2100, false, false, 0, null, ParseMode.Html); Thread.Sleep(4000);
+                                await Bot.SendTextMessageAsync(message.Chat.Id, door_2101, false, false, 0, null, ParseMode.Html); Thread.Sleep(4000);
+                                await Bot.SendTextMessageAsync(message.Chat.Id, door_2102, false, false, 0, null, ParseMode.Html); Thread.Sleep(4000);
+                                await Bot.SendTextMessageAsync(message.Chat.Id, door_2103, false, false, 0, null, ParseMode.Html); Thread.Sleep(4000);
+                                await Bot.SendTextMessageAsync(message.Chat.Id, door_2104, false, false, 0, null, ParseMode.Html); Thread.Sleep(4000);
+                                await Bot.SendTextMessageAsync(message.Chat.Id, door_2105, false, false, 0, null, ParseMode.Html); Thread.Sleep(4000);
+                                await Bot.SendTextMessageAsync(message.Chat.Id, door_2106, false, false, 0, null, ParseMode.Html); Thread.Sleep(4000);
+                                await Bot.SendTextMessageAsync(message.Chat.Id, door_2107, false, false, 0, keyboardDoor3, ParseMode.Html); Thread.Sleep(4000);
+                                keyboardLast = keyboardDoor3;
                             }
                             //дверь №3
                             else if (message.Text == "Войти в третью дверь")
@@ -1017,114 +994,114 @@ namespace revcom_bot
                                 string door_393 = "- А мне по чем знать? До сегодняшнего вечера его здесь не было.";
                                 string door_394 = "- Тогда… Могу я его забрать?..";
                                 string door_395 = "<i>Анна кивнула, протянув рисунок мне. Я сложил лист несколько раз и недолго думая сунул в карман.\n\nПришло время расходиться.</i>";
-                                await Bot.SendTextMessageAsync(message.Chat.Id, door_30, false, false, 0, keyboardWait, ParseMode.Html); Thread.Sleep(52);
-                                await Bot.SendTextMessageAsync(message.Chat.Id, door_31, false, false, 0, null, ParseMode.Html); Thread.Sleep(52);
-                                await Bot.SendTextMessageAsync(message.Chat.Id, door_32, false, false, 0, null, ParseMode.Html); Thread.Sleep(52);
-                                await Bot.SendTextMessageAsync(message.Chat.Id, door_33, false, false, 0, null, ParseMode.Html); Thread.Sleep(52);
-                                await Bot.SendTextMessageAsync(message.Chat.Id, door_34, false, false, 0, null, ParseMode.Html); Thread.Sleep(52);
-                                await Bot.SendTextMessageAsync(message.Chat.Id, door_35, false, false, 0, null, ParseMode.Html); Thread.Sleep(52);
-                                await Bot.SendTextMessageAsync(message.Chat.Id, door_36, false, false, 0, null, ParseMode.Html); Thread.Sleep(52);
-                                await Bot.SendTextMessageAsync(message.Chat.Id, door_37, false, false, 0, null, ParseMode.Html); Thread.Sleep(52);
-                                await Bot.SendTextMessageAsync(message.Chat.Id, door_38, false, false, 0, null, ParseMode.Html); Thread.Sleep(52);
-                                await Bot.SendTextMessageAsync(message.Chat.Id, door_39, false, false, 0, null, ParseMode.Html); Thread.Sleep(52);
-                                await Bot.SendTextMessageAsync(message.Chat.Id, door_310, false, false, 0, null, ParseMode.Html); Thread.Sleep(52);
-                                await Bot.SendTextMessageAsync(message.Chat.Id, door_311, false, false, 0, null, ParseMode.Html); Thread.Sleep(52);
-                                await Bot.SendTextMessageAsync(message.Chat.Id, door_312, false, false, 0, null, ParseMode.Html); Thread.Sleep(52);
-                                await Bot.SendTextMessageAsync(message.Chat.Id, door_313, false, false, 0, null, ParseMode.Html); Thread.Sleep(52);
-                                await Bot.SendTextMessageAsync(message.Chat.Id, door_314, false, false, 0, null, ParseMode.Html); Thread.Sleep(52);
-                                await Bot.SendTextMessageAsync(message.Chat.Id, door_315, false, false, 0, null, ParseMode.Html); Thread.Sleep(52);
-                                await Bot.SendTextMessageAsync(message.Chat.Id, door_316, false, false, 0, null, ParseMode.Html); Thread.Sleep(52);
-                                await Bot.SendTextMessageAsync(message.Chat.Id, door_317, false, false, 0, null, ParseMode.Html); Thread.Sleep(52);
-                                await Bot.SendTextMessageAsync(message.Chat.Id, door_318, false, false, 0, null, ParseMode.Html); Thread.Sleep(52);
-                                await Bot.SendTextMessageAsync(message.Chat.Id, door_319, false, false, 0, null, ParseMode.Html); Thread.Sleep(52);
-                                await Bot.SendTextMessageAsync(message.Chat.Id, door_320, false, false, 0, null, ParseMode.Html); Thread.Sleep(52);
-                                await Bot.SendTextMessageAsync(message.Chat.Id, door_321, false, false, 0, null, ParseMode.Html); Thread.Sleep(52);
-                                await Bot.SendTextMessageAsync(message.Chat.Id, door_322, false, false, 0, null, ParseMode.Html); Thread.Sleep(52);
-                                await Bot.SendTextMessageAsync(message.Chat.Id, door_323, false, false, 0, null, ParseMode.Html); Thread.Sleep(52);
-                                await Bot.SendTextMessageAsync(message.Chat.Id, door_324, false, false, 0, null, ParseMode.Html); Thread.Sleep(52);
-                                await Bot.SendTextMessageAsync(message.Chat.Id, door_325, false, false, 0, null, ParseMode.Html); Thread.Sleep(52);
-                                await Bot.SendTextMessageAsync(message.Chat.Id, door_326, false, false, 0, null, ParseMode.Html); Thread.Sleep(52);
-                                await Bot.SendTextMessageAsync(message.Chat.Id, door_327, false, false, 0, null, ParseMode.Html); Thread.Sleep(52);
-                                await Bot.SendTextMessageAsync(message.Chat.Id, door_328, false, false, 0, null, ParseMode.Html); Thread.Sleep(52);
-                                await Bot.SendTextMessageAsync(message.Chat.Id, door_329, false, false, 0, null, ParseMode.Html); Thread.Sleep(52);
-                                await Bot.SendTextMessageAsync(message.Chat.Id, door_330, false, false, 0, null, ParseMode.Html); Thread.Sleep(52);
-                                await Bot.SendTextMessageAsync(message.Chat.Id, door_331, false, false, 0, null, ParseMode.Html); Thread.Sleep(52);
-                                await Bot.SendTextMessageAsync(message.Chat.Id, door_332, false, false, 0, null, ParseMode.Html); Thread.Sleep(52);
-                                await Bot.SendTextMessageAsync(message.Chat.Id, door_333, false, false, 0, null, ParseMode.Html); Thread.Sleep(52);
-                                await Bot.SendTextMessageAsync(message.Chat.Id, door_334, false, false, 0, null, ParseMode.Html); Thread.Sleep(52);
-                                await Bot.SendTextMessageAsync(message.Chat.Id, door_335, false, false, 0, null, ParseMode.Html); Thread.Sleep(52);
-                                await Bot.SendTextMessageAsync(message.Chat.Id, door_336, false, false, 0, null, ParseMode.Html); Thread.Sleep(52);
-                                await Bot.SendTextMessageAsync(message.Chat.Id, door_337, false, false, 0, null, ParseMode.Html); Thread.Sleep(52);
-                                await Bot.SendTextMessageAsync(message.Chat.Id, door_338, false, false, 0, null, ParseMode.Html); Thread.Sleep(52);
-                                await Bot.SendTextMessageAsync(message.Chat.Id, door_339, false, false, 0, null, ParseMode.Html); Thread.Sleep(52);
-                                await Bot.SendTextMessageAsync(message.Chat.Id, door_340, false, false, 0, null, ParseMode.Html); Thread.Sleep(52);
-                                await Bot.SendTextMessageAsync(message.Chat.Id, door_341, false, false, 0, null, ParseMode.Html); Thread.Sleep(52);
-                                await Bot.SendTextMessageAsync(message.Chat.Id, door_342, false, false, 0, null, ParseMode.Html); Thread.Sleep(52);
-                                await Bot.SendTextMessageAsync(message.Chat.Id, door_343, false, false, 0, null, ParseMode.Html); Thread.Sleep(52);
-                                await Bot.SendTextMessageAsync(message.Chat.Id, door_344, false, false, 0, null, ParseMode.Html); Thread.Sleep(52);
-                                await Bot.SendTextMessageAsync(message.Chat.Id, door_345, false, false, 0, null, ParseMode.Html); Thread.Sleep(52);
-                                await Bot.SendTextMessageAsync(message.Chat.Id, door_346, false, false, 0, null, ParseMode.Html); Thread.Sleep(52);
-                                await Bot.SendTextMessageAsync(message.Chat.Id, door_347, false, false, 0, null, ParseMode.Html); Thread.Sleep(52);
-                                await Bot.SendTextMessageAsync(message.Chat.Id, door_348, false, false, 0, null, ParseMode.Html); Thread.Sleep(52);
-                                await Bot.SendTextMessageAsync(message.Chat.Id, door_349, false, false, 0, null, ParseMode.Html); Thread.Sleep(52);
-                                await Bot.SendTextMessageAsync(message.Chat.Id, door_350, false, false, 0, null, ParseMode.Html); Thread.Sleep(52);
-                                await Bot.SendTextMessageAsync(message.Chat.Id, door_351, false, false, 0, null, ParseMode.Html); Thread.Sleep(52);
-                                await Bot.SendTextMessageAsync(message.Chat.Id, door_352, false, false, 0, null, ParseMode.Html); Thread.Sleep(52);
-                                await Bot.SendTextMessageAsync(message.Chat.Id, door_353, false, false, 0, null, ParseMode.Html); Thread.Sleep(52);
-                                await Bot.SendTextMessageAsync(message.Chat.Id, door_354, false, false, 0, null, ParseMode.Html); Thread.Sleep(52);
-                                await Bot.SendTextMessageAsync(message.Chat.Id, door_355, false, false, 0, null, ParseMode.Html); Thread.Sleep(52);
-                                await Bot.SendTextMessageAsync(message.Chat.Id, door_356, false, false, 0, null, ParseMode.Html); Thread.Sleep(52);
-                                await Bot.SendTextMessageAsync(message.Chat.Id, door_357, false, false, 0, null, ParseMode.Html); Thread.Sleep(52);
-                                await Bot.SendTextMessageAsync(message.Chat.Id, door_358, false, false, 0, null, ParseMode.Html); Thread.Sleep(52);
-                                await Bot.SendTextMessageAsync(message.Chat.Id, door_359, false, false, 0, null, ParseMode.Html); Thread.Sleep(52);
-                                await Bot.SendTextMessageAsync(message.Chat.Id, door_360, false, false, 0, null, ParseMode.Html); Thread.Sleep(52);
-                                await Bot.SendTextMessageAsync(message.Chat.Id, door_361, false, false, 0, null, ParseMode.Html); Thread.Sleep(52);
-                                await Bot.SendTextMessageAsync(message.Chat.Id, door_362, false, false, 0, null, ParseMode.Html); Thread.Sleep(52);
-                                await Bot.SendTextMessageAsync(message.Chat.Id, door_363, false, false, 0, null, ParseMode.Html); Thread.Sleep(52);
-                                await Bot.SendTextMessageAsync(message.Chat.Id, door_364, false, false, 0, null, ParseMode.Html); Thread.Sleep(52);
-                                await Bot.SendTextMessageAsync(message.Chat.Id, door_365, false, false, 0, null, ParseMode.Html); Thread.Sleep(52);
-                                await Bot.SendTextMessageAsync(message.Chat.Id, door_366, false, false, 0, null, ParseMode.Html); Thread.Sleep(52);
-                                await Bot.SendTextMessageAsync(message.Chat.Id, door_367, false, false, 0, null, ParseMode.Html); Thread.Sleep(52);
-                                await Bot.SendTextMessageAsync(message.Chat.Id, door_368, false, false, 0, null, ParseMode.Html); Thread.Sleep(52);
-                                await Bot.SendTextMessageAsync(message.Chat.Id, door_369, false, false, 0, null, ParseMode.Html); Thread.Sleep(52);
-                                await Bot.SendTextMessageAsync(message.Chat.Id, door_370, false, false, 0, null, ParseMode.Html); Thread.Sleep(52);
-                                await Bot.SendTextMessageAsync(message.Chat.Id, door_371, false, false, 0, null, ParseMode.Html); Thread.Sleep(52);
-                                await Bot.SendTextMessageAsync(message.Chat.Id, door_372, false, false, 0, null, ParseMode.Html); Thread.Sleep(52);
-                                await Bot.SendTextMessageAsync(message.Chat.Id, door_373, false, false, 0, null, ParseMode.Html); Thread.Sleep(52);
-                                await Bot.SendTextMessageAsync(message.Chat.Id, door_374, false, false, 0, null, ParseMode.Html); Thread.Sleep(52);
-                                await Bot.SendTextMessageAsync(message.Chat.Id, door_375, false, false, 0, null, ParseMode.Html); Thread.Sleep(52);
-                                await Bot.SendTextMessageAsync(message.Chat.Id, door_376, false, false, 0, null, ParseMode.Html); Thread.Sleep(52);
-                                await Bot.SendTextMessageAsync(message.Chat.Id, door_377, false, false, 0, null, ParseMode.Html); Thread.Sleep(52);
-                                await Bot.SendTextMessageAsync(message.Chat.Id, door_378, false, false, 0, null, ParseMode.Html); Thread.Sleep(52);
-                                await Bot.SendTextMessageAsync(message.Chat.Id, door_379, false, false, 0, null, ParseMode.Html); Thread.Sleep(52);
-                                await Bot.SendTextMessageAsync(message.Chat.Id, door_380, false, false, 0, null, ParseMode.Html); Thread.Sleep(52);
-                                await Bot.SendTextMessageAsync(message.Chat.Id, door_381, false, false, 0, null, ParseMode.Html); Thread.Sleep(52);
-                                await Bot.SendTextMessageAsync(message.Chat.Id, door_382, false, false, 0, null, ParseMode.Html); Thread.Sleep(52);
-                                await Bot.SendTextMessageAsync(message.Chat.Id, door_383, false, false, 0, null, ParseMode.Html); Thread.Sleep(52);
-                                await Bot.SendTextMessageAsync(message.Chat.Id, door_384, false, false, 0, null, ParseMode.Html); Thread.Sleep(52);
-                                await Bot.SendTextMessageAsync(message.Chat.Id, door_385, false, false, 0, null, ParseMode.Html); Thread.Sleep(52);
-                                await Bot.SendTextMessageAsync(message.Chat.Id, door_386, false, false, 0, null, ParseMode.Html); Thread.Sleep(52);
-                                await Bot.SendTextMessageAsync(message.Chat.Id, door_387, false, false, 0, null, ParseMode.Html); Thread.Sleep(52);
-                                await Bot.SendTextMessageAsync(message.Chat.Id, door_388, false, false, 0, null, ParseMode.Html); Thread.Sleep(52);
-                                await Bot.SendTextMessageAsync(message.Chat.Id, door_389, false, false, 0, null, ParseMode.Html); Thread.Sleep(52);
-                                await Bot.SendTextMessageAsync(message.Chat.Id, door_390, false, false, 0, null, ParseMode.Html); Thread.Sleep(52);
-                                await Bot.SendTextMessageAsync(message.Chat.Id, door_391, false, false, 0, null, ParseMode.Html); Thread.Sleep(52);
-                                await Bot.SendTextMessageAsync(message.Chat.Id, door_392, false, false, 0, null, ParseMode.Html); Thread.Sleep(52);
-                                await Bot.SendTextMessageAsync(message.Chat.Id, door_393, false, false, 0, null, ParseMode.Html); Thread.Sleep(52);
-                                await Bot.SendTextMessageAsync(message.Chat.Id, door_394, false, false, 0, null, ParseMode.Html); Thread.Sleep(52);
+                                await Bot.SendTextMessageAsync(message.Chat.Id, door_30, false, false, 0, keyboardWait, ParseMode.Html); Thread.Sleep(4000);
+                                await Bot.SendTextMessageAsync(message.Chat.Id, door_31, false, false, 0, null, ParseMode.Html); Thread.Sleep(4000);
+                                await Bot.SendTextMessageAsync(message.Chat.Id, door_32, false, false, 0, null, ParseMode.Html); Thread.Sleep(4000);
+                                await Bot.SendTextMessageAsync(message.Chat.Id, door_33, false, false, 0, null, ParseMode.Html); Thread.Sleep(4000);
+                                await Bot.SendTextMessageAsync(message.Chat.Id, door_34, false, false, 0, null, ParseMode.Html); Thread.Sleep(4000);
+                                await Bot.SendTextMessageAsync(message.Chat.Id, door_35, false, false, 0, null, ParseMode.Html); Thread.Sleep(4000);
+                                await Bot.SendTextMessageAsync(message.Chat.Id, door_36, false, false, 0, null, ParseMode.Html); Thread.Sleep(4000);
+                                await Bot.SendTextMessageAsync(message.Chat.Id, door_37, false, false, 0, null, ParseMode.Html); Thread.Sleep(4000);
+                                await Bot.SendTextMessageAsync(message.Chat.Id, door_38, false, false, 0, null, ParseMode.Html); Thread.Sleep(4000);
+                                await Bot.SendTextMessageAsync(message.Chat.Id, door_39, false, false, 0, null, ParseMode.Html); Thread.Sleep(4000);
+                                await Bot.SendTextMessageAsync(message.Chat.Id, door_310, false, false, 0, null, ParseMode.Html); Thread.Sleep(4000);
+                                await Bot.SendTextMessageAsync(message.Chat.Id, door_311, false, false, 0, null, ParseMode.Html); Thread.Sleep(4000);
+                                await Bot.SendTextMessageAsync(message.Chat.Id, door_312, false, false, 0, null, ParseMode.Html); Thread.Sleep(4000);
+                                await Bot.SendTextMessageAsync(message.Chat.Id, door_313, false, false, 0, null, ParseMode.Html); Thread.Sleep(4000);
+                                await Bot.SendTextMessageAsync(message.Chat.Id, door_314, false, false, 0, null, ParseMode.Html); Thread.Sleep(4000);
+                                await Bot.SendTextMessageAsync(message.Chat.Id, door_315, false, false, 0, null, ParseMode.Html); Thread.Sleep(4000);
+                                await Bot.SendTextMessageAsync(message.Chat.Id, door_316, false, false, 0, null, ParseMode.Html); Thread.Sleep(4000);
+                                await Bot.SendTextMessageAsync(message.Chat.Id, door_317, false, false, 0, null, ParseMode.Html); Thread.Sleep(4000);
+                                await Bot.SendTextMessageAsync(message.Chat.Id, door_318, false, false, 0, null, ParseMode.Html); Thread.Sleep(4000);
+                                await Bot.SendTextMessageAsync(message.Chat.Id, door_319, false, false, 0, null, ParseMode.Html); Thread.Sleep(4000);
+                                await Bot.SendTextMessageAsync(message.Chat.Id, door_320, false, false, 0, null, ParseMode.Html); Thread.Sleep(4000);
+                                await Bot.SendTextMessageAsync(message.Chat.Id, door_321, false, false, 0, null, ParseMode.Html); Thread.Sleep(4000);
+                                await Bot.SendTextMessageAsync(message.Chat.Id, door_322, false, false, 0, null, ParseMode.Html); Thread.Sleep(4000);
+                                await Bot.SendTextMessageAsync(message.Chat.Id, door_323, false, false, 0, null, ParseMode.Html); Thread.Sleep(4000);
+                                await Bot.SendTextMessageAsync(message.Chat.Id, door_324, false, false, 0, null, ParseMode.Html); Thread.Sleep(4000);
+                                await Bot.SendTextMessageAsync(message.Chat.Id, door_325, false, false, 0, null, ParseMode.Html); Thread.Sleep(4000);
+                                await Bot.SendTextMessageAsync(message.Chat.Id, door_326, false, false, 0, null, ParseMode.Html); Thread.Sleep(4000);
+                                await Bot.SendTextMessageAsync(message.Chat.Id, door_327, false, false, 0, null, ParseMode.Html); Thread.Sleep(4000);
+                                await Bot.SendTextMessageAsync(message.Chat.Id, door_328, false, false, 0, null, ParseMode.Html); Thread.Sleep(4000);
+                                await Bot.SendTextMessageAsync(message.Chat.Id, door_329, false, false, 0, null, ParseMode.Html); Thread.Sleep(4000);
+                                await Bot.SendTextMessageAsync(message.Chat.Id, door_330, false, false, 0, null, ParseMode.Html); Thread.Sleep(4000);
+                                await Bot.SendTextMessageAsync(message.Chat.Id, door_331, false, false, 0, null, ParseMode.Html); Thread.Sleep(4000);
+                                await Bot.SendTextMessageAsync(message.Chat.Id, door_332, false, false, 0, null, ParseMode.Html); Thread.Sleep(4000);
+                                await Bot.SendTextMessageAsync(message.Chat.Id, door_333, false, false, 0, null, ParseMode.Html); Thread.Sleep(4000);
+                                await Bot.SendTextMessageAsync(message.Chat.Id, door_334, false, false, 0, null, ParseMode.Html); Thread.Sleep(4000);
+                                await Bot.SendTextMessageAsync(message.Chat.Id, door_335, false, false, 0, null, ParseMode.Html); Thread.Sleep(4000);
+                                await Bot.SendTextMessageAsync(message.Chat.Id, door_336, false, false, 0, null, ParseMode.Html); Thread.Sleep(4000);
+                                await Bot.SendTextMessageAsync(message.Chat.Id, door_337, false, false, 0, null, ParseMode.Html); Thread.Sleep(4000);
+                                await Bot.SendTextMessageAsync(message.Chat.Id, door_338, false, false, 0, null, ParseMode.Html); Thread.Sleep(4000);
+                                await Bot.SendTextMessageAsync(message.Chat.Id, door_339, false, false, 0, null, ParseMode.Html); Thread.Sleep(4000);
+                                await Bot.SendTextMessageAsync(message.Chat.Id, door_340, false, false, 0, null, ParseMode.Html); Thread.Sleep(4000);
+                                await Bot.SendTextMessageAsync(message.Chat.Id, door_341, false, false, 0, null, ParseMode.Html); Thread.Sleep(4000);
+                                await Bot.SendTextMessageAsync(message.Chat.Id, door_342, false, false, 0, null, ParseMode.Html); Thread.Sleep(4000);
+                                await Bot.SendTextMessageAsync(message.Chat.Id, door_343, false, false, 0, null, ParseMode.Html); Thread.Sleep(4000);
+                                await Bot.SendTextMessageAsync(message.Chat.Id, door_344, false, false, 0, null, ParseMode.Html); Thread.Sleep(4000);
+                                await Bot.SendTextMessageAsync(message.Chat.Id, door_345, false, false, 0, null, ParseMode.Html); Thread.Sleep(4000);
+                                await Bot.SendTextMessageAsync(message.Chat.Id, door_346, false, false, 0, null, ParseMode.Html); Thread.Sleep(4000);
+                                await Bot.SendTextMessageAsync(message.Chat.Id, door_347, false, false, 0, null, ParseMode.Html); Thread.Sleep(4000);
+                                await Bot.SendTextMessageAsync(message.Chat.Id, door_348, false, false, 0, null, ParseMode.Html); Thread.Sleep(4000);
+                                await Bot.SendTextMessageAsync(message.Chat.Id, door_349, false, false, 0, null, ParseMode.Html); Thread.Sleep(4000);
+                                await Bot.SendTextMessageAsync(message.Chat.Id, door_350, false, false, 0, null, ParseMode.Html); Thread.Sleep(4000);
+                                await Bot.SendTextMessageAsync(message.Chat.Id, door_351, false, false, 0, null, ParseMode.Html); Thread.Sleep(4000);
+                                await Bot.SendTextMessageAsync(message.Chat.Id, door_352, false, false, 0, null, ParseMode.Html); Thread.Sleep(4000);
+                                await Bot.SendTextMessageAsync(message.Chat.Id, door_353, false, false, 0, null, ParseMode.Html); Thread.Sleep(4000);
+                                await Bot.SendTextMessageAsync(message.Chat.Id, door_354, false, false, 0, null, ParseMode.Html); Thread.Sleep(4000);
+                                await Bot.SendTextMessageAsync(message.Chat.Id, door_355, false, false, 0, null, ParseMode.Html); Thread.Sleep(4000);
+                                await Bot.SendTextMessageAsync(message.Chat.Id, door_356, false, false, 0, null, ParseMode.Html); Thread.Sleep(4000);
+                                await Bot.SendTextMessageAsync(message.Chat.Id, door_357, false, false, 0, null, ParseMode.Html); Thread.Sleep(4000);
+                                await Bot.SendTextMessageAsync(message.Chat.Id, door_358, false, false, 0, null, ParseMode.Html); Thread.Sleep(4000);
+                                await Bot.SendTextMessageAsync(message.Chat.Id, door_359, false, false, 0, null, ParseMode.Html); Thread.Sleep(4000);
+                                await Bot.SendTextMessageAsync(message.Chat.Id, door_360, false, false, 0, null, ParseMode.Html); Thread.Sleep(4000);
+                                await Bot.SendTextMessageAsync(message.Chat.Id, door_361, false, false, 0, null, ParseMode.Html); Thread.Sleep(4000);
+                                await Bot.SendTextMessageAsync(message.Chat.Id, door_362, false, false, 0, null, ParseMode.Html); Thread.Sleep(4000);
+                                await Bot.SendTextMessageAsync(message.Chat.Id, door_363, false, false, 0, null, ParseMode.Html); Thread.Sleep(4000);
+                                await Bot.SendTextMessageAsync(message.Chat.Id, door_364, false, false, 0, null, ParseMode.Html); Thread.Sleep(4000);
+                                await Bot.SendTextMessageAsync(message.Chat.Id, door_365, false, false, 0, null, ParseMode.Html); Thread.Sleep(4000);
+                                await Bot.SendTextMessageAsync(message.Chat.Id, door_366, false, false, 0, null, ParseMode.Html); Thread.Sleep(4000);
+                                await Bot.SendTextMessageAsync(message.Chat.Id, door_367, false, false, 0, null, ParseMode.Html); Thread.Sleep(4000);
+                                await Bot.SendTextMessageAsync(message.Chat.Id, door_368, false, false, 0, null, ParseMode.Html); Thread.Sleep(4000);
+                                await Bot.SendTextMessageAsync(message.Chat.Id, door_369, false, false, 0, null, ParseMode.Html); Thread.Sleep(4000);
+                                await Bot.SendTextMessageAsync(message.Chat.Id, door_370, false, false, 0, null, ParseMode.Html); Thread.Sleep(4000);
+                                await Bot.SendTextMessageAsync(message.Chat.Id, door_371, false, false, 0, null, ParseMode.Html); Thread.Sleep(4000);
+                                await Bot.SendTextMessageAsync(message.Chat.Id, door_372, false, false, 0, null, ParseMode.Html); Thread.Sleep(4000);
+                                await Bot.SendTextMessageAsync(message.Chat.Id, door_373, false, false, 0, null, ParseMode.Html); Thread.Sleep(4000);
+                                await Bot.SendTextMessageAsync(message.Chat.Id, door_374, false, false, 0, null, ParseMode.Html); Thread.Sleep(4000);
+                                await Bot.SendTextMessageAsync(message.Chat.Id, door_375, false, false, 0, null, ParseMode.Html); Thread.Sleep(4000);
+                                await Bot.SendTextMessageAsync(message.Chat.Id, door_376, false, false, 0, null, ParseMode.Html); Thread.Sleep(4000);
+                                await Bot.SendTextMessageAsync(message.Chat.Id, door_377, false, false, 0, null, ParseMode.Html); Thread.Sleep(4000);
+                                await Bot.SendTextMessageAsync(message.Chat.Id, door_378, false, false, 0, null, ParseMode.Html); Thread.Sleep(4000);
+                                await Bot.SendTextMessageAsync(message.Chat.Id, door_379, false, false, 0, null, ParseMode.Html); Thread.Sleep(4000);
+                                await Bot.SendTextMessageAsync(message.Chat.Id, door_380, false, false, 0, null, ParseMode.Html); Thread.Sleep(4000);
+                                await Bot.SendTextMessageAsync(message.Chat.Id, door_381, false, false, 0, null, ParseMode.Html); Thread.Sleep(4000);
+                                await Bot.SendTextMessageAsync(message.Chat.Id, door_382, false, false, 0, null, ParseMode.Html); Thread.Sleep(4000);
+                                await Bot.SendTextMessageAsync(message.Chat.Id, door_383, false, false, 0, null, ParseMode.Html); Thread.Sleep(4000);
+                                await Bot.SendTextMessageAsync(message.Chat.Id, door_384, false, false, 0, null, ParseMode.Html); Thread.Sleep(4000);
+                                await Bot.SendTextMessageAsync(message.Chat.Id, door_385, false, false, 0, null, ParseMode.Html); Thread.Sleep(4000);
+                                await Bot.SendTextMessageAsync(message.Chat.Id, door_386, false, false, 0, null, ParseMode.Html); Thread.Sleep(4000);
+                                await Bot.SendTextMessageAsync(message.Chat.Id, door_387, false, false, 0, null, ParseMode.Html); Thread.Sleep(4000);
+                                await Bot.SendTextMessageAsync(message.Chat.Id, door_388, false, false, 0, null, ParseMode.Html); Thread.Sleep(4000);
+                                await Bot.SendTextMessageAsync(message.Chat.Id, door_389, false, false, 0, null, ParseMode.Html); Thread.Sleep(4000);
+                                await Bot.SendTextMessageAsync(message.Chat.Id, door_390, false, false, 0, null, ParseMode.Html); Thread.Sleep(4000);
+                                await Bot.SendTextMessageAsync(message.Chat.Id, door_391, false, false, 0, null, ParseMode.Html); Thread.Sleep(4000);
+                                await Bot.SendTextMessageAsync(message.Chat.Id, door_392, false, false, 0, null, ParseMode.Html); Thread.Sleep(4000);
+                                await Bot.SendTextMessageAsync(message.Chat.Id, door_393, false, false, 0, null, ParseMode.Html); Thread.Sleep(4000);
+                                await Bot.SendTextMessageAsync(message.Chat.Id, door_394, false, false, 0, null, ParseMode.Html); Thread.Sleep(4000);
                                 var keyboard = new Telegram.Bot.Types.ReplyMarkups.ReplyKeyboardMarkup
                                 {
                                     Keyboard = new[] {
                                                 new[] // row 1
                                                 {
                                                     new Telegram.Bot.Types.KeyboardButton("Провести"),
-                                                    
+
                                                 },
                                                 new[]
                                                 {
                                                     new Telegram.Bot.Types.KeyboardButton("Уехать"),
                                                 },
-                                                
+
                                                 new[]
                                                 {
                                                     new Telegram.Bot.Types.KeyboardButton("/help")
@@ -1133,7 +1110,7 @@ namespace revcom_bot
                                     ResizeKeyboard = true
                                 };
                                 keyboardLast = keyboard;
-                                await Bot.SendTextMessageAsync(message.Chat.Id, door_395, false, false, 0, keyboard, ParseMode.Html); Thread.Sleep(52);
+                                await Bot.SendTextMessageAsync(message.Chat.Id, door_395, false, false, 0, keyboard, ParseMode.Html); Thread.Sleep(4000);
                             }
                             else if (message.Text == "Провести")
                             {
@@ -1168,40 +1145,40 @@ namespace revcom_bot
                                 string door_3125 = "<i>Не успел я опомниться, как она поцеловала меня.</i>";
                                 string door_3126 = "<i>*Постельная сцена*</i>";
                                 string door_3127 = "<i>Я снова провалился в сон. Я будто падал в пропасть, которой нет конца, но я уже знал, где очнусь и что увижу…</i>";
-                                await Bot.SendTextMessageAsync(message.Chat.Id, door_396, false, false, 0, keyboardWait, ParseMode.Html); Thread.Sleep(52);
-                                await Bot.SendTextMessageAsync(message.Chat.Id, door_397, false, false, 0, null, ParseMode.Html); Thread.Sleep(52);
-                                await Bot.SendTextMessageAsync(message.Chat.Id, door_398, false, false, 0, null, ParseMode.Html); Thread.Sleep(52);
-                                await Bot.SendTextMessageAsync(message.Chat.Id, door_399, false, false, 0, null, ParseMode.Html); Thread.Sleep(52);
-                                await Bot.SendTextMessageAsync(message.Chat.Id, door_3100, false, false, 0, null, ParseMode.Html); Thread.Sleep(52);
-                                await Bot.SendTextMessageAsync(message.Chat.Id, door_3101, false, false, 0, null, ParseMode.Html); Thread.Sleep(52);
-                                await Bot.SendTextMessageAsync(message.Chat.Id, door_3103, false, false, 0, null, ParseMode.Html); Thread.Sleep(52);
-                                await Bot.SendTextMessageAsync(message.Chat.Id, door_3104, false, false, 0, null, ParseMode.Html); Thread.Sleep(52);
-                                await Bot.SendTextMessageAsync(message.Chat.Id, door_3105, false, false, 0, null, ParseMode.Html); Thread.Sleep(52);
-                                await Bot.SendTextMessageAsync(message.Chat.Id, door_3106, false, false, 0, null, ParseMode.Html); Thread.Sleep(52);
-                                await Bot.SendTextMessageAsync(message.Chat.Id, door_3107, false, false, 0, null, ParseMode.Html); Thread.Sleep(52);
-                                await Bot.SendTextMessageAsync(message.Chat.Id, door_3108, false, false, 0, null, ParseMode.Html); Thread.Sleep(52);
-                                await Bot.SendTextMessageAsync(message.Chat.Id, door_3109, false, false, 0, null, ParseMode.Html); Thread.Sleep(52);
-                                await Bot.SendTextMessageAsync(message.Chat.Id, door_3110, false, false, 0, null, ParseMode.Html); Thread.Sleep(52);
-                                await Bot.SendTextMessageAsync(message.Chat.Id, door_3111, false, false, 0, null, ParseMode.Html); Thread.Sleep(52);
-                                await Bot.SendTextMessageAsync(message.Chat.Id, door_3112, false, false, 0, null, ParseMode.Html); Thread.Sleep(52);
-                                await Bot.SendTextMessageAsync(message.Chat.Id, door_3113, false, false, 0, null, ParseMode.Html); Thread.Sleep(52);
-                                await Bot.SendTextMessageAsync(message.Chat.Id, door_3114, false, false, 0, null, ParseMode.Html); Thread.Sleep(52);
-                                await Bot.SendTextMessageAsync(message.Chat.Id, door_3115, false, false, 0, null, ParseMode.Html); Thread.Sleep(52);
-                                await Bot.SendTextMessageAsync(message.Chat.Id, door_3116, false, false, 0, null, ParseMode.Html); Thread.Sleep(52);
-                                await Bot.SendTextMessageAsync(message.Chat.Id, door_3117, false, false, 0, null, ParseMode.Html); Thread.Sleep(52);
-                                await Bot.SendTextMessageAsync(message.Chat.Id, door_3118, false, false, 0, null, ParseMode.Html); Thread.Sleep(52);
-                                await Bot.SendTextMessageAsync(message.Chat.Id, door_3119, false, false, 0, null, ParseMode.Html); Thread.Sleep(52);
-                                await Bot.SendTextMessageAsync(message.Chat.Id, door_3120, false, false, 0, null, ParseMode.Html); Thread.Sleep(52);
-                                await Bot.SendTextMessageAsync(message.Chat.Id, door_3121, false, false, 0, null, ParseMode.Html); Thread.Sleep(52);
-                                await Bot.SendTextMessageAsync(message.Chat.Id, door_3122, false, false, 0, null, ParseMode.Html); Thread.Sleep(52);
-                                await Bot.SendTextMessageAsync(message.Chat.Id, door_3123, false, false, 0, null, ParseMode.Html); Thread.Sleep(52);
-                                await Bot.SendTextMessageAsync(message.Chat.Id, door_3124, false, false, 0, null, ParseMode.Html); Thread.Sleep(52);
-                                await Bot.SendTextMessageAsync(message.Chat.Id, door_3125, false, false, 0, null, ParseMode.Html); Thread.Sleep(52);
-                                await Bot.SendTextMessageAsync(message.Chat.Id, door_3126, false, false, 0, null, ParseMode.Html); Thread.Sleep(52);
-                                await Bot.SendTextMessageAsync(message.Chat.Id, door_3127, false, false, 0, keyboardDoor4, ParseMode.Html); Thread.Sleep(52);
-                    
+                                await Bot.SendTextMessageAsync(message.Chat.Id, door_396, false, false, 0, keyboardWait, ParseMode.Html); Thread.Sleep(4000);
+                                await Bot.SendTextMessageAsync(message.Chat.Id, door_397, false, false, 0, null, ParseMode.Html); Thread.Sleep(4000);
+                                await Bot.SendTextMessageAsync(message.Chat.Id, door_398, false, false, 0, null, ParseMode.Html); Thread.Sleep(4000);
+                                await Bot.SendTextMessageAsync(message.Chat.Id, door_399, false, false, 0, null, ParseMode.Html); Thread.Sleep(4000);
+                                await Bot.SendTextMessageAsync(message.Chat.Id, door_3100, false, false, 0, null, ParseMode.Html); Thread.Sleep(4000);
+                                await Bot.SendTextMessageAsync(message.Chat.Id, door_3101, false, false, 0, null, ParseMode.Html); Thread.Sleep(4000);
+                                await Bot.SendTextMessageAsync(message.Chat.Id, door_3103, false, false, 0, null, ParseMode.Html); Thread.Sleep(4000);
+                                await Bot.SendTextMessageAsync(message.Chat.Id, door_3104, false, false, 0, null, ParseMode.Html); Thread.Sleep(4000);
+                                await Bot.SendTextMessageAsync(message.Chat.Id, door_3105, false, false, 0, null, ParseMode.Html); Thread.Sleep(4000);
+                                await Bot.SendTextMessageAsync(message.Chat.Id, door_3106, false, false, 0, null, ParseMode.Html); Thread.Sleep(4000);
+                                await Bot.SendTextMessageAsync(message.Chat.Id, door_3107, false, false, 0, null, ParseMode.Html); Thread.Sleep(4000);
+                                await Bot.SendTextMessageAsync(message.Chat.Id, door_3108, false, false, 0, null, ParseMode.Html); Thread.Sleep(4000);
+                                await Bot.SendTextMessageAsync(message.Chat.Id, door_3109, false, false, 0, null, ParseMode.Html); Thread.Sleep(4000);
+                                await Bot.SendTextMessageAsync(message.Chat.Id, door_3110, false, false, 0, null, ParseMode.Html); Thread.Sleep(4000);
+                                await Bot.SendTextMessageAsync(message.Chat.Id, door_3111, false, false, 0, null, ParseMode.Html); Thread.Sleep(4000);
+                                await Bot.SendTextMessageAsync(message.Chat.Id, door_3112, false, false, 0, null, ParseMode.Html); Thread.Sleep(4000);
+                                await Bot.SendTextMessageAsync(message.Chat.Id, door_3113, false, false, 0, null, ParseMode.Html); Thread.Sleep(4000);
+                                await Bot.SendTextMessageAsync(message.Chat.Id, door_3114, false, false, 0, null, ParseMode.Html); Thread.Sleep(4000);
+                                await Bot.SendTextMessageAsync(message.Chat.Id, door_3115, false, false, 0, null, ParseMode.Html); Thread.Sleep(4000);
+                                await Bot.SendTextMessageAsync(message.Chat.Id, door_3116, false, false, 0, null, ParseMode.Html); Thread.Sleep(4000);
+                                await Bot.SendTextMessageAsync(message.Chat.Id, door_3117, false, false, 0, null, ParseMode.Html); Thread.Sleep(4000);
+                                await Bot.SendTextMessageAsync(message.Chat.Id, door_3118, false, false, 0, null, ParseMode.Html); Thread.Sleep(4000);
+                                await Bot.SendTextMessageAsync(message.Chat.Id, door_3119, false, false, 0, null, ParseMode.Html); Thread.Sleep(4000);
+                                await Bot.SendTextMessageAsync(message.Chat.Id, door_3120, false, false, 0, null, ParseMode.Html); Thread.Sleep(4000);
+                                await Bot.SendTextMessageAsync(message.Chat.Id, door_3121, false, false, 0, null, ParseMode.Html); Thread.Sleep(4000);
+                                await Bot.SendTextMessageAsync(message.Chat.Id, door_3122, false, false, 0, null, ParseMode.Html); Thread.Sleep(4000);
+                                await Bot.SendTextMessageAsync(message.Chat.Id, door_3123, false, false, 0, null, ParseMode.Html); Thread.Sleep(4000);
+                                await Bot.SendTextMessageAsync(message.Chat.Id, door_3124, false, false, 0, null, ParseMode.Html); Thread.Sleep(4000);
+                                await Bot.SendTextMessageAsync(message.Chat.Id, door_3125, false, false, 0, null, ParseMode.Html); Thread.Sleep(4000);
+                                await Bot.SendTextMessageAsync(message.Chat.Id, door_3126, false, false, 0, null, ParseMode.Html); Thread.Sleep(4000);
+                                await Bot.SendTextMessageAsync(message.Chat.Id, door_3127, false, false, 0, keyboardDoor4, ParseMode.Html); Thread.Sleep(4000);
+                                keyboardLast = keyboardDoor4;
                             }
-                            else if(message.Text == "Уехать")
+                            else if (message.Text == "Уехать")
                             {
                                 string door_3128 = "- Что ж… Уже довольно поздно. Мне пора возвращаться домой, к сестре. Она будет волноваться.";
                                 string door_3129 = "- Да… Я понимаю. Спасибо тебе за сегодня. За то, что спас меня, пусть я и не просила.";
@@ -1211,15 +1188,15 @@ namespace revcom_bot
                                 string door_3133 = "-Пока.";
                                 string door_3134 = "<i>Я сел в машину, а она на байк.</i>";
                                 string door_3135 = "<i>Утром сестра сказала мне, что Анна попала в аварию и разбилась. Я до сих пор не могу перестать себя винить в ее смерти. Я должен был проводить ее…\n\nЯ снова провалился в сон. Я будто падал в пропасть, которой нет конца, но я уже знал, где очнусь и что увижу…</i>";
-                                await Bot.SendTextMessageAsync(message.Chat.Id, door_3128, false, false, 0, keyboardWait, ParseMode.Html); Thread.Sleep(52);
-                                await Bot.SendTextMessageAsync(message.Chat.Id, door_3129, false, false, 0, null, ParseMode.Html); Thread.Sleep(52);
-                                await Bot.SendTextMessageAsync(message.Chat.Id, door_3130, false, false, 0, null, ParseMode.Html); Thread.Sleep(52);
-                                await Bot.SendTextMessageAsync(message.Chat.Id, door_3131, false, false, 0, null, ParseMode.Html); Thread.Sleep(52);
-                                await Bot.SendTextMessageAsync(message.Chat.Id, door_3132, false, false, 0, null, ParseMode.Html); Thread.Sleep(52);
-                                await Bot.SendTextMessageAsync(message.Chat.Id, door_3133, false, false, 0, null, ParseMode.Html); Thread.Sleep(52);
-                                await Bot.SendTextMessageAsync(message.Chat.Id, door_3134, false, false, 0, null, ParseMode.Html); Thread.Sleep(52);
-                                await Bot.SendTextMessageAsync(message.Chat.Id, door_3135, false, false, 0, keyboardDoor4, ParseMode.Html); Thread.Sleep(52);
-
+                                await Bot.SendTextMessageAsync(message.Chat.Id, door_3128, false, false, 0, keyboardWait, ParseMode.Html); Thread.Sleep(4000);
+                                await Bot.SendTextMessageAsync(message.Chat.Id, door_3129, false, false, 0, null, ParseMode.Html); Thread.Sleep(4000);
+                                await Bot.SendTextMessageAsync(message.Chat.Id, door_3130, false, false, 0, null, ParseMode.Html); Thread.Sleep(4000);
+                                await Bot.SendTextMessageAsync(message.Chat.Id, door_3131, false, false, 0, null, ParseMode.Html); Thread.Sleep(4000);
+                                await Bot.SendTextMessageAsync(message.Chat.Id, door_3132, false, false, 0, null, ParseMode.Html); Thread.Sleep(4000);
+                                await Bot.SendTextMessageAsync(message.Chat.Id, door_3133, false, false, 0, null, ParseMode.Html); Thread.Sleep(4000);
+                                await Bot.SendTextMessageAsync(message.Chat.Id, door_3134, false, false, 0, null, ParseMode.Html); Thread.Sleep(4000);
+                                await Bot.SendTextMessageAsync(message.Chat.Id, door_3135, false, false, 0, keyboardDoor4, ParseMode.Html); Thread.Sleep(4000);
+                                keyboardLast = keyboardDoor4;
                             }
                             //дверь №4
                             else if (message.Text == "Войти в четвертую дверь")
@@ -1319,100 +1296,100 @@ namespace revcom_bot
                                 string door_492 = "<i>Друг лишь грустно посмотрел на меня.</i>";
                                 string door_493 = "- Спасибо. Надеюсь, что ты прав…";
                                 string door_494 = "<i>Я не знал, куда иду. Ноги сами вели меня вперед, иногда сворачивая, но маршрут будто бы был мне знаком. Все эти дома, тропинки и деревья. Все это я уже видел когда-то давно, просто не мог вспомнить.\n\nВ конце концов я действительно нашел ее.\n\nЯ увидел Жанну издалека. Она сидела на скамейке и плакала. Я хотел было подойти, но остановился, увидев, как группа гопников приблизилась к ней.\n\nЭто выглядело опасно.</i>";
-                                await Bot.SendTextMessageAsync(message.Chat.Id, door_40, false, false, 0, keyboardWait, ParseMode.Html); Thread.Sleep(52);
-                                await Bot.SendTextMessageAsync(message.Chat.Id, door_41, false, false, 0, null, ParseMode.Html); Thread.Sleep(52);
-                                await Bot.SendTextMessageAsync(message.Chat.Id, door_42, false, false, 0, null, ParseMode.Html); Thread.Sleep(52);
-                                await Bot.SendTextMessageAsync(message.Chat.Id, door_43, false, false, 0, null, ParseMode.Html); Thread.Sleep(52);
-                                await Bot.SendTextMessageAsync(message.Chat.Id, door_44, false, false, 0, null, ParseMode.Html); Thread.Sleep(52);
-                                await Bot.SendTextMessageAsync(message.Chat.Id, door_45, false, false, 0, null, ParseMode.Html); Thread.Sleep(52);
-                                await Bot.SendTextMessageAsync(message.Chat.Id, door_46, false, false, 0, null, ParseMode.Html); Thread.Sleep(52);
-                                await Bot.SendTextMessageAsync(message.Chat.Id, door_47, false, false, 0, null, ParseMode.Html); Thread.Sleep(52);
-                                await Bot.SendTextMessageAsync(message.Chat.Id, door_48, false, false, 0, null, ParseMode.Html); Thread.Sleep(52);
-                                await Bot.SendTextMessageAsync(message.Chat.Id, door_49, false, false, 0, null, ParseMode.Html); Thread.Sleep(52);
-                                await Bot.SendTextMessageAsync(message.Chat.Id, door_410, false, false, 0, null, ParseMode.Html); Thread.Sleep(52);
-                                await Bot.SendTextMessageAsync(message.Chat.Id, door_411, false, false, 0, null, ParseMode.Html); Thread.Sleep(52);
-                                await Bot.SendTextMessageAsync(message.Chat.Id, door_412, false, false, 0, null, ParseMode.Html); Thread.Sleep(52);
-                                await Bot.SendTextMessageAsync(message.Chat.Id, door_413, false, false, 0, null, ParseMode.Html); Thread.Sleep(52);
-                                await Bot.SendTextMessageAsync(message.Chat.Id, door_414, false, false, 0, null, ParseMode.Html); Thread.Sleep(52);
-                                await Bot.SendTextMessageAsync(message.Chat.Id, door_415, false, false, 0, null, ParseMode.Html); Thread.Sleep(52);
-                                await Bot.SendTextMessageAsync(message.Chat.Id, door_416, false, false, 0, null, ParseMode.Html); Thread.Sleep(52);
-                                await Bot.SendTextMessageAsync(message.Chat.Id, door_417, false, false, 0, null, ParseMode.Html); Thread.Sleep(52);
-                                await Bot.SendTextMessageAsync(message.Chat.Id, door_418, false, false, 0, null, ParseMode.Html); Thread.Sleep(52);
-                                await Bot.SendTextMessageAsync(message.Chat.Id, door_419, false, false, 0, null, ParseMode.Html); Thread.Sleep(52);
-                                await Bot.SendTextMessageAsync(message.Chat.Id, door_420, false, false, 0, null, ParseMode.Html); Thread.Sleep(52);
-                                await Bot.SendTextMessageAsync(message.Chat.Id, door_421, false, false, 0, null, ParseMode.Html); Thread.Sleep(52);
-                                await Bot.SendTextMessageAsync(message.Chat.Id, door_422, false, false, 0, null, ParseMode.Html); Thread.Sleep(52);
-                                await Bot.SendTextMessageAsync(message.Chat.Id, door_423, false, false, 0, null, ParseMode.Html); Thread.Sleep(52);
-                                await Bot.SendTextMessageAsync(message.Chat.Id, door_424, false, false, 0, null, ParseMode.Html); Thread.Sleep(52);
-                                await Bot.SendTextMessageAsync(message.Chat.Id, door_425, false, false, 0, null, ParseMode.Html); Thread.Sleep(52);
-                                await Bot.SendTextMessageAsync(message.Chat.Id, door_426, false, false, 0, null, ParseMode.Html); Thread.Sleep(52);
-                                await Bot.SendTextMessageAsync(message.Chat.Id, door_427, false, false, 0, null, ParseMode.Html); Thread.Sleep(52);
-                                await Bot.SendTextMessageAsync(message.Chat.Id, door_428, false, false, 0, null, ParseMode.Html); Thread.Sleep(52);
-                                await Bot.SendTextMessageAsync(message.Chat.Id, door_429, false, false, 0, null, ParseMode.Html); Thread.Sleep(52);
-                                await Bot.SendTextMessageAsync(message.Chat.Id, door_430, false, false, 0, null, ParseMode.Html); Thread.Sleep(52);
-                                await Bot.SendTextMessageAsync(message.Chat.Id, door_431, false, false, 0, null, ParseMode.Html); Thread.Sleep(52);
-                                await Bot.SendTextMessageAsync(message.Chat.Id, door_432, false, false, 0, null, ParseMode.Html); Thread.Sleep(52);
-                                await Bot.SendTextMessageAsync(message.Chat.Id, door_433, false, false, 0, null, ParseMode.Html); Thread.Sleep(52);
-                                await Bot.SendTextMessageAsync(message.Chat.Id, door_434, false, false, 0, null, ParseMode.Html); Thread.Sleep(52);
-                                await Bot.SendTextMessageAsync(message.Chat.Id, door_435, false, false, 0, null, ParseMode.Html); Thread.Sleep(52);
-                                await Bot.SendTextMessageAsync(message.Chat.Id, door_436, false, false, 0, null, ParseMode.Html); Thread.Sleep(52);
-                                await Bot.SendTextMessageAsync(message.Chat.Id, door_437, false, false, 0, null, ParseMode.Html); Thread.Sleep(52);
-                                await Bot.SendTextMessageAsync(message.Chat.Id, door_438, false, false, 0, null, ParseMode.Html); Thread.Sleep(52);
-                                await Bot.SendTextMessageAsync(message.Chat.Id, door_439, false, false, 0, null, ParseMode.Html); Thread.Sleep(52);
-                                await Bot.SendTextMessageAsync(message.Chat.Id, door_440, false, false, 0, null, ParseMode.Html); Thread.Sleep(52);
-                                await Bot.SendTextMessageAsync(message.Chat.Id, door_441, false, false, 0, null, ParseMode.Html); Thread.Sleep(52);
-                                await Bot.SendTextMessageAsync(message.Chat.Id, door_442, false, false, 0, null, ParseMode.Html); Thread.Sleep(52);
-                                await Bot.SendTextMessageAsync(message.Chat.Id, door_443, false, false, 0, null, ParseMode.Html); Thread.Sleep(52);
-                                await Bot.SendTextMessageAsync(message.Chat.Id, door_444, false, false, 0, null, ParseMode.Html); Thread.Sleep(52);
-                                await Bot.SendTextMessageAsync(message.Chat.Id, door_445, false, false, 0, null, ParseMode.Html); Thread.Sleep(52);
-                                await Bot.SendTextMessageAsync(message.Chat.Id, door_446, false, false, 0, null, ParseMode.Html); Thread.Sleep(52);
-                                await Bot.SendTextMessageAsync(message.Chat.Id, door_447, false, false, 0, null, ParseMode.Html); Thread.Sleep(52);
-                                await Bot.SendTextMessageAsync(message.Chat.Id, door_448, false, false, 0, null, ParseMode.Html); Thread.Sleep(52);
-                                await Bot.SendTextMessageAsync(message.Chat.Id, door_449, false, false, 0, null, ParseMode.Html); Thread.Sleep(52);
-                                await Bot.SendTextMessageAsync(message.Chat.Id, door_450, false, false, 0, null, ParseMode.Html); Thread.Sleep(52);
-                                await Bot.SendTextMessageAsync(message.Chat.Id, door_451, false, false, 0, null, ParseMode.Html); Thread.Sleep(52);
-                                await Bot.SendTextMessageAsync(message.Chat.Id, door_452, false, false, 0, null, ParseMode.Html); Thread.Sleep(52);
-                                await Bot.SendTextMessageAsync(message.Chat.Id, door_453, false, false, 0, null, ParseMode.Html); Thread.Sleep(52);
-                                await Bot.SendTextMessageAsync(message.Chat.Id, door_454, false, false, 0, null, ParseMode.Html); Thread.Sleep(52);
-                                await Bot.SendTextMessageAsync(message.Chat.Id, door_455, false, false, 0, null, ParseMode.Html); Thread.Sleep(52);
-                                await Bot.SendTextMessageAsync(message.Chat.Id, door_456, false, false, 0, null, ParseMode.Html); Thread.Sleep(52);
-                                await Bot.SendTextMessageAsync(message.Chat.Id, door_457, false, false, 0, null, ParseMode.Html); Thread.Sleep(52);
-                                await Bot.SendTextMessageAsync(message.Chat.Id, door_458, false, false, 0, null, ParseMode.Html); Thread.Sleep(52);
-                                await Bot.SendTextMessageAsync(message.Chat.Id, door_459, false, false, 0, null, ParseMode.Html); Thread.Sleep(52);
-                                await Bot.SendTextMessageAsync(message.Chat.Id, door_460, false, false, 0, null, ParseMode.Html); Thread.Sleep(52);
-                                await Bot.SendTextMessageAsync(message.Chat.Id, door_461, false, false, 0, null, ParseMode.Html); Thread.Sleep(52);
-                                await Bot.SendTextMessageAsync(message.Chat.Id, door_462, false, false, 0, null, ParseMode.Html); Thread.Sleep(52);
-                                await Bot.SendTextMessageAsync(message.Chat.Id, door_463, false, false, 0, null, ParseMode.Html); Thread.Sleep(52);
-                                await Bot.SendTextMessageAsync(message.Chat.Id, door_464, false, false, 0, null, ParseMode.Html); Thread.Sleep(52);
-                                await Bot.SendTextMessageAsync(message.Chat.Id, door_465, false, false, 0, null, ParseMode.Html); Thread.Sleep(52);
-                                await Bot.SendTextMessageAsync(message.Chat.Id, door_466, false, false, 0, null, ParseMode.Html); Thread.Sleep(52);
-                                await Bot.SendTextMessageAsync(message.Chat.Id, door_467, false, false, 0, null, ParseMode.Html); Thread.Sleep(52);
-                                await Bot.SendTextMessageAsync(message.Chat.Id, door_468, false, false, 0, null, ParseMode.Html); Thread.Sleep(52);
-                                await Bot.SendTextMessageAsync(message.Chat.Id, door_469, false, false, 0, null, ParseMode.Html); Thread.Sleep(52);
-                                await Bot.SendTextMessageAsync(message.Chat.Id, door_470, false, false, 0, null, ParseMode.Html); Thread.Sleep(52);
-                                await Bot.SendTextMessageAsync(message.Chat.Id, door_471, false, false, 0, null, ParseMode.Html); Thread.Sleep(52);
-                                await Bot.SendTextMessageAsync(message.Chat.Id, door_472, false, false, 0, null, ParseMode.Html); Thread.Sleep(52);
-                                await Bot.SendTextMessageAsync(message.Chat.Id, door_473, false, false, 0, null, ParseMode.Html); Thread.Sleep(52);
-                                await Bot.SendTextMessageAsync(message.Chat.Id, door_474, false, false, 0, null, ParseMode.Html); Thread.Sleep(52);
-                                await Bot.SendTextMessageAsync(message.Chat.Id, door_475, false, false, 0, null, ParseMode.Html); Thread.Sleep(52);
-                                await Bot.SendTextMessageAsync(message.Chat.Id, door_476, false, false, 0, null, ParseMode.Html); Thread.Sleep(52);
-                                await Bot.SendTextMessageAsync(message.Chat.Id, door_477, false, false, 0, null, ParseMode.Html); Thread.Sleep(52);
-                                await Bot.SendTextMessageAsync(message.Chat.Id, door_478, false, false, 0, null, ParseMode.Html); Thread.Sleep(52);
-                                await Bot.SendTextMessageAsync(message.Chat.Id, door_479, false, false, 0, null, ParseMode.Html); Thread.Sleep(52);
-                                await Bot.SendTextMessageAsync(message.Chat.Id, door_480, false, false, 0, null, ParseMode.Html); Thread.Sleep(52);
-                                await Bot.SendTextMessageAsync(message.Chat.Id, door_481, false, false, 0, null, ParseMode.Html); Thread.Sleep(52);
-                                await Bot.SendTextMessageAsync(message.Chat.Id, door_482, false, false, 0, null, ParseMode.Html); Thread.Sleep(52);
-                                await Bot.SendTextMessageAsync(message.Chat.Id, door_483, false, false, 0, null, ParseMode.Html); Thread.Sleep(52);
-                                await Bot.SendTextMessageAsync(message.Chat.Id, door_484, false, false, 0, null, ParseMode.Html); Thread.Sleep(52);
-                                await Bot.SendTextMessageAsync(message.Chat.Id, door_485, false, false, 0, null, ParseMode.Html); Thread.Sleep(52);
-                                await Bot.SendTextMessageAsync(message.Chat.Id, door_486, false, false, 0, null, ParseMode.Html); Thread.Sleep(52);
-                                await Bot.SendTextMessageAsync(message.Chat.Id, door_487, false, false, 0, null, ParseMode.Html); Thread.Sleep(52);
-                                await Bot.SendTextMessageAsync(message.Chat.Id, door_488, false, false, 0, null, ParseMode.Html); Thread.Sleep(52);
-                                await Bot.SendTextMessageAsync(message.Chat.Id, door_489, false, false, 0, null, ParseMode.Html); Thread.Sleep(52);
-                                await Bot.SendTextMessageAsync(message.Chat.Id, door_490, false, false, 0, null, ParseMode.Html); Thread.Sleep(52);
-                                await Bot.SendTextMessageAsync(message.Chat.Id, door_491, false, false, 0, null, ParseMode.Html); Thread.Sleep(52);
-                                await Bot.SendTextMessageAsync(message.Chat.Id, door_492, false, false, 0, null, ParseMode.Html); Thread.Sleep(52);
-                                await Bot.SendTextMessageAsync(message.Chat.Id, door_493, false, false, 0, null, ParseMode.Html); Thread.Sleep(52);
+                                await Bot.SendTextMessageAsync(message.Chat.Id, door_40, false, false, 0, keyboardWait, ParseMode.Html); Thread.Sleep(4000);
+                                await Bot.SendTextMessageAsync(message.Chat.Id, door_41, false, false, 0, null, ParseMode.Html); Thread.Sleep(4000);
+                                await Bot.SendTextMessageAsync(message.Chat.Id, door_42, false, false, 0, null, ParseMode.Html); Thread.Sleep(4000);
+                                await Bot.SendTextMessageAsync(message.Chat.Id, door_43, false, false, 0, null, ParseMode.Html); Thread.Sleep(4000);
+                                await Bot.SendTextMessageAsync(message.Chat.Id, door_44, false, false, 0, null, ParseMode.Html); Thread.Sleep(4000);
+                                await Bot.SendTextMessageAsync(message.Chat.Id, door_45, false, false, 0, null, ParseMode.Html); Thread.Sleep(4000);
+                                await Bot.SendTextMessageAsync(message.Chat.Id, door_46, false, false, 0, null, ParseMode.Html); Thread.Sleep(4000);
+                                await Bot.SendTextMessageAsync(message.Chat.Id, door_47, false, false, 0, null, ParseMode.Html); Thread.Sleep(4000);
+                                await Bot.SendTextMessageAsync(message.Chat.Id, door_48, false, false, 0, null, ParseMode.Html); Thread.Sleep(4000);
+                                await Bot.SendTextMessageAsync(message.Chat.Id, door_49, false, false, 0, null, ParseMode.Html); Thread.Sleep(4000);
+                                await Bot.SendTextMessageAsync(message.Chat.Id, door_410, false, false, 0, null, ParseMode.Html); Thread.Sleep(4000);
+                                await Bot.SendTextMessageAsync(message.Chat.Id, door_411, false, false, 0, null, ParseMode.Html); Thread.Sleep(4000);
+                                await Bot.SendTextMessageAsync(message.Chat.Id, door_412, false, false, 0, null, ParseMode.Html); Thread.Sleep(4000);
+                                await Bot.SendTextMessageAsync(message.Chat.Id, door_413, false, false, 0, null, ParseMode.Html); Thread.Sleep(4000);
+                                await Bot.SendTextMessageAsync(message.Chat.Id, door_414, false, false, 0, null, ParseMode.Html); Thread.Sleep(4000);
+                                await Bot.SendTextMessageAsync(message.Chat.Id, door_415, false, false, 0, null, ParseMode.Html); Thread.Sleep(4000);
+                                await Bot.SendTextMessageAsync(message.Chat.Id, door_416, false, false, 0, null, ParseMode.Html); Thread.Sleep(4000);
+                                await Bot.SendTextMessageAsync(message.Chat.Id, door_417, false, false, 0, null, ParseMode.Html); Thread.Sleep(4000);
+                                await Bot.SendTextMessageAsync(message.Chat.Id, door_418, false, false, 0, null, ParseMode.Html); Thread.Sleep(4000);
+                                await Bot.SendTextMessageAsync(message.Chat.Id, door_419, false, false, 0, null, ParseMode.Html); Thread.Sleep(4000);
+                                await Bot.SendTextMessageAsync(message.Chat.Id, door_420, false, false, 0, null, ParseMode.Html); Thread.Sleep(4000);
+                                await Bot.SendTextMessageAsync(message.Chat.Id, door_421, false, false, 0, null, ParseMode.Html); Thread.Sleep(4000);
+                                await Bot.SendTextMessageAsync(message.Chat.Id, door_422, false, false, 0, null, ParseMode.Html); Thread.Sleep(4000);
+                                await Bot.SendTextMessageAsync(message.Chat.Id, door_423, false, false, 0, null, ParseMode.Html); Thread.Sleep(4000);
+                                await Bot.SendTextMessageAsync(message.Chat.Id, door_424, false, false, 0, null, ParseMode.Html); Thread.Sleep(4000);
+                                await Bot.SendTextMessageAsync(message.Chat.Id, door_425, false, false, 0, null, ParseMode.Html); Thread.Sleep(4000);
+                                await Bot.SendTextMessageAsync(message.Chat.Id, door_426, false, false, 0, null, ParseMode.Html); Thread.Sleep(4000);
+                                await Bot.SendTextMessageAsync(message.Chat.Id, door_427, false, false, 0, null, ParseMode.Html); Thread.Sleep(4000);
+                                await Bot.SendTextMessageAsync(message.Chat.Id, door_428, false, false, 0, null, ParseMode.Html); Thread.Sleep(4000);
+                                await Bot.SendTextMessageAsync(message.Chat.Id, door_429, false, false, 0, null, ParseMode.Html); Thread.Sleep(4000);
+                                await Bot.SendTextMessageAsync(message.Chat.Id, door_430, false, false, 0, null, ParseMode.Html); Thread.Sleep(4000);
+                                await Bot.SendTextMessageAsync(message.Chat.Id, door_431, false, false, 0, null, ParseMode.Html); Thread.Sleep(4000);
+                                await Bot.SendTextMessageAsync(message.Chat.Id, door_432, false, false, 0, null, ParseMode.Html); Thread.Sleep(4000);
+                                await Bot.SendTextMessageAsync(message.Chat.Id, door_433, false, false, 0, null, ParseMode.Html); Thread.Sleep(4000);
+                                await Bot.SendTextMessageAsync(message.Chat.Id, door_434, false, false, 0, null, ParseMode.Html); Thread.Sleep(4000);
+                                await Bot.SendTextMessageAsync(message.Chat.Id, door_435, false, false, 0, null, ParseMode.Html); Thread.Sleep(4000);
+                                await Bot.SendTextMessageAsync(message.Chat.Id, door_436, false, false, 0, null, ParseMode.Html); Thread.Sleep(4000);
+                                await Bot.SendTextMessageAsync(message.Chat.Id, door_437, false, false, 0, null, ParseMode.Html); Thread.Sleep(4000);
+                                await Bot.SendTextMessageAsync(message.Chat.Id, door_438, false, false, 0, null, ParseMode.Html); Thread.Sleep(4000);
+                                await Bot.SendTextMessageAsync(message.Chat.Id, door_439, false, false, 0, null, ParseMode.Html); Thread.Sleep(4000);
+                                await Bot.SendTextMessageAsync(message.Chat.Id, door_440, false, false, 0, null, ParseMode.Html); Thread.Sleep(4000);
+                                await Bot.SendTextMessageAsync(message.Chat.Id, door_441, false, false, 0, null, ParseMode.Html); Thread.Sleep(4000);
+                                await Bot.SendTextMessageAsync(message.Chat.Id, door_442, false, false, 0, null, ParseMode.Html); Thread.Sleep(4000);
+                                await Bot.SendTextMessageAsync(message.Chat.Id, door_443, false, false, 0, null, ParseMode.Html); Thread.Sleep(4000);
+                                await Bot.SendTextMessageAsync(message.Chat.Id, door_444, false, false, 0, null, ParseMode.Html); Thread.Sleep(4000);
+                                await Bot.SendTextMessageAsync(message.Chat.Id, door_445, false, false, 0, null, ParseMode.Html); Thread.Sleep(4000);
+                                await Bot.SendTextMessageAsync(message.Chat.Id, door_446, false, false, 0, null, ParseMode.Html); Thread.Sleep(4000);
+                                await Bot.SendTextMessageAsync(message.Chat.Id, door_447, false, false, 0, null, ParseMode.Html); Thread.Sleep(4000);
+                                await Bot.SendTextMessageAsync(message.Chat.Id, door_448, false, false, 0, null, ParseMode.Html); Thread.Sleep(4000);
+                                await Bot.SendTextMessageAsync(message.Chat.Id, door_449, false, false, 0, null, ParseMode.Html); Thread.Sleep(4000);
+                                await Bot.SendTextMessageAsync(message.Chat.Id, door_450, false, false, 0, null, ParseMode.Html); Thread.Sleep(4000);
+                                await Bot.SendTextMessageAsync(message.Chat.Id, door_451, false, false, 0, null, ParseMode.Html); Thread.Sleep(4000);
+                                await Bot.SendTextMessageAsync(message.Chat.Id, door_452, false, false, 0, null, ParseMode.Html); Thread.Sleep(4000);
+                                await Bot.SendTextMessageAsync(message.Chat.Id, door_453, false, false, 0, null, ParseMode.Html); Thread.Sleep(4000);
+                                await Bot.SendTextMessageAsync(message.Chat.Id, door_454, false, false, 0, null, ParseMode.Html); Thread.Sleep(4000);
+                                await Bot.SendTextMessageAsync(message.Chat.Id, door_455, false, false, 0, null, ParseMode.Html); Thread.Sleep(4000);
+                                await Bot.SendTextMessageAsync(message.Chat.Id, door_456, false, false, 0, null, ParseMode.Html); Thread.Sleep(4000);
+                                await Bot.SendTextMessageAsync(message.Chat.Id, door_457, false, false, 0, null, ParseMode.Html); Thread.Sleep(4000);
+                                await Bot.SendTextMessageAsync(message.Chat.Id, door_458, false, false, 0, null, ParseMode.Html); Thread.Sleep(4000);
+                                await Bot.SendTextMessageAsync(message.Chat.Id, door_459, false, false, 0, null, ParseMode.Html); Thread.Sleep(4000);
+                                await Bot.SendTextMessageAsync(message.Chat.Id, door_460, false, false, 0, null, ParseMode.Html); Thread.Sleep(4000);
+                                await Bot.SendTextMessageAsync(message.Chat.Id, door_461, false, false, 0, null, ParseMode.Html); Thread.Sleep(4000);
+                                await Bot.SendTextMessageAsync(message.Chat.Id, door_462, false, false, 0, null, ParseMode.Html); Thread.Sleep(4000);
+                                await Bot.SendTextMessageAsync(message.Chat.Id, door_463, false, false, 0, null, ParseMode.Html); Thread.Sleep(4000);
+                                await Bot.SendTextMessageAsync(message.Chat.Id, door_464, false, false, 0, null, ParseMode.Html); Thread.Sleep(4000);
+                                await Bot.SendTextMessageAsync(message.Chat.Id, door_465, false, false, 0, null, ParseMode.Html); Thread.Sleep(4000);
+                                await Bot.SendTextMessageAsync(message.Chat.Id, door_466, false, false, 0, null, ParseMode.Html); Thread.Sleep(4000);
+                                await Bot.SendTextMessageAsync(message.Chat.Id, door_467, false, false, 0, null, ParseMode.Html); Thread.Sleep(4000);
+                                await Bot.SendTextMessageAsync(message.Chat.Id, door_468, false, false, 0, null, ParseMode.Html); Thread.Sleep(4000);
+                                await Bot.SendTextMessageAsync(message.Chat.Id, door_469, false, false, 0, null, ParseMode.Html); Thread.Sleep(4000);
+                                await Bot.SendTextMessageAsync(message.Chat.Id, door_470, false, false, 0, null, ParseMode.Html); Thread.Sleep(4000);
+                                await Bot.SendTextMessageAsync(message.Chat.Id, door_471, false, false, 0, null, ParseMode.Html); Thread.Sleep(4000);
+                                await Bot.SendTextMessageAsync(message.Chat.Id, door_472, false, false, 0, null, ParseMode.Html); Thread.Sleep(4000);
+                                await Bot.SendTextMessageAsync(message.Chat.Id, door_473, false, false, 0, null, ParseMode.Html); Thread.Sleep(4000);
+                                await Bot.SendTextMessageAsync(message.Chat.Id, door_474, false, false, 0, null, ParseMode.Html); Thread.Sleep(4000);
+                                await Bot.SendTextMessageAsync(message.Chat.Id, door_475, false, false, 0, null, ParseMode.Html); Thread.Sleep(4000);
+                                await Bot.SendTextMessageAsync(message.Chat.Id, door_476, false, false, 0, null, ParseMode.Html); Thread.Sleep(4000);
+                                await Bot.SendTextMessageAsync(message.Chat.Id, door_477, false, false, 0, null, ParseMode.Html); Thread.Sleep(4000);
+                                await Bot.SendTextMessageAsync(message.Chat.Id, door_478, false, false, 0, null, ParseMode.Html); Thread.Sleep(4000);
+                                await Bot.SendTextMessageAsync(message.Chat.Id, door_479, false, false, 0, null, ParseMode.Html); Thread.Sleep(4000);
+                                await Bot.SendTextMessageAsync(message.Chat.Id, door_480, false, false, 0, null, ParseMode.Html); Thread.Sleep(4000);
+                                await Bot.SendTextMessageAsync(message.Chat.Id, door_481, false, false, 0, null, ParseMode.Html); Thread.Sleep(4000);
+                                await Bot.SendTextMessageAsync(message.Chat.Id, door_482, false, false, 0, null, ParseMode.Html); Thread.Sleep(4000);
+                                await Bot.SendTextMessageAsync(message.Chat.Id, door_483, false, false, 0, null, ParseMode.Html); Thread.Sleep(4000);
+                                await Bot.SendTextMessageAsync(message.Chat.Id, door_484, false, false, 0, null, ParseMode.Html); Thread.Sleep(4000);
+                                await Bot.SendTextMessageAsync(message.Chat.Id, door_485, false, false, 0, null, ParseMode.Html); Thread.Sleep(4000);
+                                await Bot.SendTextMessageAsync(message.Chat.Id, door_486, false, false, 0, null, ParseMode.Html); Thread.Sleep(4000);
+                                await Bot.SendTextMessageAsync(message.Chat.Id, door_487, false, false, 0, null, ParseMode.Html); Thread.Sleep(4000);
+                                await Bot.SendTextMessageAsync(message.Chat.Id, door_488, false, false, 0, null, ParseMode.Html); Thread.Sleep(4000);
+                                await Bot.SendTextMessageAsync(message.Chat.Id, door_489, false, false, 0, null, ParseMode.Html); Thread.Sleep(4000);
+                                await Bot.SendTextMessageAsync(message.Chat.Id, door_490, false, false, 0, null, ParseMode.Html); Thread.Sleep(4000);
+                                await Bot.SendTextMessageAsync(message.Chat.Id, door_491, false, false, 0, null, ParseMode.Html); Thread.Sleep(4000);
+                                await Bot.SendTextMessageAsync(message.Chat.Id, door_492, false, false, 0, null, ParseMode.Html); Thread.Sleep(4000);
+                                await Bot.SendTextMessageAsync(message.Chat.Id, door_493, false, false, 0, null, ParseMode.Html); Thread.Sleep(4000);
                                 var keyboard = new Telegram.Bot.Types.ReplyMarkups.ReplyKeyboardMarkup
                                 {
                                     Keyboard = new[] {
@@ -1433,7 +1410,8 @@ namespace revcom_bot
                                             },
                                     ResizeKeyboard = true
                                 };
-                                await Bot.SendTextMessageAsync(message.Chat.Id, door_494, false, false, 0, null, ParseMode.Html); Thread.Sleep(52);
+                                keyboardLast = keyboard;
+                                await Bot.SendTextMessageAsync(message.Chat.Id, door_494, false, false, 0, null, ParseMode.Html); Thread.Sleep(4000);
 
                             }
                             else if (message.Text == "Вмешаться.")
@@ -1472,46 +1450,47 @@ namespace revcom_bot
                                 string door_4126 = "- Спасибо тебе…";
                                 string door_4127 = "<i>*Постельная сцена*</i>";
                                 string door_4128 = "<i>Я вновь провалился во тьму…</i>";
-                                await Bot.SendTextMessageAsync(message.Chat.Id, door_495, false, false, 0, keyboardWait, ParseMode.Html); Thread.Sleep(52);
-                                await Bot.SendTextMessageAsync(message.Chat.Id, door_496, false, false, 0, null, ParseMode.Html); Thread.Sleep(52);
-                                await Bot.SendTextMessageAsync(message.Chat.Id, door_497, false, false, 0, null, ParseMode.Html); Thread.Sleep(52);
-                                await Bot.SendTextMessageAsync(message.Chat.Id, door_498, false, false, 0, null, ParseMode.Html); Thread.Sleep(52);
-                                await Bot.SendTextMessageAsync(message.Chat.Id, door_499, false, false, 0, null, ParseMode.Html); Thread.Sleep(52);
-                                await Bot.SendTextMessageAsync(message.Chat.Id, door_4100, false, false, 0, null, ParseMode.Html); Thread.Sleep(52);
-                                await Bot.SendTextMessageAsync(message.Chat.Id, door_4101, false, false, 0, null, ParseMode.Html); Thread.Sleep(52);
-                                await Bot.SendTextMessageAsync(message.Chat.Id, door_4102, false, false, 0, null, ParseMode.Html); Thread.Sleep(52);
-                                await Bot.SendTextMessageAsync(message.Chat.Id, door_4103, false, false, 0, null, ParseMode.Html); Thread.Sleep(52);
-                                await Bot.SendTextMessageAsync(message.Chat.Id, door_4104, false, false, 0, null, ParseMode.Html); Thread.Sleep(52);
-                                await Bot.SendTextMessageAsync(message.Chat.Id, door_4105, false, false, 0, null, ParseMode.Html); Thread.Sleep(52);
-                                await Bot.SendTextMessageAsync(message.Chat.Id, door_4106, false, false, 0, null, ParseMode.Html); Thread.Sleep(52);
-                                await Bot.SendTextMessageAsync(message.Chat.Id, door_4107, false, false, 0, null, ParseMode.Html); Thread.Sleep(52);
-                                await Bot.SendTextMessageAsync(message.Chat.Id, door_4108, false, false, 0, null, ParseMode.Html); Thread.Sleep(52);
-                                await Bot.SendTextMessageAsync(message.Chat.Id, door_4109, false, false, 0, null, ParseMode.Html); Thread.Sleep(52);
-                                await Bot.SendTextMessageAsync(message.Chat.Id, door_4110, false, false, 0, null, ParseMode.Html); Thread.Sleep(52);
-                                await Bot.SendTextMessageAsync(message.Chat.Id, door_4111, false, false, 0, null, ParseMode.Html); Thread.Sleep(52);
-                                await Bot.SendTextMessageAsync(message.Chat.Id, door_4112, false, false, 0, null, ParseMode.Html); Thread.Sleep(52);
-                                await Bot.SendTextMessageAsync(message.Chat.Id, door_4113, false, false, 0, null, ParseMode.Html); Thread.Sleep(52);
-                                await Bot.SendTextMessageAsync(message.Chat.Id, door_4114, false, false, 0, null, ParseMode.Html); Thread.Sleep(52);
-                                await Bot.SendTextMessageAsync(message.Chat.Id, door_4115, false, false, 0, null, ParseMode.Html); Thread.Sleep(52);
-                                await Bot.SendTextMessageAsync(message.Chat.Id, door_4116, false, false, 0, null, ParseMode.Html); Thread.Sleep(52);
-                                await Bot.SendTextMessageAsync(message.Chat.Id, door_4117, false, false, 0, null, ParseMode.Html); Thread.Sleep(52);
-                                await Bot.SendTextMessageAsync(message.Chat.Id, door_4118, false, false, 0, null, ParseMode.Html); Thread.Sleep(52);
-                                await Bot.SendTextMessageAsync(message.Chat.Id, door_4119, false, false, 0, null, ParseMode.Html); Thread.Sleep(52);
-                                await Bot.SendTextMessageAsync(message.Chat.Id, door_4120, false, false, 0, null, ParseMode.Html); Thread.Sleep(52);
-                                await Bot.SendTextMessageAsync(message.Chat.Id, door_4121, false, false, 0, null, ParseMode.Html); Thread.Sleep(52);
-                                await Bot.SendTextMessageAsync(message.Chat.Id, door_4122, false, false, 0, null, ParseMode.Html); Thread.Sleep(52);
-                                await Bot.SendTextMessageAsync(message.Chat.Id, door_4123, false, false, 0, null, ParseMode.Html); Thread.Sleep(52);
-                                await Bot.SendTextMessageAsync(message.Chat.Id, door_4124, false, false, 0, null, ParseMode.Html); Thread.Sleep(52);
-                                await Bot.SendTextMessageAsync(message.Chat.Id, door_4125, false, false, 0, null, ParseMode.Html); Thread.Sleep(52);
-                                await Bot.SendTextMessageAsync(message.Chat.Id, door_4126, false, false, 0, null, ParseMode.Html); Thread.Sleep(52);
-                                await Bot.SendTextMessageAsync(message.Chat.Id, door_4127, false, false, 0, null, ParseMode.Html); Thread.Sleep(52);
-                                await Bot.SendTextMessageAsync(message.Chat.Id, door_4128, false, false, 0, keyboardDoor5, ParseMode.Html); Thread.Sleep(52);
-
+                                await Bot.SendTextMessageAsync(message.Chat.Id, door_495, false, false, 0, keyboardWait, ParseMode.Html); Thread.Sleep(4000);
+                                await Bot.SendTextMessageAsync(message.Chat.Id, door_496, false, false, 0, null, ParseMode.Html); Thread.Sleep(4000);
+                                await Bot.SendTextMessageAsync(message.Chat.Id, door_497, false, false, 0, null, ParseMode.Html); Thread.Sleep(4000);
+                                await Bot.SendTextMessageAsync(message.Chat.Id, door_498, false, false, 0, null, ParseMode.Html); Thread.Sleep(4000);
+                                await Bot.SendTextMessageAsync(message.Chat.Id, door_499, false, false, 0, null, ParseMode.Html); Thread.Sleep(4000);
+                                await Bot.SendTextMessageAsync(message.Chat.Id, door_4100, false, false, 0, null, ParseMode.Html); Thread.Sleep(4000);
+                                await Bot.SendTextMessageAsync(message.Chat.Id, door_4101, false, false, 0, null, ParseMode.Html); Thread.Sleep(4000);
+                                await Bot.SendTextMessageAsync(message.Chat.Id, door_4102, false, false, 0, null, ParseMode.Html); Thread.Sleep(4000);
+                                await Bot.SendTextMessageAsync(message.Chat.Id, door_4103, false, false, 0, null, ParseMode.Html); Thread.Sleep(4000);
+                                await Bot.SendTextMessageAsync(message.Chat.Id, door_4104, false, false, 0, null, ParseMode.Html); Thread.Sleep(4000);
+                                await Bot.SendTextMessageAsync(message.Chat.Id, door_4105, false, false, 0, null, ParseMode.Html); Thread.Sleep(4000);
+                                await Bot.SendTextMessageAsync(message.Chat.Id, door_4106, false, false, 0, null, ParseMode.Html); Thread.Sleep(4000);
+                                await Bot.SendTextMessageAsync(message.Chat.Id, door_4107, false, false, 0, null, ParseMode.Html); Thread.Sleep(4000);
+                                await Bot.SendTextMessageAsync(message.Chat.Id, door_4108, false, false, 0, null, ParseMode.Html); Thread.Sleep(4000);
+                                await Bot.SendTextMessageAsync(message.Chat.Id, door_4109, false, false, 0, null, ParseMode.Html); Thread.Sleep(4000);
+                                await Bot.SendTextMessageAsync(message.Chat.Id, door_4110, false, false, 0, null, ParseMode.Html); Thread.Sleep(4000);
+                                await Bot.SendTextMessageAsync(message.Chat.Id, door_4111, false, false, 0, null, ParseMode.Html); Thread.Sleep(4000);
+                                await Bot.SendTextMessageAsync(message.Chat.Id, door_4112, false, false, 0, null, ParseMode.Html); Thread.Sleep(4000);
+                                await Bot.SendTextMessageAsync(message.Chat.Id, door_4113, false, false, 0, null, ParseMode.Html); Thread.Sleep(4000);
+                                await Bot.SendTextMessageAsync(message.Chat.Id, door_4114, false, false, 0, null, ParseMode.Html); Thread.Sleep(4000);
+                                await Bot.SendTextMessageAsync(message.Chat.Id, door_4115, false, false, 0, null, ParseMode.Html); Thread.Sleep(4000);
+                                await Bot.SendTextMessageAsync(message.Chat.Id, door_4116, false, false, 0, null, ParseMode.Html); Thread.Sleep(4000);
+                                await Bot.SendTextMessageAsync(message.Chat.Id, door_4117, false, false, 0, null, ParseMode.Html); Thread.Sleep(4000);
+                                await Bot.SendTextMessageAsync(message.Chat.Id, door_4118, false, false, 0, null, ParseMode.Html); Thread.Sleep(4000);
+                                await Bot.SendTextMessageAsync(message.Chat.Id, door_4119, false, false, 0, null, ParseMode.Html); Thread.Sleep(4000);
+                                await Bot.SendTextMessageAsync(message.Chat.Id, door_4120, false, false, 0, null, ParseMode.Html); Thread.Sleep(4000);
+                                await Bot.SendTextMessageAsync(message.Chat.Id, door_4121, false, false, 0, null, ParseMode.Html); Thread.Sleep(4000);
+                                await Bot.SendTextMessageAsync(message.Chat.Id, door_4122, false, false, 0, null, ParseMode.Html); Thread.Sleep(4000);
+                                await Bot.SendTextMessageAsync(message.Chat.Id, door_4123, false, false, 0, null, ParseMode.Html); Thread.Sleep(4000);
+                                await Bot.SendTextMessageAsync(message.Chat.Id, door_4124, false, false, 0, null, ParseMode.Html); Thread.Sleep(4000);
+                                await Bot.SendTextMessageAsync(message.Chat.Id, door_4125, false, false, 0, null, ParseMode.Html); Thread.Sleep(4000);
+                                await Bot.SendTextMessageAsync(message.Chat.Id, door_4126, false, false, 0, null, ParseMode.Html); Thread.Sleep(4000);
+                                await Bot.SendTextMessageAsync(message.Chat.Id, door_4127, false, false, 0, null, ParseMode.Html); Thread.Sleep(4000);
+                                await Bot.SendTextMessageAsync(message.Chat.Id, door_4128, false, false, 0, keyboardDoor5, ParseMode.Html); Thread.Sleep(4000);
+                                keyboardLast = keyboardDoor5;
                             }
-                            else if(message.Text == "Уйти.")
+                            else if (message.Text == "Уйти.")
                             {
                                 string door_4129 = "<i>Я решил, что оно не стоит того. Я вызвал копов, позвонил Вите и сказал, что кто-то из прохожих видел ее там, а затем ушел.\n\nЖанну изнасиловали. Следующим вечером в больнице она покончила с собой, а я вернулся в ту самую комнату с шестью дверями…</i>";
-                                await Bot.SendTextMessageAsync(message.Chat.Id, door_4129, false, false, 0, keyboardDoor5, ParseMode.Html); Thread.Sleep(52);
+                                await Bot.SendTextMessageAsync(message.Chat.Id, door_4129, false, false, 0, keyboardDoor5, ParseMode.Html); Thread.Sleep(4000);
+                                keyboardLast = keyboardDoor5;
                             }
                             //дверь №5
                             else if (message.Text == "Войти в пятую дверь")
@@ -1596,88 +1575,89 @@ namespace revcom_bot
                                 string door_577 = "<i>Я не знал, что ответить.</i>";
                                 string door_578 = "<i>«Юи, ты слишком любопытная, даже для девушки!» - весело подметил я.\n\nОна хихикнула.\n\n«Желание узнать все вещи и постигнуть их истину, заложено в нас от природы».\n\n«Кто это сказал?»\n\n«Альбрехт Дюрер».\n\n«Кто он?»\n\n«Знаменитый немецкий художник! Его работы гениальны!»</i>";
                                 string door_579 = "<i>Воспоминание вырвало меня из реальности. Когда я опомнился, Дима уже исчез во тьме за барной стойкой.\n\nЯ позвал его, но мне никто не ответил.\n\nМне не оставалось ничего, кроме как последовать за ним во мрак…</i>";
-                                await Bot.SendTextMessageAsync(message.Chat.Id, door_50, false, false, 0, keyboardWait, ParseMode.Html); Thread.Sleep(52);
-                                await Bot.SendTextMessageAsync(message.Chat.Id, door_51, false, false, 0, null, ParseMode.Html); Thread.Sleep(52);
-                                await Bot.SendTextMessageAsync(message.Chat.Id, door_52, false, false, 0, null, ParseMode.Html); Thread.Sleep(52);
-                                await Bot.SendTextMessageAsync(message.Chat.Id, door_53, false, false, 0, null, ParseMode.Html); Thread.Sleep(52);
-                                await Bot.SendTextMessageAsync(message.Chat.Id, door_54, false, false, 0, null, ParseMode.Html); Thread.Sleep(52);
-                                await Bot.SendTextMessageAsync(message.Chat.Id, door_55, false, false, 0, null, ParseMode.Html); Thread.Sleep(52);
-                                await Bot.SendTextMessageAsync(message.Chat.Id, door_56, false, false, 0, null, ParseMode.Html); Thread.Sleep(52);
-                                await Bot.SendTextMessageAsync(message.Chat.Id, door_57, false, false, 0, null, ParseMode.Html); Thread.Sleep(52);
-                                await Bot.SendTextMessageAsync(message.Chat.Id, door_58, false, false, 0, null, ParseMode.Html); Thread.Sleep(52);
-                                await Bot.SendTextMessageAsync(message.Chat.Id, door_59, false, false, 0, null, ParseMode.Html); Thread.Sleep(52);
-                                await Bot.SendTextMessageAsync(message.Chat.Id, door_510, false, false, 0, null, ParseMode.Html); Thread.Sleep(52);
-                                await Bot.SendTextMessageAsync(message.Chat.Id, door_511, false, false, 0, null, ParseMode.Html); Thread.Sleep(52);
-                                await Bot.SendTextMessageAsync(message.Chat.Id, door_512, false, false, 0, null, ParseMode.Html); Thread.Sleep(52);
-                                await Bot.SendTextMessageAsync(message.Chat.Id, door_513, false, false, 0, null, ParseMode.Html); Thread.Sleep(52);
-                                await Bot.SendTextMessageAsync(message.Chat.Id, door_514, false, false, 0, null, ParseMode.Html); Thread.Sleep(52);
-                                await Bot.SendTextMessageAsync(message.Chat.Id, door_515, false, false, 0, null, ParseMode.Html); Thread.Sleep(52);
-                                await Bot.SendTextMessageAsync(message.Chat.Id, door_516, false, false, 0, null, ParseMode.Html); Thread.Sleep(52);
-                                await Bot.SendTextMessageAsync(message.Chat.Id, door_517, false, false, 0, null, ParseMode.Html); Thread.Sleep(52);
-                                await Bot.SendTextMessageAsync(message.Chat.Id, door_518, false, false, 0, null, ParseMode.Html); Thread.Sleep(52);
-                                await Bot.SendTextMessageAsync(message.Chat.Id, door_519, false, false, 0, null, ParseMode.Html); Thread.Sleep(52);
-                                await Bot.SendTextMessageAsync(message.Chat.Id, door_520, false, false, 0, null, ParseMode.Html); Thread.Sleep(52);
-                                await Bot.SendTextMessageAsync(message.Chat.Id, door_521, false, false, 0, null, ParseMode.Html); Thread.Sleep(52);
-                                await Bot.SendTextMessageAsync(message.Chat.Id, door_522, false, false, 0, null, ParseMode.Html); Thread.Sleep(52);
-                                await Bot.SendTextMessageAsync(message.Chat.Id, door_523, false, false, 0, null, ParseMode.Html); Thread.Sleep(52);
-                                await Bot.SendTextMessageAsync(message.Chat.Id, door_524, false, false, 0, null, ParseMode.Html); Thread.Sleep(52);
-                                await Bot.SendTextMessageAsync(message.Chat.Id, door_525, false, false, 0, null, ParseMode.Html); Thread.Sleep(52);
-                                await Bot.SendTextMessageAsync(message.Chat.Id, door_526, false, false, 0, null, ParseMode.Html); Thread.Sleep(52);
-                                await Bot.SendTextMessageAsync(message.Chat.Id, door_527, false, false, 0, null, ParseMode.Html); Thread.Sleep(52);
-                                await Bot.SendTextMessageAsync(message.Chat.Id, door_528, false, false, 0, null, ParseMode.Html); Thread.Sleep(52);
-                                await Bot.SendTextMessageAsync(message.Chat.Id, door_529, false, false, 0, null, ParseMode.Html); Thread.Sleep(52);
-                                await Bot.SendTextMessageAsync(message.Chat.Id, door_530, false, false, 0, null, ParseMode.Html); Thread.Sleep(52);
-                                await Bot.SendTextMessageAsync(message.Chat.Id, door_531, false, false, 0, null, ParseMode.Html); Thread.Sleep(52);
-                                await Bot.SendTextMessageAsync(message.Chat.Id, door_532, false, false, 0, null, ParseMode.Html); Thread.Sleep(52);
-                                await Bot.SendTextMessageAsync(message.Chat.Id, door_533, false, false, 0, null, ParseMode.Html); Thread.Sleep(52);
-                                await Bot.SendTextMessageAsync(message.Chat.Id, door_534, false, false, 0, null, ParseMode.Html); Thread.Sleep(52);
-                                await Bot.SendTextMessageAsync(message.Chat.Id, door_535, false, false, 0, null, ParseMode.Html); Thread.Sleep(52);
-                                await Bot.SendTextMessageAsync(message.Chat.Id, door_536, false, false, 0, null, ParseMode.Html); Thread.Sleep(52);
-                                await Bot.SendTextMessageAsync(message.Chat.Id, door_537, false, false, 0, null, ParseMode.Html); Thread.Sleep(52);
-                                await Bot.SendTextMessageAsync(message.Chat.Id, door_538, false, false, 0, null, ParseMode.Html); Thread.Sleep(52);
-                                await Bot.SendTextMessageAsync(message.Chat.Id, door_539, false, false, 0, null, ParseMode.Html); Thread.Sleep(52);
-                                await Bot.SendTextMessageAsync(message.Chat.Id, door_540, false, false, 0, null, ParseMode.Html); Thread.Sleep(52);
-                                await Bot.SendTextMessageAsync(message.Chat.Id, door_541, false, false, 0, null, ParseMode.Html); Thread.Sleep(52);
-                                await Bot.SendTextMessageAsync(message.Chat.Id, door_542, false, false, 0, null, ParseMode.Html); Thread.Sleep(52);
-                                await Bot.SendTextMessageAsync(message.Chat.Id, door_543, false, false, 0, null, ParseMode.Html); Thread.Sleep(52);
-                                await Bot.SendTextMessageAsync(message.Chat.Id, door_544, false, false, 0, null, ParseMode.Html); Thread.Sleep(52);
-                                await Bot.SendTextMessageAsync(message.Chat.Id, door_545, false, false, 0, null, ParseMode.Html); Thread.Sleep(52);
-                                await Bot.SendTextMessageAsync(message.Chat.Id, door_546, false, false, 0, null, ParseMode.Html); Thread.Sleep(52);
-                                await Bot.SendTextMessageAsync(message.Chat.Id, door_547, false, false, 0, null, ParseMode.Html); Thread.Sleep(52);
-                                await Bot.SendTextMessageAsync(message.Chat.Id, door_548, false, false, 0, null, ParseMode.Html); Thread.Sleep(52);
-                                await Bot.SendTextMessageAsync(message.Chat.Id, door_549, false, false, 0, null, ParseMode.Html); Thread.Sleep(52);
-                                await Bot.SendTextMessageAsync(message.Chat.Id, door_550, false, false, 0, null, ParseMode.Html); Thread.Sleep(52);
-                                await Bot.SendTextMessageAsync(message.Chat.Id, door_551, false, false, 0, null, ParseMode.Html); Thread.Sleep(52);
-                                await Bot.SendTextMessageAsync(message.Chat.Id, door_552, false, false, 0, null, ParseMode.Html); Thread.Sleep(52);
-                                await Bot.SendTextMessageAsync(message.Chat.Id, door_553, false, false, 0, null, ParseMode.Html); Thread.Sleep(52);
-                                await Bot.SendTextMessageAsync(message.Chat.Id, door_554, false, false, 0, null, ParseMode.Html); Thread.Sleep(52);
-                                await Bot.SendTextMessageAsync(message.Chat.Id, door_555, false, false, 0, null, ParseMode.Html); Thread.Sleep(52);
-                                await Bot.SendTextMessageAsync(message.Chat.Id, door_556, false, false, 0, null, ParseMode.Html); Thread.Sleep(52);
-                                await Bot.SendTextMessageAsync(message.Chat.Id, door_557, false, false, 0, null, ParseMode.Html); Thread.Sleep(52);
-                                await Bot.SendTextMessageAsync(message.Chat.Id, door_558, false, false, 0, null, ParseMode.Html); Thread.Sleep(52);
-                                await Bot.SendTextMessageAsync(message.Chat.Id, door_559, false, false, 0, null, ParseMode.Html); Thread.Sleep(52);
-                                await Bot.SendTextMessageAsync(message.Chat.Id, door_560, false, false, 0, null, ParseMode.Html); Thread.Sleep(52);
-                                await Bot.SendTextMessageAsync(message.Chat.Id, door_561, false, false, 0, null, ParseMode.Html); Thread.Sleep(52);
-                                await Bot.SendTextMessageAsync(message.Chat.Id, door_562, false, false, 0, null, ParseMode.Html); Thread.Sleep(52);
-                                await Bot.SendTextMessageAsync(message.Chat.Id, door_563, false, false, 0, null, ParseMode.Html); Thread.Sleep(52);
-                                await Bot.SendTextMessageAsync(message.Chat.Id, door_564, false, false, 0, null, ParseMode.Html); Thread.Sleep(52);
-                                await Bot.SendTextMessageAsync(message.Chat.Id, door_565, false, false, 0, null, ParseMode.Html); Thread.Sleep(52);
-                                await Bot.SendTextMessageAsync(message.Chat.Id, door_566, false, false, 0, null, ParseMode.Html); Thread.Sleep(52);
-                                await Bot.SendTextMessageAsync(message.Chat.Id, door_567, false, false, 0, null, ParseMode.Html); Thread.Sleep(52);
-                                await Bot.SendTextMessageAsync(message.Chat.Id, door_568, false, false, 0, null, ParseMode.Html); Thread.Sleep(52);
-                                await Bot.SendTextMessageAsync(message.Chat.Id, door_569, false, false, 0, null, ParseMode.Html); Thread.Sleep(52);
-                                await Bot.SendTextMessageAsync(message.Chat.Id, door_570, false, false, 0, null, ParseMode.Html); Thread.Sleep(52);
-                                await Bot.SendTextMessageAsync(message.Chat.Id, door_571, false, false, 0, null, ParseMode.Html); Thread.Sleep(52);
-                                await Bot.SendTextMessageAsync(message.Chat.Id, door_572, false, false, 0, null, ParseMode.Html); Thread.Sleep(52);
-                                await Bot.SendTextMessageAsync(message.Chat.Id, door_573, false, false, 0, null, ParseMode.Html); Thread.Sleep(52);
-                                await Bot.SendTextMessageAsync(message.Chat.Id, door_574, false, false, 0, null, ParseMode.Html); Thread.Sleep(52);
-                                await Bot.SendTextMessageAsync(message.Chat.Id, door_575, false, false, 0, null, ParseMode.Html); Thread.Sleep(52);
-                                await Bot.SendTextMessageAsync(message.Chat.Id, door_576, false, false, 0, null, ParseMode.Html); Thread.Sleep(52);
-                                await Bot.SendTextMessageAsync(message.Chat.Id, door_577, false, false, 0, null, ParseMode.Html); Thread.Sleep(52);
-                                await Bot.SendTextMessageAsync(message.Chat.Id, door_578, false, false, 0, null, ParseMode.Html); Thread.Sleep(52);
-                                await Bot.SendTextMessageAsync(message.Chat.Id, door_579, false, false, 0, keyboardDoor6, ParseMode.Html); Thread.Sleep(52);
+                                await Bot.SendTextMessageAsync(message.Chat.Id, door_50, false, false, 0, keyboardWait, ParseMode.Html); Thread.Sleep(4000);
+                                await Bot.SendTextMessageAsync(message.Chat.Id, door_51, false, false, 0, null, ParseMode.Html); Thread.Sleep(4000);
+                                await Bot.SendTextMessageAsync(message.Chat.Id, door_52, false, false, 0, null, ParseMode.Html); Thread.Sleep(4000);
+                                await Bot.SendTextMessageAsync(message.Chat.Id, door_53, false, false, 0, null, ParseMode.Html); Thread.Sleep(4000);
+                                await Bot.SendTextMessageAsync(message.Chat.Id, door_54, false, false, 0, null, ParseMode.Html); Thread.Sleep(4000);
+                                await Bot.SendTextMessageAsync(message.Chat.Id, door_55, false, false, 0, null, ParseMode.Html); Thread.Sleep(4000);
+                                await Bot.SendTextMessageAsync(message.Chat.Id, door_56, false, false, 0, null, ParseMode.Html); Thread.Sleep(4000);
+                                await Bot.SendTextMessageAsync(message.Chat.Id, door_57, false, false, 0, null, ParseMode.Html); Thread.Sleep(4000);
+                                await Bot.SendTextMessageAsync(message.Chat.Id, door_58, false, false, 0, null, ParseMode.Html); Thread.Sleep(4000);
+                                await Bot.SendTextMessageAsync(message.Chat.Id, door_59, false, false, 0, null, ParseMode.Html); Thread.Sleep(4000);
+                                await Bot.SendTextMessageAsync(message.Chat.Id, door_510, false, false, 0, null, ParseMode.Html); Thread.Sleep(4000);
+                                await Bot.SendTextMessageAsync(message.Chat.Id, door_511, false, false, 0, null, ParseMode.Html); Thread.Sleep(4000);
+                                await Bot.SendTextMessageAsync(message.Chat.Id, door_512, false, false, 0, null, ParseMode.Html); Thread.Sleep(4000);
+                                await Bot.SendTextMessageAsync(message.Chat.Id, door_513, false, false, 0, null, ParseMode.Html); Thread.Sleep(4000);
+                                await Bot.SendTextMessageAsync(message.Chat.Id, door_514, false, false, 0, null, ParseMode.Html); Thread.Sleep(4000);
+                                await Bot.SendTextMessageAsync(message.Chat.Id, door_515, false, false, 0, null, ParseMode.Html); Thread.Sleep(4000);
+                                await Bot.SendTextMessageAsync(message.Chat.Id, door_516, false, false, 0, null, ParseMode.Html); Thread.Sleep(4000);
+                                await Bot.SendTextMessageAsync(message.Chat.Id, door_517, false, false, 0, null, ParseMode.Html); Thread.Sleep(4000);
+                                await Bot.SendTextMessageAsync(message.Chat.Id, door_518, false, false, 0, null, ParseMode.Html); Thread.Sleep(4000);
+                                await Bot.SendTextMessageAsync(message.Chat.Id, door_519, false, false, 0, null, ParseMode.Html); Thread.Sleep(4000);
+                                await Bot.SendTextMessageAsync(message.Chat.Id, door_520, false, false, 0, null, ParseMode.Html); Thread.Sleep(4000);
+                                await Bot.SendTextMessageAsync(message.Chat.Id, door_521, false, false, 0, null, ParseMode.Html); Thread.Sleep(4000);
+                                await Bot.SendTextMessageAsync(message.Chat.Id, door_522, false, false, 0, null, ParseMode.Html); Thread.Sleep(4000);
+                                await Bot.SendTextMessageAsync(message.Chat.Id, door_523, false, false, 0, null, ParseMode.Html); Thread.Sleep(4000);
+                                await Bot.SendTextMessageAsync(message.Chat.Id, door_524, false, false, 0, null, ParseMode.Html); Thread.Sleep(4000);
+                                await Bot.SendTextMessageAsync(message.Chat.Id, door_525, false, false, 0, null, ParseMode.Html); Thread.Sleep(4000);
+                                await Bot.SendTextMessageAsync(message.Chat.Id, door_526, false, false, 0, null, ParseMode.Html); Thread.Sleep(4000);
+                                await Bot.SendTextMessageAsync(message.Chat.Id, door_527, false, false, 0, null, ParseMode.Html); Thread.Sleep(4000);
+                                await Bot.SendTextMessageAsync(message.Chat.Id, door_528, false, false, 0, null, ParseMode.Html); Thread.Sleep(4000);
+                                await Bot.SendTextMessageAsync(message.Chat.Id, door_529, false, false, 0, null, ParseMode.Html); Thread.Sleep(4000);
+                                await Bot.SendTextMessageAsync(message.Chat.Id, door_530, false, false, 0, null, ParseMode.Html); Thread.Sleep(4000);
+                                await Bot.SendTextMessageAsync(message.Chat.Id, door_531, false, false, 0, null, ParseMode.Html); Thread.Sleep(4000);
+                                await Bot.SendTextMessageAsync(message.Chat.Id, door_532, false, false, 0, null, ParseMode.Html); Thread.Sleep(4000);
+                                await Bot.SendTextMessageAsync(message.Chat.Id, door_533, false, false, 0, null, ParseMode.Html); Thread.Sleep(4000);
+                                await Bot.SendTextMessageAsync(message.Chat.Id, door_534, false, false, 0, null, ParseMode.Html); Thread.Sleep(4000);
+                                await Bot.SendTextMessageAsync(message.Chat.Id, door_535, false, false, 0, null, ParseMode.Html); Thread.Sleep(4000);
+                                await Bot.SendTextMessageAsync(message.Chat.Id, door_536, false, false, 0, null, ParseMode.Html); Thread.Sleep(4000);
+                                await Bot.SendTextMessageAsync(message.Chat.Id, door_537, false, false, 0, null, ParseMode.Html); Thread.Sleep(4000);
+                                await Bot.SendTextMessageAsync(message.Chat.Id, door_538, false, false, 0, null, ParseMode.Html); Thread.Sleep(4000);
+                                await Bot.SendTextMessageAsync(message.Chat.Id, door_539, false, false, 0, null, ParseMode.Html); Thread.Sleep(4000);
+                                await Bot.SendTextMessageAsync(message.Chat.Id, door_540, false, false, 0, null, ParseMode.Html); Thread.Sleep(4000);
+                                await Bot.SendTextMessageAsync(message.Chat.Id, door_541, false, false, 0, null, ParseMode.Html); Thread.Sleep(4000);
+                                await Bot.SendTextMessageAsync(message.Chat.Id, door_542, false, false, 0, null, ParseMode.Html); Thread.Sleep(4000);
+                                await Bot.SendTextMessageAsync(message.Chat.Id, door_543, false, false, 0, null, ParseMode.Html); Thread.Sleep(4000);
+                                await Bot.SendTextMessageAsync(message.Chat.Id, door_544, false, false, 0, null, ParseMode.Html); Thread.Sleep(4000);
+                                await Bot.SendTextMessageAsync(message.Chat.Id, door_545, false, false, 0, null, ParseMode.Html); Thread.Sleep(4000);
+                                await Bot.SendTextMessageAsync(message.Chat.Id, door_546, false, false, 0, null, ParseMode.Html); Thread.Sleep(4000);
+                                await Bot.SendTextMessageAsync(message.Chat.Id, door_547, false, false, 0, null, ParseMode.Html); Thread.Sleep(4000);
+                                await Bot.SendTextMessageAsync(message.Chat.Id, door_548, false, false, 0, null, ParseMode.Html); Thread.Sleep(4000);
+                                await Bot.SendTextMessageAsync(message.Chat.Id, door_549, false, false, 0, null, ParseMode.Html); Thread.Sleep(4000);
+                                await Bot.SendTextMessageAsync(message.Chat.Id, door_550, false, false, 0, null, ParseMode.Html); Thread.Sleep(4000);
+                                await Bot.SendTextMessageAsync(message.Chat.Id, door_551, false, false, 0, null, ParseMode.Html); Thread.Sleep(4000);
+                                await Bot.SendTextMessageAsync(message.Chat.Id, door_552, false, false, 0, null, ParseMode.Html); Thread.Sleep(4000);
+                                await Bot.SendTextMessageAsync(message.Chat.Id, door_553, false, false, 0, null, ParseMode.Html); Thread.Sleep(4000);
+                                await Bot.SendTextMessageAsync(message.Chat.Id, door_554, false, false, 0, null, ParseMode.Html); Thread.Sleep(4000);
+                                await Bot.SendTextMessageAsync(message.Chat.Id, door_555, false, false, 0, null, ParseMode.Html); Thread.Sleep(4000);
+                                await Bot.SendTextMessageAsync(message.Chat.Id, door_556, false, false, 0, null, ParseMode.Html); Thread.Sleep(4000);
+                                await Bot.SendTextMessageAsync(message.Chat.Id, door_557, false, false, 0, null, ParseMode.Html); Thread.Sleep(4000);
+                                await Bot.SendTextMessageAsync(message.Chat.Id, door_558, false, false, 0, null, ParseMode.Html); Thread.Sleep(4000);
+                                await Bot.SendTextMessageAsync(message.Chat.Id, door_559, false, false, 0, null, ParseMode.Html); Thread.Sleep(4000);
+                                await Bot.SendTextMessageAsync(message.Chat.Id, door_560, false, false, 0, null, ParseMode.Html); Thread.Sleep(4000);
+                                await Bot.SendTextMessageAsync(message.Chat.Id, door_561, false, false, 0, null, ParseMode.Html); Thread.Sleep(4000);
+                                await Bot.SendTextMessageAsync(message.Chat.Id, door_562, false, false, 0, null, ParseMode.Html); Thread.Sleep(4000);
+                                await Bot.SendTextMessageAsync(message.Chat.Id, door_563, false, false, 0, null, ParseMode.Html); Thread.Sleep(4000);
+                                await Bot.SendTextMessageAsync(message.Chat.Id, door_564, false, false, 0, null, ParseMode.Html); Thread.Sleep(4000);
+                                await Bot.SendTextMessageAsync(message.Chat.Id, door_565, false, false, 0, null, ParseMode.Html); Thread.Sleep(4000);
+                                await Bot.SendTextMessageAsync(message.Chat.Id, door_566, false, false, 0, null, ParseMode.Html); Thread.Sleep(4000);
+                                await Bot.SendTextMessageAsync(message.Chat.Id, door_567, false, false, 0, null, ParseMode.Html); Thread.Sleep(4000);
+                                await Bot.SendTextMessageAsync(message.Chat.Id, door_568, false, false, 0, null, ParseMode.Html); Thread.Sleep(4000);
+                                await Bot.SendTextMessageAsync(message.Chat.Id, door_569, false, false, 0, null, ParseMode.Html); Thread.Sleep(4000);
+                                await Bot.SendTextMessageAsync(message.Chat.Id, door_570, false, false, 0, null, ParseMode.Html); Thread.Sleep(4000);
+                                await Bot.SendTextMessageAsync(message.Chat.Id, door_571, false, false, 0, null, ParseMode.Html); Thread.Sleep(4000);
+                                await Bot.SendTextMessageAsync(message.Chat.Id, door_572, false, false, 0, null, ParseMode.Html); Thread.Sleep(4000);
+                                await Bot.SendTextMessageAsync(message.Chat.Id, door_573, false, false, 0, null, ParseMode.Html); Thread.Sleep(4000);
+                                await Bot.SendTextMessageAsync(message.Chat.Id, door_574, false, false, 0, null, ParseMode.Html); Thread.Sleep(4000);
+                                await Bot.SendTextMessageAsync(message.Chat.Id, door_575, false, false, 0, null, ParseMode.Html); Thread.Sleep(4000);
+                                await Bot.SendTextMessageAsync(message.Chat.Id, door_576, false, false, 0, null, ParseMode.Html); Thread.Sleep(4000);
+                                await Bot.SendTextMessageAsync(message.Chat.Id, door_577, false, false, 0, null, ParseMode.Html); Thread.Sleep(4000);
+                                await Bot.SendTextMessageAsync(message.Chat.Id, door_578, false, false, 0, null, ParseMode.Html); Thread.Sleep(4000);
+                                await Bot.SendTextMessageAsync(message.Chat.Id, door_579, false, false, 0, keyboardDoor6, ParseMode.Html); Thread.Sleep(4000);
+                                keyboardLast = keyboardDoor6;
                             }
-                            else if(message.Text == "Войти в шестую дверь")
+                            else if (message.Text == "Войти в шестую дверь")
                             {
                                 string door_60 = "<i>Тьма привела меня к шестой двери…\n\nЯ огляделся...\n\nДмитрия нигде не было…\n\nЯ побывал за каждой из дверей, кроме этой…\n\nОна была покрыта чем-то бардовым – в тусклом освещении было не различить…\n\nТо ли ржавчина, то ли истлевшая краска покрывала ее сверху донизу…\n\nНо меня кольнуло другое, страшное подозрение…\n\nМне казалось, это человеческая кровь, вот только чья?..\n\nМне было страшно. Впервые за долгое время я был готов остаться в этой комнате с дверями, лишь бы не идти дальше. Все мое естество было против этого, но я не мог…\n\nЭта история будет продолжаться до тех пор, пока я все не вспомню…\n\nПереступив через страх и чувство тревоги, я потянул за ручку.\n\nДверь едва поддалась. Чтобы открыть ее, мне пришлось тянуть изо всех сил. Я услышал жуткий скрип и скрежет. Наверное такой звук издает дверь, которую давным-давно никто не отпирал…\n\nНо она не была такой, когда я впервые очнулся в той комнате…</i>";
                                 string door_61 = "<i>Не без опасения я огляделся, но ничто вокруг меня не вызывало тревоги.\n\nБыл обычный солнечный день. Солнце не пекло, но приятно грело. В такие редкие дни люди выбираются из своих домов, чтобы встретиться с близкими, погулять, поболтать или просто хорошо провести время.\n\nЯ оказался в парке, но он был другим…\n\nЯ сидел на лавочке возле фонтана. Сквозь тонкие струйки и капли воды проглядывались едва заметные радуги. Я был окружен людьми и цветами, но что-то не давало мне покоя.\n\nКто-то подошел и заговорил со мной, но я не слышал слов…\n\nВсе выглядели такими добрыми и счастливыми, но я никак не мог перестать думать о том, что за всем этим скрывается фальшь…\n\nЯ не знал этих людей. В моем мире их не существовало. Не существовало и их альтернативных личностей…\n\nЯ словно оказался в идеально мире. Утопической реальности, где повсюду царил покой, где не случается ничего плохого. В этом мире меня окружали живые манекены…\n\nМеня окружали толпы безликих манекенов.Бесчувственных кукол, собранных для величайшего представления этого века. Представления, имя которому – жизнь…\n\nЯ бродил среди улиц и ничего не узнавал. Все, что было мне так знакомо, словно стерли, исказили, исковеркали, очернили…\n\nВся эта показная утопия вызывала во мне неистовое отвращение…\n\nЯ ничего не мог поделать…\n\nКто-то в толпе случайно коснулся меня.\n\nЯ сразу же отдернул руку…</i>";
@@ -1843,171 +1823,171 @@ namespace revcom_bot
                                 string door_6131 = "- А что я могу?";
                                 string door_6132 = "<i>Я поднял на него взгляд.</i>";
                                 string door_6133 = "- До этого момента Юи вмешивалась в ход событий, заставляя тебя путешествовать от двери к двери. Теперь же ты можешь сам решать свою судьбу… Остаться здесь, вернуться в один из миров, где ты бывал ранее или же отправиться за ней…";
-                                await Bot.SendTextMessageAsync(message.Chat.Id, door_60, false, false, 0, keyboardWait, ParseMode.Html); Thread.Sleep(52);
-                                await Bot.SendTextMessageAsync(message.Chat.Id, door_61, false, false, 0, null, ParseMode.Html); Thread.Sleep(52);
-                                await Bot.SendTextMessageAsync(message.Chat.Id, door_62, false, false, 0, null, ParseMode.Html); Thread.Sleep(52);
-                                await Bot.SendTextMessageAsync(message.Chat.Id, door_63, false, false, 0, null, ParseMode.Html); Thread.Sleep(52);
-                                await Bot.SendTextMessageAsync(message.Chat.Id, door_64, false, false, 0, null, ParseMode.Html); Thread.Sleep(52);
-                                await Bot.SendTextMessageAsync(message.Chat.Id, door_65, false, false, 0, null, ParseMode.Html); Thread.Sleep(52);
-                                await Bot.SendTextMessageAsync(message.Chat.Id, door_66, false, false, 0, null, ParseMode.Html); Thread.Sleep(52);
-                                await Bot.SendTextMessageAsync(message.Chat.Id, door_67, false, false, 0, null, ParseMode.Html); Thread.Sleep(52);
-                                await Bot.SendTextMessageAsync(message.Chat.Id, door_68, false, false, 0, null, ParseMode.Html); Thread.Sleep(52);
-                                await Bot.SendTextMessageAsync(message.Chat.Id, door_69, false, false, 0, null, ParseMode.Html); Thread.Sleep(52);
-                                await Bot.SendTextMessageAsync(message.Chat.Id, door_610, false, false, 0, null, ParseMode.Html); Thread.Sleep(52);
-                                await Bot.SendTextMessageAsync(message.Chat.Id, door_611, false, false, 0, null, ParseMode.Html); Thread.Sleep(52);
-                                await Bot.SendTextMessageAsync(message.Chat.Id, door_612, false, false, 0, null, ParseMode.Html); Thread.Sleep(52);
-                                await Bot.SendTextMessageAsync(message.Chat.Id, door_613, false, false, 0, null, ParseMode.Html); Thread.Sleep(52);
-                                await Bot.SendTextMessageAsync(message.Chat.Id, door_614, false, false, 0, null, ParseMode.Html); Thread.Sleep(52);
-                                await Bot.SendTextMessageAsync(message.Chat.Id, door_615, false, false, 0, null, ParseMode.Html); Thread.Sleep(52);
-                                await Bot.SendTextMessageAsync(message.Chat.Id, door_616, false, false, 0, null, ParseMode.Html); Thread.Sleep(52);
-                                await Bot.SendTextMessageAsync(message.Chat.Id, door_617, false, false, 0, null, ParseMode.Html); Thread.Sleep(52);
-                                await Bot.SendTextMessageAsync(message.Chat.Id, door_618, false, false, 0, null, ParseMode.Html); Thread.Sleep(52);
-                                await Bot.SendTextMessageAsync(message.Chat.Id, door_619, false, false, 0, null, ParseMode.Html); Thread.Sleep(52);
-                                await Bot.SendTextMessageAsync(message.Chat.Id, door_620, false, false, 0, null, ParseMode.Html); Thread.Sleep(52);
-                                await Bot.SendTextMessageAsync(message.Chat.Id, door_621, false, false, 0, null, ParseMode.Html); Thread.Sleep(52);
-                                await Bot.SendTextMessageAsync(message.Chat.Id, door_622, false, false, 0, null, ParseMode.Html); Thread.Sleep(52);
-                                await Bot.SendTextMessageAsync(message.Chat.Id, door_623, false, false, 0, null, ParseMode.Html); Thread.Sleep(52);
-                                await Bot.SendTextMessageAsync(message.Chat.Id, door_624, false, false, 0, null, ParseMode.Html); Thread.Sleep(52);
-                                await Bot.SendTextMessageAsync(message.Chat.Id, door_625, false, false, 0, null, ParseMode.Html); Thread.Sleep(52);
-                                await Bot.SendTextMessageAsync(message.Chat.Id, door_626, false, false, 0, null, ParseMode.Html); Thread.Sleep(52);
-                                await Bot.SendTextMessageAsync(message.Chat.Id, door_627, false, false, 0, null, ParseMode.Html); Thread.Sleep(52);
-                                await Bot.SendTextMessageAsync(message.Chat.Id, door_628, false, false, 0, null, ParseMode.Html); Thread.Sleep(52);
-                                await Bot.SendTextMessageAsync(message.Chat.Id, door_629, false, false, 0, null, ParseMode.Html); Thread.Sleep(52);
-                                await Bot.SendTextMessageAsync(message.Chat.Id, door_630, false, false, 0, null, ParseMode.Html); Thread.Sleep(52);
-                                await Bot.SendTextMessageAsync(message.Chat.Id, door_631, false, false, 0, null, ParseMode.Html); Thread.Sleep(52);
-                                await Bot.SendTextMessageAsync(message.Chat.Id, door_632, false, false, 0, null, ParseMode.Html); Thread.Sleep(52);
-                                await Bot.SendTextMessageAsync(message.Chat.Id, door_633, false, false, 0, null, ParseMode.Html); Thread.Sleep(52);
-                                await Bot.SendTextMessageAsync(message.Chat.Id, door_634, false, false, 0, null, ParseMode.Html); Thread.Sleep(52);
-                                await Bot.SendTextMessageAsync(message.Chat.Id, door_635, false, false, 0, null, ParseMode.Html); Thread.Sleep(52);
-                                await Bot.SendTextMessageAsync(message.Chat.Id, door_636, false, false, 0, null, ParseMode.Html); Thread.Sleep(52);
-                                await Bot.SendTextMessageAsync(message.Chat.Id, door_637, false, false, 0, null, ParseMode.Html); Thread.Sleep(52);
-                                await Bot.SendTextMessageAsync(message.Chat.Id, door_638, false, false, 0, null, ParseMode.Html); Thread.Sleep(52);
-                                await Bot.SendTextMessageAsync(message.Chat.Id, door_639, false, false, 0, null, ParseMode.Html); Thread.Sleep(52);
-                                await Bot.SendTextMessageAsync(message.Chat.Id, door_640, false, false, 0, null, ParseMode.Html); Thread.Sleep(52);
-                                await Bot.SendTextMessageAsync(message.Chat.Id, door_641, false, false, 0, null, ParseMode.Html); Thread.Sleep(52);
-                                await Bot.SendTextMessageAsync(message.Chat.Id, door_642, false, false, 0, null, ParseMode.Html); Thread.Sleep(52);
-                                await Bot.SendTextMessageAsync(message.Chat.Id, door_643, false, false, 0, null, ParseMode.Html); Thread.Sleep(52);
-                                await Bot.SendTextMessageAsync(message.Chat.Id, door_644, false, false, 0, null, ParseMode.Html); Thread.Sleep(52);
-                                await Bot.SendTextMessageAsync(message.Chat.Id, door_645, false, false, 0, null, ParseMode.Html); Thread.Sleep(52);
-                                await Bot.SendTextMessageAsync(message.Chat.Id, door_646, false, false, 0, null, ParseMode.Html); Thread.Sleep(52);
-                                await Bot.SendTextMessageAsync(message.Chat.Id, door_647, false, false, 0, null, ParseMode.Html); Thread.Sleep(52);
-                                await Bot.SendTextMessageAsync(message.Chat.Id, door_648, false, false, 0, null, ParseMode.Html); Thread.Sleep(52);
-                                await Bot.SendTextMessageAsync(message.Chat.Id, door_649, false, false, 0, null, ParseMode.Html); Thread.Sleep(52);
-                                await Bot.SendTextMessageAsync(message.Chat.Id, door_650, false, false, 0, null, ParseMode.Html); Thread.Sleep(52);
-                                await Bot.SendTextMessageAsync(message.Chat.Id, door_651, false, false, 0, null, ParseMode.Html); Thread.Sleep(52);
-                                await Bot.SendTextMessageAsync(message.Chat.Id, door_652, false, false, 0, null, ParseMode.Html); Thread.Sleep(52);
-                                await Bot.SendTextMessageAsync(message.Chat.Id, door_653, false, false, 0, null, ParseMode.Html); Thread.Sleep(52);
-                                await Bot.SendTextMessageAsync(message.Chat.Id, door_654, false, false, 0, null, ParseMode.Html); Thread.Sleep(52);
-                                await Bot.SendTextMessageAsync(message.Chat.Id, door_655, false, false, 0, null, ParseMode.Html); Thread.Sleep(52);
-                                await Bot.SendTextMessageAsync(message.Chat.Id, door_656, false, false, 0, null, ParseMode.Html); Thread.Sleep(52);
-                                await Bot.SendTextMessageAsync(message.Chat.Id, door_657, false, false, 0, null, ParseMode.Html); Thread.Sleep(52);
-                                await Bot.SendTextMessageAsync(message.Chat.Id, door_658, false, false, 0, null, ParseMode.Html); Thread.Sleep(52);
-                                await Bot.SendTextMessageAsync(message.Chat.Id, door_659, false, false, 0, null, ParseMode.Html); Thread.Sleep(52);
-                                await Bot.SendTextMessageAsync(message.Chat.Id, door_660, false, false, 0, null, ParseMode.Html); Thread.Sleep(52);
-                                await Bot.SendTextMessageAsync(message.Chat.Id, door_661, false, false, 0, null, ParseMode.Html); Thread.Sleep(52);
-                                await Bot.SendTextMessageAsync(message.Chat.Id, door_662, false, false, 0, null, ParseMode.Html); Thread.Sleep(52);
-                                await Bot.SendTextMessageAsync(message.Chat.Id, door_663, false, false, 0, null, ParseMode.Html); Thread.Sleep(52);
-                                await Bot.SendTextMessageAsync(message.Chat.Id, door_664, false, false, 0, null, ParseMode.Html); Thread.Sleep(52);
-                                await Bot.SendTextMessageAsync(message.Chat.Id, door_665, false, false, 0, null, ParseMode.Html); Thread.Sleep(52);
-                                await Bot.SendTextMessageAsync(message.Chat.Id, door_666, false, false, 0, null, ParseMode.Html); Thread.Sleep(52);
-                                await Bot.SendTextMessageAsync(message.Chat.Id, door_667, false, false, 0, null, ParseMode.Html); Thread.Sleep(52);
-                                await Bot.SendTextMessageAsync(message.Chat.Id, door_668, false, false, 0, null, ParseMode.Html); Thread.Sleep(52);
-                                await Bot.SendTextMessageAsync(message.Chat.Id, door_669, false, false, 0, null, ParseMode.Html); Thread.Sleep(52);
-                                await Bot.SendTextMessageAsync(message.Chat.Id, door_670, false, false, 0, null, ParseMode.Html); Thread.Sleep(52);
-                                await Bot.SendTextMessageAsync(message.Chat.Id, door_671, false, false, 0, null, ParseMode.Html); Thread.Sleep(52);
-                                await Bot.SendTextMessageAsync(message.Chat.Id, door_672, false, false, 0, null, ParseMode.Html); Thread.Sleep(52);
-                                await Bot.SendTextMessageAsync(message.Chat.Id, door_673, false, false, 0, null, ParseMode.Html); Thread.Sleep(52);
-                                await Bot.SendTextMessageAsync(message.Chat.Id, door_674, false, false, 0, null, ParseMode.Html); Thread.Sleep(52);
-                                await Bot.SendTextMessageAsync(message.Chat.Id, door_675, false, false, 0, null, ParseMode.Html); Thread.Sleep(52);
-                                await Bot.SendTextMessageAsync(message.Chat.Id, door_676, false, false, 0, null, ParseMode.Html); Thread.Sleep(52);
-                                await Bot.SendTextMessageAsync(message.Chat.Id, door_677, false, false, 0, null, ParseMode.Html); Thread.Sleep(52);
-                                await Bot.SendTextMessageAsync(message.Chat.Id, door_678, false, false, 0, null, ParseMode.Html); Thread.Sleep(52);
-                                await Bot.SendTextMessageAsync(message.Chat.Id, door_679, false, false, 0, null, ParseMode.Html); Thread.Sleep(52);
-                                await Bot.SendTextMessageAsync(message.Chat.Id, door_680, false, false, 0, null, ParseMode.Html); Thread.Sleep(52);
-                                await Bot.SendTextMessageAsync(message.Chat.Id, door_681, false, false, 0, null, ParseMode.Html); Thread.Sleep(52);
-                                await Bot.SendTextMessageAsync(message.Chat.Id, door_682, false, false, 0, null, ParseMode.Html); Thread.Sleep(52);
-                                await Bot.SendTextMessageAsync(message.Chat.Id, door_683, false, false, 0, null, ParseMode.Html); Thread.Sleep(52);
-                                await Bot.SendTextMessageAsync(message.Chat.Id, door_684, false, false, 0, null, ParseMode.Html); Thread.Sleep(52);
-                                await Bot.SendTextMessageAsync(message.Chat.Id, door_685, false, false, 0, null, ParseMode.Html); Thread.Sleep(52);
-                                await Bot.SendTextMessageAsync(message.Chat.Id, door_686, false, false, 0, null, ParseMode.Html); Thread.Sleep(52);
-                                await Bot.SendTextMessageAsync(message.Chat.Id, door_687, false, false, 0, null, ParseMode.Html); Thread.Sleep(52);
-                                await Bot.SendTextMessageAsync(message.Chat.Id, door_688, false, false, 0, null, ParseMode.Html); Thread.Sleep(52);
-                                await Bot.SendTextMessageAsync(message.Chat.Id, door_689, false, false, 0, null, ParseMode.Html); Thread.Sleep(52);
-                                await Bot.SendTextMessageAsync(message.Chat.Id, door_690, false, false, 0, null, ParseMode.Html); Thread.Sleep(52);
-                                await Bot.SendTextMessageAsync(message.Chat.Id, door_691, false, false, 0, null, ParseMode.Html); Thread.Sleep(52);
-                                await Bot.SendTextMessageAsync(message.Chat.Id, door_692, false, false, 0, null, ParseMode.Html); Thread.Sleep(52);
-                                await Bot.SendTextMessageAsync(message.Chat.Id, door_693, false, false, 0, null, ParseMode.Html); Thread.Sleep(52);
-                                await Bot.SendTextMessageAsync(message.Chat.Id, door_694, false, false, 0, null, ParseMode.Html); Thread.Sleep(52);
-                                await Bot.SendTextMessageAsync(message.Chat.Id, door_695, false, false, 0, null, ParseMode.Html); Thread.Sleep(52);
-                                await Bot.SendTextMessageAsync(message.Chat.Id, door_696, false, false, 0, null, ParseMode.Html); Thread.Sleep(52);
-                                await Bot.SendTextMessageAsync(message.Chat.Id, door_697, false, false, 0, null, ParseMode.Html); Thread.Sleep(52);
-                                await Bot.SendTextMessageAsync(message.Chat.Id, door_698, false, false, 0, null, ParseMode.Html); Thread.Sleep(52);
-                                await Bot.SendTextMessageAsync(message.Chat.Id, door_699, false, false, 0, null, ParseMode.Html); Thread.Sleep(52);
+                                await Bot.SendTextMessageAsync(message.Chat.Id, door_60, false, false, 0, keyboardWait, ParseMode.Html); Thread.Sleep(4000);
+                                await Bot.SendTextMessageAsync(message.Chat.Id, door_61, false, false, 0, null, ParseMode.Html); Thread.Sleep(4000);
+                                await Bot.SendTextMessageAsync(message.Chat.Id, door_62, false, false, 0, null, ParseMode.Html); Thread.Sleep(4000);
+                                await Bot.SendTextMessageAsync(message.Chat.Id, door_63, false, false, 0, null, ParseMode.Html); Thread.Sleep(4000);
+                                await Bot.SendTextMessageAsync(message.Chat.Id, door_64, false, false, 0, null, ParseMode.Html); Thread.Sleep(4000);
+                                await Bot.SendTextMessageAsync(message.Chat.Id, door_65, false, false, 0, null, ParseMode.Html); Thread.Sleep(4000);
+                                await Bot.SendTextMessageAsync(message.Chat.Id, door_66, false, false, 0, null, ParseMode.Html); Thread.Sleep(4000);
+                                await Bot.SendTextMessageAsync(message.Chat.Id, door_67, false, false, 0, null, ParseMode.Html); Thread.Sleep(4000);
+                                await Bot.SendTextMessageAsync(message.Chat.Id, door_68, false, false, 0, null, ParseMode.Html); Thread.Sleep(4000);
+                                await Bot.SendTextMessageAsync(message.Chat.Id, door_69, false, false, 0, null, ParseMode.Html); Thread.Sleep(4000);
+                                await Bot.SendTextMessageAsync(message.Chat.Id, door_610, false, false, 0, null, ParseMode.Html); Thread.Sleep(4000);
+                                await Bot.SendTextMessageAsync(message.Chat.Id, door_611, false, false, 0, null, ParseMode.Html); Thread.Sleep(4000);
+                                await Bot.SendTextMessageAsync(message.Chat.Id, door_612, false, false, 0, null, ParseMode.Html); Thread.Sleep(4000);
+                                await Bot.SendTextMessageAsync(message.Chat.Id, door_613, false, false, 0, null, ParseMode.Html); Thread.Sleep(4000);
+                                await Bot.SendTextMessageAsync(message.Chat.Id, door_614, false, false, 0, null, ParseMode.Html); Thread.Sleep(4000);
+                                await Bot.SendTextMessageAsync(message.Chat.Id, door_615, false, false, 0, null, ParseMode.Html); Thread.Sleep(4000);
+                                await Bot.SendTextMessageAsync(message.Chat.Id, door_616, false, false, 0, null, ParseMode.Html); Thread.Sleep(4000);
+                                await Bot.SendTextMessageAsync(message.Chat.Id, door_617, false, false, 0, null, ParseMode.Html); Thread.Sleep(4000);
+                                await Bot.SendTextMessageAsync(message.Chat.Id, door_618, false, false, 0, null, ParseMode.Html); Thread.Sleep(4000);
+                                await Bot.SendTextMessageAsync(message.Chat.Id, door_619, false, false, 0, null, ParseMode.Html); Thread.Sleep(4000);
+                                await Bot.SendTextMessageAsync(message.Chat.Id, door_620, false, false, 0, null, ParseMode.Html); Thread.Sleep(4000);
+                                await Bot.SendTextMessageAsync(message.Chat.Id, door_621, false, false, 0, null, ParseMode.Html); Thread.Sleep(4000);
+                                await Bot.SendTextMessageAsync(message.Chat.Id, door_622, false, false, 0, null, ParseMode.Html); Thread.Sleep(4000);
+                                await Bot.SendTextMessageAsync(message.Chat.Id, door_623, false, false, 0, null, ParseMode.Html); Thread.Sleep(4000);
+                                await Bot.SendTextMessageAsync(message.Chat.Id, door_624, false, false, 0, null, ParseMode.Html); Thread.Sleep(4000);
+                                await Bot.SendTextMessageAsync(message.Chat.Id, door_625, false, false, 0, null, ParseMode.Html); Thread.Sleep(4000);
+                                await Bot.SendTextMessageAsync(message.Chat.Id, door_626, false, false, 0, null, ParseMode.Html); Thread.Sleep(4000);
+                                await Bot.SendTextMessageAsync(message.Chat.Id, door_627, false, false, 0, null, ParseMode.Html); Thread.Sleep(4000);
+                                await Bot.SendTextMessageAsync(message.Chat.Id, door_628, false, false, 0, null, ParseMode.Html); Thread.Sleep(4000);
+                                await Bot.SendTextMessageAsync(message.Chat.Id, door_629, false, false, 0, null, ParseMode.Html); Thread.Sleep(4000);
+                                await Bot.SendTextMessageAsync(message.Chat.Id, door_630, false, false, 0, null, ParseMode.Html); Thread.Sleep(4000);
+                                await Bot.SendTextMessageAsync(message.Chat.Id, door_631, false, false, 0, null, ParseMode.Html); Thread.Sleep(4000);
+                                await Bot.SendTextMessageAsync(message.Chat.Id, door_632, false, false, 0, null, ParseMode.Html); Thread.Sleep(4000);
+                                await Bot.SendTextMessageAsync(message.Chat.Id, door_633, false, false, 0, null, ParseMode.Html); Thread.Sleep(4000);
+                                await Bot.SendTextMessageAsync(message.Chat.Id, door_634, false, false, 0, null, ParseMode.Html); Thread.Sleep(4000);
+                                await Bot.SendTextMessageAsync(message.Chat.Id, door_635, false, false, 0, null, ParseMode.Html); Thread.Sleep(4000);
+                                await Bot.SendTextMessageAsync(message.Chat.Id, door_636, false, false, 0, null, ParseMode.Html); Thread.Sleep(4000);
+                                await Bot.SendTextMessageAsync(message.Chat.Id, door_637, false, false, 0, null, ParseMode.Html); Thread.Sleep(4000);
+                                await Bot.SendTextMessageAsync(message.Chat.Id, door_638, false, false, 0, null, ParseMode.Html); Thread.Sleep(4000);
+                                await Bot.SendTextMessageAsync(message.Chat.Id, door_639, false, false, 0, null, ParseMode.Html); Thread.Sleep(4000);
+                                await Bot.SendTextMessageAsync(message.Chat.Id, door_640, false, false, 0, null, ParseMode.Html); Thread.Sleep(4000);
+                                await Bot.SendTextMessageAsync(message.Chat.Id, door_641, false, false, 0, null, ParseMode.Html); Thread.Sleep(4000);
+                                await Bot.SendTextMessageAsync(message.Chat.Id, door_642, false, false, 0, null, ParseMode.Html); Thread.Sleep(4000);
+                                await Bot.SendTextMessageAsync(message.Chat.Id, door_643, false, false, 0, null, ParseMode.Html); Thread.Sleep(4000);
+                                await Bot.SendTextMessageAsync(message.Chat.Id, door_644, false, false, 0, null, ParseMode.Html); Thread.Sleep(4000);
+                                await Bot.SendTextMessageAsync(message.Chat.Id, door_645, false, false, 0, null, ParseMode.Html); Thread.Sleep(4000);
+                                await Bot.SendTextMessageAsync(message.Chat.Id, door_646, false, false, 0, null, ParseMode.Html); Thread.Sleep(4000);
+                                await Bot.SendTextMessageAsync(message.Chat.Id, door_647, false, false, 0, null, ParseMode.Html); Thread.Sleep(4000);
+                                await Bot.SendTextMessageAsync(message.Chat.Id, door_648, false, false, 0, null, ParseMode.Html); Thread.Sleep(4000);
+                                await Bot.SendTextMessageAsync(message.Chat.Id, door_649, false, false, 0, null, ParseMode.Html); Thread.Sleep(4000);
+                                await Bot.SendTextMessageAsync(message.Chat.Id, door_650, false, false, 0, null, ParseMode.Html); Thread.Sleep(4000);
+                                await Bot.SendTextMessageAsync(message.Chat.Id, door_651, false, false, 0, null, ParseMode.Html); Thread.Sleep(4000);
+                                await Bot.SendTextMessageAsync(message.Chat.Id, door_652, false, false, 0, null, ParseMode.Html); Thread.Sleep(4000);
+                                await Bot.SendTextMessageAsync(message.Chat.Id, door_653, false, false, 0, null, ParseMode.Html); Thread.Sleep(4000);
+                                await Bot.SendTextMessageAsync(message.Chat.Id, door_654, false, false, 0, null, ParseMode.Html); Thread.Sleep(4000);
+                                await Bot.SendTextMessageAsync(message.Chat.Id, door_655, false, false, 0, null, ParseMode.Html); Thread.Sleep(4000);
+                                await Bot.SendTextMessageAsync(message.Chat.Id, door_656, false, false, 0, null, ParseMode.Html); Thread.Sleep(4000);
+                                await Bot.SendTextMessageAsync(message.Chat.Id, door_657, false, false, 0, null, ParseMode.Html); Thread.Sleep(4000);
+                                await Bot.SendTextMessageAsync(message.Chat.Id, door_658, false, false, 0, null, ParseMode.Html); Thread.Sleep(4000);
+                                await Bot.SendTextMessageAsync(message.Chat.Id, door_659, false, false, 0, null, ParseMode.Html); Thread.Sleep(4000);
+                                await Bot.SendTextMessageAsync(message.Chat.Id, door_660, false, false, 0, null, ParseMode.Html); Thread.Sleep(4000);
+                                await Bot.SendTextMessageAsync(message.Chat.Id, door_661, false, false, 0, null, ParseMode.Html); Thread.Sleep(4000);
+                                await Bot.SendTextMessageAsync(message.Chat.Id, door_662, false, false, 0, null, ParseMode.Html); Thread.Sleep(4000);
+                                await Bot.SendTextMessageAsync(message.Chat.Id, door_663, false, false, 0, null, ParseMode.Html); Thread.Sleep(4000);
+                                await Bot.SendTextMessageAsync(message.Chat.Id, door_664, false, false, 0, null, ParseMode.Html); Thread.Sleep(4000);
+                                await Bot.SendTextMessageAsync(message.Chat.Id, door_665, false, false, 0, null, ParseMode.Html); Thread.Sleep(4000);
+                                await Bot.SendTextMessageAsync(message.Chat.Id, door_666, false, false, 0, null, ParseMode.Html); Thread.Sleep(4000);
+                                await Bot.SendTextMessageAsync(message.Chat.Id, door_667, false, false, 0, null, ParseMode.Html); Thread.Sleep(4000);
+                                await Bot.SendTextMessageAsync(message.Chat.Id, door_668, false, false, 0, null, ParseMode.Html); Thread.Sleep(4000);
+                                await Bot.SendTextMessageAsync(message.Chat.Id, door_669, false, false, 0, null, ParseMode.Html); Thread.Sleep(4000);
+                                await Bot.SendTextMessageAsync(message.Chat.Id, door_670, false, false, 0, null, ParseMode.Html); Thread.Sleep(4000);
+                                await Bot.SendTextMessageAsync(message.Chat.Id, door_671, false, false, 0, null, ParseMode.Html); Thread.Sleep(4000);
+                                await Bot.SendTextMessageAsync(message.Chat.Id, door_672, false, false, 0, null, ParseMode.Html); Thread.Sleep(4000);
+                                await Bot.SendTextMessageAsync(message.Chat.Id, door_673, false, false, 0, null, ParseMode.Html); Thread.Sleep(4000);
+                                await Bot.SendTextMessageAsync(message.Chat.Id, door_674, false, false, 0, null, ParseMode.Html); Thread.Sleep(4000);
+                                await Bot.SendTextMessageAsync(message.Chat.Id, door_675, false, false, 0, null, ParseMode.Html); Thread.Sleep(4000);
+                                await Bot.SendTextMessageAsync(message.Chat.Id, door_676, false, false, 0, null, ParseMode.Html); Thread.Sleep(4000);
+                                await Bot.SendTextMessageAsync(message.Chat.Id, door_677, false, false, 0, null, ParseMode.Html); Thread.Sleep(4000);
+                                await Bot.SendTextMessageAsync(message.Chat.Id, door_678, false, false, 0, null, ParseMode.Html); Thread.Sleep(4000);
+                                await Bot.SendTextMessageAsync(message.Chat.Id, door_679, false, false, 0, null, ParseMode.Html); Thread.Sleep(4000);
+                                await Bot.SendTextMessageAsync(message.Chat.Id, door_680, false, false, 0, null, ParseMode.Html); Thread.Sleep(4000);
+                                await Bot.SendTextMessageAsync(message.Chat.Id, door_681, false, false, 0, null, ParseMode.Html); Thread.Sleep(4000);
+                                await Bot.SendTextMessageAsync(message.Chat.Id, door_682, false, false, 0, null, ParseMode.Html); Thread.Sleep(4000);
+                                await Bot.SendTextMessageAsync(message.Chat.Id, door_683, false, false, 0, null, ParseMode.Html); Thread.Sleep(4000);
+                                await Bot.SendTextMessageAsync(message.Chat.Id, door_684, false, false, 0, null, ParseMode.Html); Thread.Sleep(4000);
+                                await Bot.SendTextMessageAsync(message.Chat.Id, door_685, false, false, 0, null, ParseMode.Html); Thread.Sleep(4000);
+                                await Bot.SendTextMessageAsync(message.Chat.Id, door_686, false, false, 0, null, ParseMode.Html); Thread.Sleep(4000);
+                                await Bot.SendTextMessageAsync(message.Chat.Id, door_687, false, false, 0, null, ParseMode.Html); Thread.Sleep(4000);
+                                await Bot.SendTextMessageAsync(message.Chat.Id, door_688, false, false, 0, null, ParseMode.Html); Thread.Sleep(4000);
+                                await Bot.SendTextMessageAsync(message.Chat.Id, door_689, false, false, 0, null, ParseMode.Html); Thread.Sleep(4000);
+                                await Bot.SendTextMessageAsync(message.Chat.Id, door_690, false, false, 0, null, ParseMode.Html); Thread.Sleep(4000);
+                                await Bot.SendTextMessageAsync(message.Chat.Id, door_691, false, false, 0, null, ParseMode.Html); Thread.Sleep(4000);
+                                await Bot.SendTextMessageAsync(message.Chat.Id, door_692, false, false, 0, null, ParseMode.Html); Thread.Sleep(4000);
+                                await Bot.SendTextMessageAsync(message.Chat.Id, door_693, false, false, 0, null, ParseMode.Html); Thread.Sleep(4000);
+                                await Bot.SendTextMessageAsync(message.Chat.Id, door_694, false, false, 0, null, ParseMode.Html); Thread.Sleep(4000);
+                                await Bot.SendTextMessageAsync(message.Chat.Id, door_695, false, false, 0, null, ParseMode.Html); Thread.Sleep(4000);
+                                await Bot.SendTextMessageAsync(message.Chat.Id, door_696, false, false, 0, null, ParseMode.Html); Thread.Sleep(4000);
+                                await Bot.SendTextMessageAsync(message.Chat.Id, door_697, false, false, 0, null, ParseMode.Html); Thread.Sleep(4000);
+                                await Bot.SendTextMessageAsync(message.Chat.Id, door_698, false, false, 0, null, ParseMode.Html); Thread.Sleep(4000);
+                                await Bot.SendTextMessageAsync(message.Chat.Id, door_699, false, false, 0, null, ParseMode.Html); Thread.Sleep(4000);
                                 //problem
-                                await Bot.SendTextMessageAsync(message.Chat.Id, door_6710, false, false, 0, null, ParseMode.Html); Thread.Sleep(52);
-                                await Bot.SendTextMessageAsync(message.Chat.Id, door_6711, false, false, 0, null, ParseMode.Html); Thread.Sleep(52);
-                                await Bot.SendTextMessageAsync(message.Chat.Id, door_6712, false, false, 0, null, ParseMode.Html); Thread.Sleep(52);
-                                await Bot.SendTextMessageAsync(message.Chat.Id, door_6713, false, false, 0, null, ParseMode.Html); Thread.Sleep(52);
-                                await Bot.SendTextMessageAsync(message.Chat.Id, door_6714, false, false, 0, null, ParseMode.Html); Thread.Sleep(52);
-                                await Bot.SendTextMessageAsync(message.Chat.Id, door_6715, false, false, 0, null, ParseMode.Html); Thread.Sleep(52);
-                                await Bot.SendTextMessageAsync(message.Chat.Id, door_6716, false, false, 0, null, ParseMode.Html); Thread.Sleep(52);
-                                await Bot.SendTextMessageAsync(message.Chat.Id, door_6717, false, false, 0, null, ParseMode.Html); Thread.Sleep(52);
-                                await Bot.SendTextMessageAsync(message.Chat.Id, door_6718, false, false, 0, null, ParseMode.Html); Thread.Sleep(52);
-                                await Bot.SendTextMessageAsync(message.Chat.Id, door_6719, false, false, 0, null, ParseMode.Html); Thread.Sleep(52);
-                                await Bot.SendTextMessageAsync(message.Chat.Id, door_6810, false, false, 0, null, ParseMode.Html); Thread.Sleep(52);
-                                await Bot.SendTextMessageAsync(message.Chat.Id, door_6811, false, false, 0, null, ParseMode.Html); Thread.Sleep(52);
-                                await Bot.SendTextMessageAsync(message.Chat.Id, door_6812, false, false, 0, null, ParseMode.Html); Thread.Sleep(52);
-                                await Bot.SendTextMessageAsync(message.Chat.Id, door_6813, false, false, 0, null, ParseMode.Html); Thread.Sleep(52);
-                                await Bot.SendTextMessageAsync(message.Chat.Id, door_6814, false, false, 0, null, ParseMode.Html); Thread.Sleep(52);
-                                await Bot.SendTextMessageAsync(message.Chat.Id, door_6815, false, false, 0, null, ParseMode.Html); Thread.Sleep(52);
-                                await Bot.SendTextMessageAsync(message.Chat.Id, door_6816, false, false, 0, null, ParseMode.Html); Thread.Sleep(52);
-                                await Bot.SendTextMessageAsync(message.Chat.Id, door_6817, false, false, 0, null, ParseMode.Html); Thread.Sleep(52);
-                                await Bot.SendTextMessageAsync(message.Chat.Id, door_6818, false, false, 0, null, ParseMode.Html); Thread.Sleep(52);
-                                await Bot.SendTextMessageAsync(message.Chat.Id, door_6819, false, false, 0, null, ParseMode.Html); Thread.Sleep(52);
-                                await Bot.SendTextMessageAsync(message.Chat.Id, door_6910, false, false, 0, null, ParseMode.Html); Thread.Sleep(52);
-                                await Bot.SendTextMessageAsync(message.Chat.Id, door_6911, false, false, 0, null, ParseMode.Html); Thread.Sleep(52);
-                                await Bot.SendTextMessageAsync(message.Chat.Id, door_6912, false, false, 0, null, ParseMode.Html); Thread.Sleep(52);
-                                await Bot.SendTextMessageAsync(message.Chat.Id, door_6913, false, false, 0, null, ParseMode.Html); Thread.Sleep(52);
-                                await Bot.SendTextMessageAsync(message.Chat.Id, door_6914, false, false, 0, null, ParseMode.Html); Thread.Sleep(52);
-                                await Bot.SendTextMessageAsync(message.Chat.Id, door_6915, false, false, 0, null, ParseMode.Html); Thread.Sleep(52);
-                                await Bot.SendTextMessageAsync(message.Chat.Id, door_6916, false, false, 0, null, ParseMode.Html); Thread.Sleep(52);
-                                await Bot.SendTextMessageAsync(message.Chat.Id, door_6917, false, false, 0, null, ParseMode.Html); Thread.Sleep(52);
-                                await Bot.SendTextMessageAsync(message.Chat.Id, door_6918, false, false, 0, null, ParseMode.Html); Thread.Sleep(52);
-                                await Bot.SendTextMessageAsync(message.Chat.Id, door_6919, false, false, 0, null, ParseMode.Html); Thread.Sleep(52);
+                                await Bot.SendTextMessageAsync(message.Chat.Id, door_6710, false, false, 0, null, ParseMode.Html); Thread.Sleep(4000);
+                                await Bot.SendTextMessageAsync(message.Chat.Id, door_6711, false, false, 0, null, ParseMode.Html); Thread.Sleep(4000);
+                                await Bot.SendTextMessageAsync(message.Chat.Id, door_6712, false, false, 0, null, ParseMode.Html); Thread.Sleep(4000);
+                                await Bot.SendTextMessageAsync(message.Chat.Id, door_6713, false, false, 0, null, ParseMode.Html); Thread.Sleep(4000);
+                                await Bot.SendTextMessageAsync(message.Chat.Id, door_6714, false, false, 0, null, ParseMode.Html); Thread.Sleep(4000);
+                                await Bot.SendTextMessageAsync(message.Chat.Id, door_6715, false, false, 0, null, ParseMode.Html); Thread.Sleep(4000);
+                                await Bot.SendTextMessageAsync(message.Chat.Id, door_6716, false, false, 0, null, ParseMode.Html); Thread.Sleep(4000);
+                                await Bot.SendTextMessageAsync(message.Chat.Id, door_6717, false, false, 0, null, ParseMode.Html); Thread.Sleep(4000);
+                                await Bot.SendTextMessageAsync(message.Chat.Id, door_6718, false, false, 0, null, ParseMode.Html); Thread.Sleep(4000);
+                                await Bot.SendTextMessageAsync(message.Chat.Id, door_6719, false, false, 0, null, ParseMode.Html); Thread.Sleep(4000);
+                                await Bot.SendTextMessageAsync(message.Chat.Id, door_6810, false, false, 0, null, ParseMode.Html); Thread.Sleep(4000);
+                                await Bot.SendTextMessageAsync(message.Chat.Id, door_6811, false, false, 0, null, ParseMode.Html); Thread.Sleep(4000);
+                                await Bot.SendTextMessageAsync(message.Chat.Id, door_6812, false, false, 0, null, ParseMode.Html); Thread.Sleep(4000);
+                                await Bot.SendTextMessageAsync(message.Chat.Id, door_6813, false, false, 0, null, ParseMode.Html); Thread.Sleep(4000);
+                                await Bot.SendTextMessageAsync(message.Chat.Id, door_6814, false, false, 0, null, ParseMode.Html); Thread.Sleep(4000);
+                                await Bot.SendTextMessageAsync(message.Chat.Id, door_6815, false, false, 0, null, ParseMode.Html); Thread.Sleep(4000);
+                                await Bot.SendTextMessageAsync(message.Chat.Id, door_6816, false, false, 0, null, ParseMode.Html); Thread.Sleep(4000);
+                                await Bot.SendTextMessageAsync(message.Chat.Id, door_6817, false, false, 0, null, ParseMode.Html); Thread.Sleep(4000);
+                                await Bot.SendTextMessageAsync(message.Chat.Id, door_6818, false, false, 0, null, ParseMode.Html); Thread.Sleep(4000);
+                                await Bot.SendTextMessageAsync(message.Chat.Id, door_6819, false, false, 0, null, ParseMode.Html); Thread.Sleep(4000);
+                                await Bot.SendTextMessageAsync(message.Chat.Id, door_6910, false, false, 0, null, ParseMode.Html); Thread.Sleep(4000);
+                                await Bot.SendTextMessageAsync(message.Chat.Id, door_6911, false, false, 0, null, ParseMode.Html); Thread.Sleep(4000);
+                                await Bot.SendTextMessageAsync(message.Chat.Id, door_6912, false, false, 0, null, ParseMode.Html); Thread.Sleep(4000);
+                                await Bot.SendTextMessageAsync(message.Chat.Id, door_6913, false, false, 0, null, ParseMode.Html); Thread.Sleep(4000);
+                                await Bot.SendTextMessageAsync(message.Chat.Id, door_6914, false, false, 0, null, ParseMode.Html); Thread.Sleep(4000);
+                                await Bot.SendTextMessageAsync(message.Chat.Id, door_6915, false, false, 0, null, ParseMode.Html); Thread.Sleep(4000);
+                                await Bot.SendTextMessageAsync(message.Chat.Id, door_6916, false, false, 0, null, ParseMode.Html); Thread.Sleep(4000);
+                                await Bot.SendTextMessageAsync(message.Chat.Id, door_6917, false, false, 0, null, ParseMode.Html); Thread.Sleep(4000);
+                                await Bot.SendTextMessageAsync(message.Chat.Id, door_6918, false, false, 0, null, ParseMode.Html); Thread.Sleep(4000);
+                                await Bot.SendTextMessageAsync(message.Chat.Id, door_6919, false, false, 0, null, ParseMode.Html); Thread.Sleep(4000);
                                 //problem fixed
-                                await Bot.SendTextMessageAsync(message.Chat.Id, door_6100, false, false, 0, null, ParseMode.Html); Thread.Sleep(52);
-                                await Bot.SendTextMessageAsync(message.Chat.Id, door_6101, false, false, 0, null, ParseMode.Html); Thread.Sleep(52);
-                                await Bot.SendTextMessageAsync(message.Chat.Id, door_6102, false, false, 0, null, ParseMode.Html); Thread.Sleep(52);
-                                await Bot.SendTextMessageAsync(message.Chat.Id, door_6103, false, false, 0, null, ParseMode.Html); Thread.Sleep(52);
-                                await Bot.SendTextMessageAsync(message.Chat.Id, door_6104, false, false, 0, null, ParseMode.Html); Thread.Sleep(52);
-                                await Bot.SendTextMessageAsync(message.Chat.Id, door_6105, false, false, 0, null, ParseMode.Html); Thread.Sleep(52);
-                                await Bot.SendTextMessageAsync(message.Chat.Id, door_6106, false, false, 0, null, ParseMode.Html); Thread.Sleep(52);
-                                await Bot.SendTextMessageAsync(message.Chat.Id, door_6107, false, false, 0, null, ParseMode.Html); Thread.Sleep(52);
-                                await Bot.SendTextMessageAsync(message.Chat.Id, door_6108, false, false, 0, null, ParseMode.Html); Thread.Sleep(52);
-                                await Bot.SendTextMessageAsync(message.Chat.Id, door_6109, false, false, 0, null, ParseMode.Html); Thread.Sleep(52);
-                                await Bot.SendTextMessageAsync(message.Chat.Id, door_6110, false, false, 0, null, ParseMode.Html); Thread.Sleep(52);
-                                await Bot.SendTextMessageAsync(message.Chat.Id, door_6111, false, false, 0, null, ParseMode.Html); Thread.Sleep(52);
-                                await Bot.SendTextMessageAsync(message.Chat.Id, door_6112, false, false, 0, null, ParseMode.Html); Thread.Sleep(52);
-                                await Bot.SendTextMessageAsync(message.Chat.Id, door_6113, false, false, 0, null, ParseMode.Html); Thread.Sleep(52);
-                                await Bot.SendTextMessageAsync(message.Chat.Id, door_6114, false, false, 0, null, ParseMode.Html); Thread.Sleep(52);
-                                await Bot.SendTextMessageAsync(message.Chat.Id, door_6115, false, false, 0, null, ParseMode.Html); Thread.Sleep(52);
-                                await Bot.SendTextMessageAsync(message.Chat.Id, door_6116, false, false, 0, null, ParseMode.Html); Thread.Sleep(52);
-                                await Bot.SendTextMessageAsync(message.Chat.Id, door_6117, false, false, 0, null, ParseMode.Html); Thread.Sleep(52);
-                                await Bot.SendTextMessageAsync(message.Chat.Id, door_6118, false, false, 0, null, ParseMode.Html); Thread.Sleep(52);
-                                await Bot.SendTextMessageAsync(message.Chat.Id, door_6119, false, false, 0, null, ParseMode.Html); Thread.Sleep(52);
-                                await Bot.SendTextMessageAsync(message.Chat.Id, door_6120, false, false, 0, null, ParseMode.Html); Thread.Sleep(52);
-                                await Bot.SendTextMessageAsync(message.Chat.Id, door_6121, false, false, 0, null, ParseMode.Html); Thread.Sleep(52);
-                                await Bot.SendTextMessageAsync(message.Chat.Id, door_6122, false, false, 0, null, ParseMode.Html); Thread.Sleep(52);
-                                await Bot.SendTextMessageAsync(message.Chat.Id, door_6123, false, false, 0, null, ParseMode.Html); Thread.Sleep(52);
-                                await Bot.SendTextMessageAsync(message.Chat.Id, door_6124, false, false, 0, null, ParseMode.Html); Thread.Sleep(52);
-                                await Bot.SendTextMessageAsync(message.Chat.Id, door_6125, false, false, 0, null, ParseMode.Html); Thread.Sleep(52);
-                                await Bot.SendTextMessageAsync(message.Chat.Id, door_6126, false, false, 0, null, ParseMode.Html); Thread.Sleep(52);
-                                await Bot.SendTextMessageAsync(message.Chat.Id, door_6127, false, false, 0, null, ParseMode.Html); Thread.Sleep(52);
-                                await Bot.SendTextMessageAsync(message.Chat.Id, door_6128, false, false, 0, null, ParseMode.Html); Thread.Sleep(52);
-                                await Bot.SendTextMessageAsync(message.Chat.Id, door_6129, false, false, 0, null, ParseMode.Html); Thread.Sleep(52);
-                                await Bot.SendTextMessageAsync(message.Chat.Id, door_6130, false, false, 0, null, ParseMode.Html); Thread.Sleep(52);
-                                await Bot.SendTextMessageAsync(message.Chat.Id, door_6131, false, false, 0, null, ParseMode.Html); Thread.Sleep(52);
-                                await Bot.SendTextMessageAsync(message.Chat.Id, door_6132, false, false, 0, null, ParseMode.Html); Thread.Sleep(52);
+                                await Bot.SendTextMessageAsync(message.Chat.Id, door_6100, false, false, 0, null, ParseMode.Html); Thread.Sleep(4000);
+                                await Bot.SendTextMessageAsync(message.Chat.Id, door_6101, false, false, 0, null, ParseMode.Html); Thread.Sleep(4000);
+                                await Bot.SendTextMessageAsync(message.Chat.Id, door_6102, false, false, 0, null, ParseMode.Html); Thread.Sleep(4000);
+                                await Bot.SendTextMessageAsync(message.Chat.Id, door_6103, false, false, 0, null, ParseMode.Html); Thread.Sleep(4000);
+                                await Bot.SendTextMessageAsync(message.Chat.Id, door_6104, false, false, 0, null, ParseMode.Html); Thread.Sleep(4000);
+                                await Bot.SendTextMessageAsync(message.Chat.Id, door_6105, false, false, 0, null, ParseMode.Html); Thread.Sleep(4000);
+                                await Bot.SendTextMessageAsync(message.Chat.Id, door_6106, false, false, 0, null, ParseMode.Html); Thread.Sleep(4000);
+                                await Bot.SendTextMessageAsync(message.Chat.Id, door_6107, false, false, 0, null, ParseMode.Html); Thread.Sleep(4000);
+                                await Bot.SendTextMessageAsync(message.Chat.Id, door_6108, false, false, 0, null, ParseMode.Html); Thread.Sleep(4000);
+                                await Bot.SendTextMessageAsync(message.Chat.Id, door_6109, false, false, 0, null, ParseMode.Html); Thread.Sleep(4000);
+                                await Bot.SendTextMessageAsync(message.Chat.Id, door_6110, false, false, 0, null, ParseMode.Html); Thread.Sleep(4000);
+                                await Bot.SendTextMessageAsync(message.Chat.Id, door_6111, false, false, 0, null, ParseMode.Html); Thread.Sleep(4000);
+                                await Bot.SendTextMessageAsync(message.Chat.Id, door_6112, false, false, 0, null, ParseMode.Html); Thread.Sleep(4000);
+                                await Bot.SendTextMessageAsync(message.Chat.Id, door_6113, false, false, 0, null, ParseMode.Html); Thread.Sleep(4000);
+                                await Bot.SendTextMessageAsync(message.Chat.Id, door_6114, false, false, 0, null, ParseMode.Html); Thread.Sleep(4000);
+                                await Bot.SendTextMessageAsync(message.Chat.Id, door_6115, false, false, 0, null, ParseMode.Html); Thread.Sleep(4000);
+                                await Bot.SendTextMessageAsync(message.Chat.Id, door_6116, false, false, 0, null, ParseMode.Html); Thread.Sleep(4000);
+                                await Bot.SendTextMessageAsync(message.Chat.Id, door_6117, false, false, 0, null, ParseMode.Html); Thread.Sleep(4000);
+                                await Bot.SendTextMessageAsync(message.Chat.Id, door_6118, false, false, 0, null, ParseMode.Html); Thread.Sleep(4000);
+                                await Bot.SendTextMessageAsync(message.Chat.Id, door_6119, false, false, 0, null, ParseMode.Html); Thread.Sleep(4000);
+                                await Bot.SendTextMessageAsync(message.Chat.Id, door_6120, false, false, 0, null, ParseMode.Html); Thread.Sleep(4000);
+                                await Bot.SendTextMessageAsync(message.Chat.Id, door_6121, false, false, 0, null, ParseMode.Html); Thread.Sleep(4000);
+                                await Bot.SendTextMessageAsync(message.Chat.Id, door_6122, false, false, 0, null, ParseMode.Html); Thread.Sleep(4000);
+                                await Bot.SendTextMessageAsync(message.Chat.Id, door_6123, false, false, 0, null, ParseMode.Html); Thread.Sleep(4000);
+                                await Bot.SendTextMessageAsync(message.Chat.Id, door_6124, false, false, 0, null, ParseMode.Html); Thread.Sleep(4000);
+                                await Bot.SendTextMessageAsync(message.Chat.Id, door_6125, false, false, 0, null, ParseMode.Html); Thread.Sleep(4000);
+                                await Bot.SendTextMessageAsync(message.Chat.Id, door_6126, false, false, 0, null, ParseMode.Html); Thread.Sleep(4000);
+                                await Bot.SendTextMessageAsync(message.Chat.Id, door_6127, false, false, 0, null, ParseMode.Html); Thread.Sleep(4000);
+                                await Bot.SendTextMessageAsync(message.Chat.Id, door_6128, false, false, 0, null, ParseMode.Html); Thread.Sleep(4000);
+                                await Bot.SendTextMessageAsync(message.Chat.Id, door_6129, false, false, 0, null, ParseMode.Html); Thread.Sleep(4000);
+                                await Bot.SendTextMessageAsync(message.Chat.Id, door_6130, false, false, 0, null, ParseMode.Html); Thread.Sleep(4000);
+                                await Bot.SendTextMessageAsync(message.Chat.Id, door_6131, false, false, 0, null, ParseMode.Html); Thread.Sleep(4000);
+                                await Bot.SendTextMessageAsync(message.Chat.Id, door_6132, false, false, 0, null, ParseMode.Html); Thread.Sleep(4000);
 
                                 var keyboard = new Telegram.Bot.Types.ReplyMarkups.ReplyKeyboardMarkup
                                 {
@@ -2043,10 +2023,165 @@ namespace revcom_bot
                                             },
                                     ResizeKeyboard = true
                                 };
-                                await Bot.SendTextMessageAsync(message.Chat.Id, door_6133, false, false, 0, keyboard, ParseMode.Html); Thread.Sleep(52);
+                                keyboardLast = keyboard;
+                                await Bot.SendTextMessageAsync(message.Chat.Id, door_6133, false, false, 0, keyboard, ParseMode.Html); Thread.Sleep(4000);
 
                             }
+                            //Эпилог
+                            else if (message.Text == "Перейти к эпилогу")
+                            {
+                                string epilog = "<i>Я никогда не задумывался о том, чего хочу… Наверное у многих сейчас это самые банальные желания, вроде успешного окончания учебы, хорошая работа, семья, любовь… Я не знаю, важно ли все это для меня… Есть ли в этом мире что-нибудь по-настоящему важное?\n\nВ мире, где каждый ищет, ради чего ему жить, смогу ли я найти это что-то когда-нибудь?..»\n\nЮи жила ради меня… Она пожертвовала всем, что у нее было, чтобы вновь встретиться со мной… Чтобы помнить меня…\n\nЯ не знаю, что меня ждет впереди…\n\nЛюди живут долго, помня то, что не хотят, и забывая то, что забывать не следует…\n\nВозможно я снова забуду что-то важное… Много важных вещей…\n\nЯ не могу ручаться даже за то, что вспомню свое имя, когда проснусь... Я не знаю, где я проснусь…\n\nНо одно я знаю наверняка…\n\nЯ найду то, ради чего мне стоит жить…</i>";
+                                string end = "<i>The End</i>";
+                                var keyboard = new Telegram.Bot.Types.ReplyMarkups.ReplyKeyboardMarkup
+                                {
+                                    Keyboard = new[] {
+                                                new[] // row 1
+                                                {
+                                                    new Telegram.Bot.Types.KeyboardButton("Спасибо"),
+                                                },
+                                            },
+                                    ResizeKeyboard = true
+                                };
+                                await Bot.SendTextMessageAsync(message.Chat.Id, epilog, false, false, 0, keyboardWait, ParseMode.Html); Thread.Sleep(4000);
+                                await Bot.SendTextMessageAsync(message.Chat.Id, end, false, false, 0, keyboard, ParseMode.Html); Thread.Sleep(4000);
+                            }
+                            //дверь №6
+                            else if (message.Text == "Остаться")
+                            {
+                                string door_6135 = "- Я… Устал… Я больше не могу путешествовать…";
+                                string door_6136 = "- Я понимаю твое желание…";
+                                string door_6137 = "<i>С тех пор в моей жизни не случалось ничего интересного…\n\nЯ закончил университет в красным дипломом, получил престижную работу…\n\nВ скором времени я получу должность главного директора, возможно заведу семью и забуду обо всем, что случилось… \n\nНо я не хочу забывать…</i>";
+                                await Bot.SendTextMessageAsync(message.Chat.Id, door_6135, false, false, 0, keyboardWait, ParseMode.Html); Thread.Sleep(4000);
+                                await Bot.SendTextMessageAsync(message.Chat.Id, door_6136, false, false, 0, null, ParseMode.Html); Thread.Sleep(4000);
+                                await Bot.SendTextMessageAsync(message.Chat.Id, door_6137, false, false, 0, null, ParseMode.Html); Thread.Sleep(4000);
+                                await Bot.SendPhotoAsync(message.Chat.Id, "https://preview.ibb.co/mCo0p6/CHOISE_61.jpg", "", false, 0, keyboard6);
+                                keyboardLast = keyboard6;
+                            }
+                            else if (message.Text == "Вернуться к Алене")
+                            {
+                                string door_6139 = "- Я хочу вернуться к сестре…";
+                                string door_6140 = "- Хорошо… Если ты умрешь в этом мире, ты забудешь все, что с тобой произошло, будешь жить так, как будто всего этого никогда не случалось…";
+                                string door_6141 = "- Значит я забуду и Юи?..";
+                                string door_6142 = "- Увы. Ты можешь выбрать лишь одну альтернативную личность, чтобы жить ее жизнью. Но для этого придется избавиться от остальных.";
+                                string door_6143 = "- И я никогда не вспомню о том, что произошло?";
+                                string door_6144 = "- Никогда.";
+                                string door_6145 = "- Тогда… Я согласен…";
+                                string door_6146 = "<i>Я сглотнул, разбежался и прыгнул, оставив все ужасы позади…</i>";
+                                await Bot.SendTextMessageAsync(message.Chat.Id, door_6139, false, false, 0, keyboardWait, ParseMode.Html); Thread.Sleep(4000);
+                                await Bot.SendTextMessageAsync(message.Chat.Id, door_6140, false, false, 0, null, ParseMode.Html); Thread.Sleep(4000);
+                                await Bot.SendTextMessageAsync(message.Chat.Id, door_6141, false, false, 0, null, ParseMode.Html); Thread.Sleep(4000);
+                                await Bot.SendTextMessageAsync(message.Chat.Id, door_6142, false, false, 0, null, ParseMode.Html); Thread.Sleep(4000);
+                                await Bot.SendTextMessageAsync(message.Chat.Id, door_6143, false, false, 0, null, ParseMode.Html); Thread.Sleep(4000);
+                                await Bot.SendTextMessageAsync(message.Chat.Id, door_6144, false, false, 0, null, ParseMode.Html); Thread.Sleep(4000);
+                                await Bot.SendTextMessageAsync(message.Chat.Id, door_6145, false, false, 0, null, ParseMode.Html); Thread.Sleep(4000);
+                                await Bot.SendTextMessageAsync(message.Chat.Id, door_6146, false, false, 0, null, ParseMode.Html); Thread.Sleep(4000);
+                                await Bot.SendPhotoAsync(message.Chat.Id, "https://thumb.ibb.co/kCm9hR/CHOISE_62.jpg", "", false, 0, keyboard6);
+                                keyboardLast = keyboard6;
+                            }
+                            else if (message.Text == "Вернуться к Ирине")
+                            {
+                                string door_6148 = "- Я хочу вернуться к Ирине…";
+                                string door_6149 = "- Хорошо… Если ты умрешь в этом мире, ты забудешь все, что с тобой произошло, будешь жить так, как будто всего этого никогда не случалось…";
+                                string door_6150 = "- Значит я забуду и Юи?..";
+                                string door_6151 = "- Увы. Ты можешь выбрать лишь одну альтернативную личность, чтобы жить ее жизнью. Но для этого придется избавиться от остальных.";
+                                string door_6152 = "- И я никогда не вспомню о том, что произошло?";
+                                string door_6153 = "- Никогда.";
+                                string door_6154 = "- Тогда… Я согласен…";
+                                string door_6155 = "<i>Я сглотнул, разбежался и прыгнул, оставив все ужасы позади…</i>";
+                                await Bot.SendTextMessageAsync(message.Chat.Id, door_6148, false, false, 0, keyboardWait, ParseMode.Html); Thread.Sleep(4000);
+                                await Bot.SendTextMessageAsync(message.Chat.Id, door_6149, false, false, 0, null, ParseMode.Html); Thread.Sleep(4000);
+                                await Bot.SendTextMessageAsync(message.Chat.Id, door_6150, false, false, 0, null, ParseMode.Html); Thread.Sleep(4000);
+                                await Bot.SendTextMessageAsync(message.Chat.Id, door_6151, false, false, 0, null, ParseMode.Html); Thread.Sleep(4000);
+                                await Bot.SendTextMessageAsync(message.Chat.Id, door_6152, false, false, 0, null, ParseMode.Html); Thread.Sleep(4000);
+                                await Bot.SendTextMessageAsync(message.Chat.Id, door_6153, false, false, 0, null, ParseMode.Html); Thread.Sleep(4000);
+                                await Bot.SendTextMessageAsync(message.Chat.Id, door_6154, false, false, 0, null, ParseMode.Html); Thread.Sleep(4000);
+                                await Bot.SendTextMessageAsync(message.Chat.Id, door_6155, false, false, 0, null, ParseMode.Html); Thread.Sleep(4000);
+                                await Bot.SendPhotoAsync(message.Chat.Id, "https://thumb.ibb.co/mHffp6/CHOISE_63.jpg", "", false, 0, keyboard6);
+                                keyboardLast = keyboard6;
+                            }
+                            else if (message.Text == "Вернуться к Анне")
+                            {
+                                string door_6157 = "- Я хочу вернуться к Анне…";
+                                string door_6158 = "- Хорошо… Если ты умрешь в этом мире, ты забудешь все, что с тобой произошло, будешь жить так, как будто всего этого никогда не случалось…";
+                                string door_6159 = "- Значит я забуду и Юи?..";
+                                string door_6160 = "- Увы. Ты можешь выбрать лишь одну альтернативную личность, чтобы жить ее жизнью. Но для этого придется избавиться от остальных.";
+                                string door_6161 = "- И я никогда не вспомню о том, что произошло?";
+                                string door_6162 = "- Никогда.";
+                                string door_6163 = "- Тогда… Я согласен…";
+                                string door_6164 = "<i>Я сглотнул, разбежался и прыгнул, оставив все ужасы позади…</i>";
+                                await Bot.SendTextMessageAsync(message.Chat.Id, door_6157, false, false, 0, keyboardWait, ParseMode.Html); Thread.Sleep(4000);
+                                await Bot.SendTextMessageAsync(message.Chat.Id, door_6158, false, false, 0, null, ParseMode.Html); Thread.Sleep(4000);
+                                await Bot.SendTextMessageAsync(message.Chat.Id, door_6159, false, false, 0, null, ParseMode.Html); Thread.Sleep(4000);
+                                await Bot.SendTextMessageAsync(message.Chat.Id, door_6160, false, false, 0, null, ParseMode.Html); Thread.Sleep(4000);
+                                await Bot.SendTextMessageAsync(message.Chat.Id, door_6161, false, false, 0, null, ParseMode.Html); Thread.Sleep(4000);
+                                await Bot.SendTextMessageAsync(message.Chat.Id, door_6162, false, false, 0, null, ParseMode.Html); Thread.Sleep(4000);
+                                await Bot.SendTextMessageAsync(message.Chat.Id, door_6163, false, false, 0, null, ParseMode.Html); Thread.Sleep(4000);
+                                await Bot.SendTextMessageAsync(message.Chat.Id, door_6164, false, false, 0, null, ParseMode.Html); Thread.Sleep(4000);
+                                await Bot.SendPhotoAsync(message.Chat.Id, "https://thumb.ibb.co/cOsMwm/CHOISE_64.jpg", "", false, 0, keyboard6);
+                                keyboardLast = keyboard6;
 
+                            }
+                            else if (message.Text == "Вернуться к Жанне")
+                            {
+                                string door_6166 = "- Я хочу вернуться к Жанне…";
+                                string door_6167 = "- Хорошо… Если ты умрешь в этом мире, ты забудешь все, что с тобой произошло, будешь жить так, как будто всего этого никогда не случалось…";
+                                string door_6168 = "- Значит я забуду и Юи?..";
+                                string door_6169 = "- Увы. Ты можешь выбрать лишь одну альтернативную личность, чтобы жить ее жизнью. Но для этого придется избавиться от остальных.";
+                                string door_6170 = "- И я никогда не вспомню о том, что произошло?";
+                                string door_6171 = "- Никогда.";
+                                string door_6172 = "- Тогда… Я согласен…";
+                                string door_6173 = "<i>Я сглотнул, разбежался и прыгнул, оставив все ужасы позади…</i>";
+                                await Bot.SendTextMessageAsync(message.Chat.Id, door_6166, false, false, 0, keyboardWait, ParseMode.Html); Thread.Sleep(4000);
+                                await Bot.SendTextMessageAsync(message.Chat.Id, door_6167, false, false, 0, null, ParseMode.Html); Thread.Sleep(4000);
+                                await Bot.SendTextMessageAsync(message.Chat.Id, door_6168, false, false, 0, null, ParseMode.Html); Thread.Sleep(4000);
+                                await Bot.SendTextMessageAsync(message.Chat.Id, door_6169, false, false, 0, null, ParseMode.Html); Thread.Sleep(4000);
+                                await Bot.SendTextMessageAsync(message.Chat.Id, door_6170, false, false, 0, null, ParseMode.Html); Thread.Sleep(4000);
+                                await Bot.SendTextMessageAsync(message.Chat.Id, door_6171, false, false, 0, null, ParseMode.Html); Thread.Sleep(4000);
+                                await Bot.SendTextMessageAsync(message.Chat.Id, door_6172, false, false, 0, null, ParseMode.Html); Thread.Sleep(4000);
+                                await Bot.SendTextMessageAsync(message.Chat.Id, door_6173, false, false, 0, null, ParseMode.Html); Thread.Sleep(4000);
+                                await Bot.SendPhotoAsync(message.Chat.Id, "https://thumb.ibb.co/fqSzhR/CHOISE_65.jpg", "", false, 0, keyboard6);
+                                keyboardLast = keyboard6;
+                            }
+                            else if (message.Text == "Отправиться за Юи")
+                            {
+                                string door_6175 = "- Я… Я не могу оставить ее… Это не ее вина… Настоящая Юи где-то там, напуганная и растерянная… Я должен ее найти!";
+                                string door_6176 = "- Но, если ты отправишься за ней, не лишившись памяти, с тобой произойдет то же, что и с ней…";
+                                string door_6177 = "- Но как я найду Юи, не помня ее?";
+                                string door_6178 = "- Я могу оставить тебе память о ней. О других альтернативных мирах ты забудешь.";
+                                string door_6179 = "- Но…";
+                                string door_6180 = "- Ты готов рискнуть ее жизнью? ";
+                                string door_6181 = "<i>Я опустил голову.\n\nЕсли переход между мирами оставляет такой отпечаток на сознании, я не могу так рисковать.</i>";
+                                string door_6182 = "- Я согласен.";
+                                string door_6183 = "- Что-ж, это твой выбор.";
+                                string door_6184 = "- Что мне делать?";
+                                string door_6185 = "- Если ты умрешь в этом мире, ты забудешь все, что с тобой произошло, будешь жить так, как будто всего этого никогда не случалось…";
+                                string door_6186 = "- Значит я забуду Алену, Аню, Иру, Жанну и даже Витю?..";
+                                string door_6187 = "- Увы. Ты можешь выбрать лишь одну альтернативную личность, чтобы жить ее жизнью. Но для этого придется избавиться от остальных…";
+                                string door_6188 = "- И я никогда не вспомню о том, что произошло?";
+                                string door_6189 = "- Никогда.";
+                                string door_6190 = "- Тогда… Я согласен…";
+                                string door_6191 = "<i>Я сглотнул, разбежался и прыгнул, оставив все ужасы позади…</i>";
+                                await Bot.SendTextMessageAsync(message.Chat.Id, door_6175, false, false, 0, keyboardWait, ParseMode.Html); Thread.Sleep(4000);
+                                await Bot.SendTextMessageAsync(message.Chat.Id, door_6176, false, false, 0, null, ParseMode.Html); Thread.Sleep(4000);
+                                await Bot.SendTextMessageAsync(message.Chat.Id, door_6177, false, false, 0, null, ParseMode.Html); Thread.Sleep(4000);
+                                await Bot.SendTextMessageAsync(message.Chat.Id, door_6178, false, false, 0, null, ParseMode.Html); Thread.Sleep(4000);
+                                await Bot.SendTextMessageAsync(message.Chat.Id, door_6179, false, false, 0, null, ParseMode.Html); Thread.Sleep(4000);
+                                await Bot.SendTextMessageAsync(message.Chat.Id, door_6180, false, false, 0, null, ParseMode.Html); Thread.Sleep(4000);
+                                await Bot.SendTextMessageAsync(message.Chat.Id, door_6181, false, false, 0, null, ParseMode.Html); Thread.Sleep(4000);
+                                await Bot.SendTextMessageAsync(message.Chat.Id, door_6182, false, false, 0, null, ParseMode.Html); Thread.Sleep(4000);
+                                await Bot.SendTextMessageAsync(message.Chat.Id, door_6183, false, false, 0, null, ParseMode.Html); Thread.Sleep(4000);
+                                await Bot.SendTextMessageAsync(message.Chat.Id, door_6184, false, false, 0, null, ParseMode.Html); Thread.Sleep(4000);
+                                await Bot.SendTextMessageAsync(message.Chat.Id, door_6185, false, false, 0, null, ParseMode.Html); Thread.Sleep(4000);
+                                await Bot.SendTextMessageAsync(message.Chat.Id, door_6186, false, false, 0, null, ParseMode.Html); Thread.Sleep(4000);
+                                await Bot.SendTextMessageAsync(message.Chat.Id, door_6187, false, false, 0, null, ParseMode.Html); Thread.Sleep(4000);
+                                await Bot.SendTextMessageAsync(message.Chat.Id, door_6188, false, false, 0, null, ParseMode.Html); Thread.Sleep(4000);
+                                await Bot.SendTextMessageAsync(message.Chat.Id, door_6189, false, false, 0, null, ParseMode.Html); Thread.Sleep(4000);
+                                await Bot.SendTextMessageAsync(message.Chat.Id, door_6190, false, false, 0, null, ParseMode.Html); Thread.Sleep(4000);
+                                await Bot.SendTextMessageAsync(message.Chat.Id, door_6191, false, false, 0, null, ParseMode.Html); Thread.Sleep(4000);
+                                await Bot.SendPhotoAsync(message.Chat.Id, "https://thumb.ibb.co/dtcX2R/CHOISE_66.jpg", "", false, 0, keyboard6);
+                                keyboardLast = keyboard6;
+                            }
+                            else if (message.Text == "Спасибо") { }
                             else
                             {
                                 string opisanie = "Текст предупреждения\n";
@@ -2058,7 +2193,7 @@ namespace revcom_bot
                     }
                     catch(Exception p)
                     {
-                        await Bot.SendTextMessageAsync(message.Chat.Id, "Внимание, произошла задержка загрузки игры. Для продолжения выберите вариант заново", false, false, 0, keyboardLast, ParseMode.Html); Thread.Sleep(52);
+                        await Bot.SendTextMessageAsync(message.Chat.Id, "Внимание, произошла задержка загрузки игры. Для продолжения выберите вариант заново", false, false, 0, keyboardLast, ParseMode.Html); Thread.Sleep(4000);
                     }
                 };
 
