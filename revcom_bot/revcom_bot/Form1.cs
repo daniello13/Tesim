@@ -208,7 +208,7 @@ namespace revcom_bot
                     void Keys_to_file(long Chat_id, string[] keyboards)
                     {
                         string writePath = Convert.ToString(Chat_id) + ".txt";
-                        using (StreamWriter sw = new StreamWriter(writePath, false, System.Text.Encoding.Default))
+                        using (StreamWriter sw = new StreamWriter(writePath, false, System.Text.Encoding.UTF8))
                         {
                             for (int i = 0; i < keyboards.Length; i++)
                             {
@@ -222,7 +222,7 @@ namespace revcom_bot
                     {
                         string readPath = Convert.ToString(Chat_id) + ".txt";
                         List<string> mas = new List<string>();
-                        using (StreamReader sr = new StreamReader(readPath, System.Text.Encoding.Default))
+                        using (StreamReader sr = new StreamReader(readPath, System.Text.Encoding.UTF8))
                         {
                             string line;
                             while ((line = sr.ReadLine()) != null)
@@ -2505,10 +2505,6 @@ namespace revcom_bot
                                             new[] // row 1
                                                 {
                                                     new Telegram.Bot.Types.KeyboardButton(a[1])
-                                                },
-                                                new[] // row 1
-                                                {
-                                                    new Telegram.Bot.Types.KeyboardButton("/help")
                                                 },
                                             },
                                 ResizeKeyboard = true
