@@ -32,6 +32,12 @@ namespace revcom_bot
 
             this.bw = new BackgroundWorker();
             this.bw.DoWork += bw_DoWork;
+            var text = @txtKey.Text; // получаем содержимое текстового поля txtKey в переменную text
+            if (text != "" && this.bw.IsBusy != true)
+            {
+                this.bw.RunWorkerAsync(text); // передаем эту переменную в виде аргумента методу bw_DoWork
+                BtnRun.Text = "Бот запущен...";
+            }
         }
 
         async void bw_DoWork(object sender, DoWorkEventArgs e)
@@ -2657,6 +2663,11 @@ namespace revcom_bot
                 this.bw.RunWorkerAsync(text); // передаем эту переменную в виде аргумента методу bw_DoWork
                 BtnRun.Text = "Бот запущен...";
             }
+        }
+
+        private void txtKey_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

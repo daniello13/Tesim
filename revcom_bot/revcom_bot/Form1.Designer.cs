@@ -61,7 +61,8 @@
             this.txtKey.Name = "txtKey";
             this.txtKey.Size = new System.Drawing.Size(383, 20);
             this.txtKey.TabIndex = 1;
-            this.txtKey.Text = "387673122:AAEuIUXPrXFeUX7Oa43UA0wc7azxfmX59Pw";
+            this.txtKey.Text = "508343926:AAHaaWy-GnJJnYAWIgd6NxzHq8TjY5GTGm0";
+            this.txtKey.TextChanged += new System.EventHandler(this.txtKey_TextChanged);
             // 
             // Form1
             // 
