@@ -13,3 +13,19 @@ c:\users\адам дженсен\documents\visual studio 2015\Projects\revcom_bo
 c:\users\адам дженсен\documents\visual studio 2015\Projects\revcom_bot\revcom_bot\obj\Debug\revcom_bot.csproj.GenerateResource.Cache
 c:\users\адам дженсен\documents\visual studio 2015\Projects\revcom_bot\revcom_bot\obj\Debug\revcom_bot.exe
 c:\users\адам дженсен\documents\visual studio 2015\Projects\revcom_bot\revcom_bot\obj\Debug\revcom_bot.pdb
+C:\Users\Daniel\Desktop\Tesim\revcom_bot\revcom_bot\bin\Debug\revcom_bot.exe.config
+C:\Users\Daniel\Desktop\Tesim\revcom_bot\revcom_bot\bin\Debug\revcom_bot.exe
+C:\Users\Daniel\Desktop\Tesim\revcom_bot\revcom_bot\bin\Debug\revcom_bot.pdb
+C:\Users\Daniel\Desktop\Tesim\revcom_bot\revcom_bot\bin\Debug\Newtonsoft.Json.dll
+C:\Users\Daniel\Desktop\Tesim\revcom_bot\revcom_bot\bin\Debug\System.Net.Http.Formatting.dll
+C:\Users\Daniel\Desktop\Tesim\revcom_bot\revcom_bot\bin\Debug\Telegram.Bot.dll
+C:\Users\Daniel\Desktop\Tesim\revcom_bot\revcom_bot\bin\Debug\Newtonsoft.Json.xml
+C:\Users\Daniel\Desktop\Tesim\revcom_bot\revcom_bot\bin\Debug\System.Net.Http.Formatting.xml
+C:\Users\Daniel\Desktop\Tesim\revcom_bot\revcom_bot\bin\Debug\Telegram.Bot.xml
+C:\Users\Daniel\Desktop\Tesim\revcom_bot\revcom_bot\obj\Debug\revcom_bot.csprojResolveAssemblyReference.cache
+C:\Users\Daniel\Desktop\Tesim\revcom_bot\revcom_bot\obj\Debug\revcom_bot.Form1.resources
+C:\Users\Daniel\Desktop\Tesim\revcom_bot\revcom_bot\obj\Debug\revcom_bot.Properties.Resources.resources
+C:\Users\Daniel\Desktop\Tesim\revcom_bot\revcom_bot\obj\Debug\revcom_bot.csproj.GenerateResource.Cache
+C:\Users\Daniel\Desktop\Tesim\revcom_bot\revcom_bot\obj\Debug\revcom_bot.csproj.CoreCompileInputs.cache
+C:\Users\Daniel\Desktop\Tesim\revcom_bot\revcom_bot\obj\Debug\revcom_bot.exe
+C:\Users\Daniel\Desktop\Tesim\revcom_bot\revcom_bot\obj\Debug\revcom_bot.pdb
