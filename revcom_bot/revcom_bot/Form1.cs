@@ -324,7 +324,7 @@ namespace revcom_bot
                                 //        );
 
                                 //}
-                                string req = "https://api.telegram.org/bot508343926:AAHaaWy-GnJJnYAWIgd6NxzHq8TjY5GTGm0/sendDocument?chat_id="+Convert.ToString(message.Chat.Id) + "&document=CQADAgAD7QADa6gJS67YWb1azh1_Ag";
+                                string req = "https://api.telegram.org/bot508343926:Here_Input_your_passwd+link/sendDocument?chat_id="+Convert.ToString(message.Chat.Id) + "&document=CQADAgAD7QADa6gJS67YWb1azh1_Ag";
                                 WebRequest n = WebRequest.Create(req);
                                 string line;
                                 WebResponse response = n.GetResponse();
